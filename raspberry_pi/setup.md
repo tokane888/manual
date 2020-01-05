@@ -1,6 +1,13 @@
 ## ラズパイインストール方法
 
-### OSインストール
+### ラズパイdockerコンテナ作成
+
+* 実機linux起動
+* docker run --name pi -d raspbian/stretch
+    * EC2のubuntu上で上記実行 => コンテナ起動。up状態に
+    * windows10のdocker toolbox上で実行した際は失敗
+
+### 実機へOSインストール
 
 * SD Card Formatterダウンロード、インストール
     * https://www.sdcard.org/downloads/formatter/
