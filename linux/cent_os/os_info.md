@@ -27,3 +27,10 @@
         # cat /etc/centos-release
         CentOS Linux release 7.5.1804 (Core)
         ```
+* Linux kernel version取得
+    * uname -r
+    ```
+    # uname -r
+    3.10.0-862.el7.x86_64
+    ```
+    * `3.10.0-862`の部分がLinux kernel version
