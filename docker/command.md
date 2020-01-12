@@ -2,6 +2,9 @@
 
 ### コンテナ掃除
 
+* コンテナ指定して削除
+    * docker rm [-f] (コンテナ名)
+        * -fを付けると起動中のコンテナでも削除
 * docker system prune -f
     * 停止しているコンテナ削除
     * dangling image削除
