@@ -20,7 +20,8 @@
         REDHAT_SUPPORT_PRODUCT="centos"
         REDHAT_SUPPORT_PRODUCT_VERSION="7"
         ```
-    * 他のOSでも基本的に同様に取得可能
+    * 他のOSでも基本的には同様に取得可能
+        * CentOS 6.9で取得失敗。7では成功
 * OSのマイナーバージョン取得
     * cat /etc/centos-release
         ```
