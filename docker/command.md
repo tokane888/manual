@@ -14,4 +14,7 @@
 
 * docker情報確認
     * docker info
-        * ストレージドライバ等確認可能
+        * ストレージドライバ等出力
+* version確認
+    * docker version
+        * clientとserverのバージョン出力
