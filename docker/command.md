@@ -9,3 +9,9 @@
 * docker system prune -af
     * 停止しているコンテナ削除
     * 使用されていないimage削除
+
+### その他
+
+* docker情報確認
+    * docker info
+        * ストレージドライバ等確認可能
