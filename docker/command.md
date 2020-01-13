@@ -17,6 +17,8 @@
 
 * コンテナを動かしたままコンテナを抜ける
     * ctrl+p, ctrl+q
+* dockerのCPU、メモリ等使用状況
+    * docker container stats
 * docker情報確認
     * docker info
         * ストレージドライバ等出力
