@@ -37,7 +37,7 @@
 
 ### パッケージ内容確認
 
-* rpmファイル取得
+* .rpmファイル取得
     * `yumdownloader (パッケージ名)`
 * ソースパッケージ取得
     * `yumdownloader --source (パッケージ名)`
