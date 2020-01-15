@@ -1,6 +1,6 @@
 ## dockerコマンド
 
-### コンテナ掃除
+### コンテナ、image掃除
 
 * コンテナ指定して削除
     * docker rm [-f] (コンテナ名)
@@ -12,6 +12,8 @@
 * docker system prune -af
     * 停止しているコンテナ削除
     * 使用されていないimage削除
+* 未使用image削除
+    * docker image prune
 
 ### その他
 
