@@ -19,6 +19,8 @@
 
 * コンテナを動かしたままコンテナを抜ける
     * ctrl+p, ctrl+q
+* alpineコンテナへrootでログイン
+    * docker exec -it --user root (コンテナID) sh
 * dockerのCPU、メモリ等使用状況
     * docker container stats
 * docker情報確認
