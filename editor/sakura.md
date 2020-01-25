@@ -13,3 +13,4 @@
 * 改行コードプルダウンからLF(unix)選択
 * 文字コードプルダウンからUTF-8選択
 * OK押下
+* (参考)https://nekomata.tech/sakura-editor-utf8-2019.html
