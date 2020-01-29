@@ -7,3 +7,5 @@
   * Boot順でUSB最優先に
 * 再起動
 * [インストール](https://tutorials.ubuntu.com/tutorial/tutorial-install-ubuntu-desktop)
+  * 途中"Minimal installation"選択する
+    * AmazonリンクとかThunderbirdとか不要なもの大量に突っ込まれる
