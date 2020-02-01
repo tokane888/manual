@@ -15,4 +15,10 @@
         * 何故か言語で英語選択するとamazonリンクとか余計なのが作成されるが後述の方法で削除
           * AmazonリンクとかThunderbirdとか不要なもの大量に突っ込まれる
             * apt list --installed | wc -l で1797行出力された
+    * OSインストール完了後、OS再起動
+      * **再起動時に、必ずUSBを抜く**
+        * live OS上で作業してしまう可能性があるため
+          * live OSで無い場合、USBを刺したままだとデスクトップにアイコンが表示される
+            * df -hなどでも確認可能
+            * live OSだとアマゾンとかのアイコンが左メニューに必ず出るっぽい
 * [dotfiles](https://github.com/tokane888/dotfiles)実行で前述の余計なファイルはほぼ削除される
