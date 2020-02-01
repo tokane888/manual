@@ -8,6 +8,8 @@
 
 ### 手順
 
+#### ドメイン登録
+
 * 下記へアクセス
   * https://www.mydns.jp
 * 左メニューからDOMAIN INFOへ
@@ -20,3 +22,13 @@
     * ~~
 * Check押下
 * OK押下
+
+#### IP通知登録
+
+* IP登録対象のPCのコンソール開く
+* crontab -e
+* 下記を末尾へ
+  * */1  * * * * wget -q -O /dev/null http://(MyDNSのID):(MyDNSのPASS)@www.mydns.jp/login.html
+    * 毎時1分にIP通知
+* (確認)MyDNS左メニューから"LOG INFO"で通知ログ確認
+  * https://www.mydns.jp
