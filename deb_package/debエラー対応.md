@@ -10,6 +10,11 @@
   * `Depends: packageB (version) but it is not going to be installed`
     * apt install (packageA) (packageB) を実行
       * 依存関係ツリーの中に、固定バージョンのパッケージに依存していものがある場合等に発生
+        * 連続してやっていき、最後に依存パッケージが全部列挙できる
+          * apt list --installed (依存パッケージ一覧) でインストール済みの依存パッケージ列挙可能
+          * apt purge -y (依存パッケージ一覧) で強引だけど解決
+            * gcc-8-baseとかが依存先の場合消せないので解決できない。
+              * TODO: 対策検討
         * 古いパッケージが残っている場合にこの問題が発生するっぽい。色々試した
           * apt upgrade => ✕
           * apt autoremove => ✕
