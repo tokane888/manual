@@ -2,6 +2,8 @@
 
 ### インストールエラー
 
+* ログ確認
+  * cat /var/log/apt/history.log
 * `N: Unable to package (パッケージ名)`
   * [Ubuntuパッケージ検索](https://packages.ubuntu.com/ja/)で当該パッケージのリポジトリ検索
     * /etc/apt/sources.list に当該リポジトリ追加
