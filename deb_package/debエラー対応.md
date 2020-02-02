@@ -1,9 +1,7 @@
 ## deb関連のエラー対応
 
-### インストールエラー
+### apt install時エラー
 
-* ログ確認
-  * cat /var/log/apt/history.log
 * `N: Unable to package (パッケージ名)`
   * [Ubuntuパッケージ検索](https://packages.ubuntu.com/ja/)で当該パッケージのリポジトリ検索
     * /etc/apt/sources.list に当該リポジトリ追加
@@ -23,3 +21,10 @@
           * apt --fix-broken install => ✕
           * 依存先パッケージapt purge => ○
             * openssh-serverのインストールに失敗する問題は、openssh-clientのuninstallで直った
+
+### 汎用対応策
+
+* ログ確認
+  * cat /var/log/apt/history.log
+* aptitude install (パッケージ名)
+  * 対応策を提示し、y/nでyを入力で対応策を実施してくれる
