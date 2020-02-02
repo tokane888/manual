@@ -13,3 +13,6 @@
     * cdは実行ファイルではなく、組み込みコマンド
 * 時刻整形して出力
     * date +%H:%M:%S
+* historyコマンドに時刻付与
+    * HISTTIMEFORMAT='%F %T '
+    * history
