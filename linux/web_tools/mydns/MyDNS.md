@@ -32,3 +32,13 @@
     * 毎時1分にIP通知
 * (確認)MyDNS左メニューから"LOG INFO"で通知ログ確認
   * https://www.mydns.jp
+
+#### Buffaloルーターポートフォワード設定
+
+* ipconfigで出力されたDefault gatewayのIPをchromeのアドレスバーに打ち込んでルーター管理画面表示
+* セキュリティ => ポート変換
+* 下記を任意に設定
+  * プロトコル => TCP/UDP => 任意のTCP/UDPポート
+  * LAN側IPアドレス
+  * LAN側ポート
+* "新規作成"押下
