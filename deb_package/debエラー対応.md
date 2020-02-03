@@ -28,3 +28,4 @@
   * cat /var/log/apt/history.log
 * aptitude install (パッケージ名)
   * 対応策を提示し、y/nでyを入力で対応策を実施してくれる
+    * 1つ目を試してだめな場合、nを押すと2つ目を表示してくれる
