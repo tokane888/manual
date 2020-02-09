@@ -44,12 +44,11 @@ ubuntu 18.04実機
     renderer: NetworkManager
     ethernets:
       enp3s0:
-          dhcp4: n
+          dhcp4: no
           addresses: [192.168.11.100/24]
           gateway4: 192.168.11.1
           nameservers:
               addresses: [192.168.11.1]
-          dhcp6: n
   ```
   * "ethernets"直下のデバイス名
     * ip addr コマンドで確認。上記では"enp3s0"
@@ -71,7 +70,7 @@ ubuntu 18.04実機
     renderer: NetworkManager
     wifis:
       wlp2s0:
-          dhcp4: n
+          dhcp4: no
           addresses: [192.168.11.100/24]
           gateway4: 192.168.11.1
           nameservers:
