@@ -18,19 +18,21 @@
     * 呼び出し元と同じシェル環境を使用
     * ";"又はwhite spaceは必須
     * groupコマンドと呼ばれる
-* nohup
+* nohup挙動
   * ssh接続時
     * nohup内のコマンドはsshdの子プロセスになる
     * nohup内でsleep実行中にssh切断した場合、nohup内プロセスはsystemd直下へ移動され、親(main.sh)は死亡
-      * ssh実行中のpstree結果(抜粋)
-        ```
-        systemd───sshd─┬─sshd───sshd───bash───pstree
-                       ├─sshd───sshd───bash───main.sh───bash───sleep
-                       └─sshd───sshd
-        ```
-      * ssh切断時のpstree結果
-        ```
-        systemd─┬─bash───sleep
-                └─sshd─┬─sshd───sshd───bash───pstree
-                       └─sshd───sshd
-                ```
+      * main.sh内で`nohup bash -c (sleep含む関数)`を実行し、Conemuのウィンドウ閉じてssh切断した場合
+        * ssh実行中のpstree結果(抜粋)
+          ```
+          systemd───sshd─┬─sshd───sshd───bash───pstree
+                         ├─sshd───sshd───bash───main.sh───bash───sleep
+                         └─sshd───sshd
+          ```
+        * ssh切断時のpstree結果
+          ```
+          systemd─┬─bash───sleep
+                  └─sshd─┬─sshd───sshd───bash───pstree
+                         └─sshd───sshd
+                  ```
+  * trapでは、sshdが死んだ際にmain.shが死んでしまう関係で、nohupの代替にはならない
