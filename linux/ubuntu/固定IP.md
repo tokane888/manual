@@ -42,7 +42,6 @@ ubuntu 18.04実機
   network:
     version: 2
     renderer: NetworkManager
-
     ethernets:
       enp3s0:
           dhcp4: n
