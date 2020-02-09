@@ -20,3 +20,10 @@
         origin  git@github.com:tokane888/manual.git (fetch)
         origin  git@github.com:tokane888/manual.git (push)
         ```
+* git clone 時に使用する秘密鍵を特定ドメインでのみ変更
+  * 下記のようにIdentityFile指定を.ssh/configに追加
+    ```
+    Host github.com
+    User git
+    IdentityFile ~/.ssh/git_id_rsa
+    ```
