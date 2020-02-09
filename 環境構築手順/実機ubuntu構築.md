@@ -13,14 +13,17 @@
       * 日本語設定にすると、日本語フォントの表示は可能だが、半角/全角キーは使用不可
     * "Minimal installation"
       * 余計なパッケージインストールしないため
-        * thunderbird, libreofficeは入る。後で手動削除
+        * thunderbird, libreofficeは入る。削除スクリプトは後述
     * OSインストール完了後、OS再起動
       * **再起動時に、必ずUSBを抜く**
         * live OS上で作業してしまう可能性があるため
           * live OSで無い場合、USBを刺したままだとデスクトップにアイコンが表示される
             * df -hなどでも確認可能
             * live OSだとアマゾンとかのアイコンが左メニューに出る
-* [dotfiles](https://github.com/tokane888/dotfiles)実行で前述の余計なファイルはほぼ削除される
-  * guiが起動しなくなる場合があるので、手動でのパッケージ削除時は慎重に行う
-    * NG例）apt purge -y thunderbird* libre*
-      * 上記実行でGUI死亡
+* [ubuntu実機用dotfiles](https://github.com/tokane888/dotfiles_ubuntu)実行で前述の余計なファイルは削除される
+  * 手動でのパッケージ削除時は慎重に
+    * GUIが起動しなくなる場合がある
+      * NG例）apt purge -y thunderbird* libre*
+    * 左メニューの下記はaptから削除せず、右クリックでお気に入りから削除に留める
+      * ubuntu software center => ファイルのアイコン右クリックで"詳細を表示"する機能が使えなくなる
+      * help => 他の複数のソフトがこれに依存していそうなので
