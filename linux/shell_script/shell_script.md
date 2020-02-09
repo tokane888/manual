@@ -20,4 +20,17 @@
     * groupコマンドと呼ばれる
 * nohup
   * ssh接続時
-    * nohup内のコマンドはsshdの子プロセスではなく、別bashの子プロセスになる
+    * nohup内のコマンドはsshdの子プロセスになる
+    * nohup内でsleep実行中にssh切断した場合、nohup内プロセスはsystemd直下へ移動され、親(main.sh)は死亡
+      * ssh実行中のpstree結果(抜粋)
+        ```
+        systemd───sshd─┬─sshd───sshd───bash───pstree
+                       ├─sshd───sshd───bash───main.sh───bash───sleep
+                       └─sshd───sshd
+        ```
+      * ssh切断時のpstree結果
+        ```
+        systemd─┬─bash───sleep
+                └─sshd─┬─sshd───sshd───bash───pstree
+                       └─sshd───sshd
+                ```
