@@ -22,7 +22,19 @@ ubuntu 18.04実機
 * ログ確認
   * systemctl status NetworkManager
 
-### ethernetで固定IP
+### ルーター側設定(Buffalo前提)
+
+* Buffaloルーターへログイン
+* 詳細設定 => LAN => LAN
+* "割当IPアドレス"の範囲に、割り当てる固定IPが含まれるように調整して"設定"
+* (ルーターが再起動するので)再ログイン
+* 詳細設定 => LAN => DHCPリース
+* "リース情報の追加"にIP, MACアドレス入力
+  * MACアドレスは区切りのコロン(":")も入力
+
+### クライアント側設定
+
+#### ethernetで固定IP
 
 * 下記テンプレの、後述の項目を書き換え
   ```
@@ -46,8 +58,11 @@ ubuntu 18.04実機
   * addresses: 固定IP
   * gateway4
   * nameservers.addresses
+* 書き換え後に下記実行
+  * netplan generate
+  * netplan apply
 
-  ### wifiで固定IP
+#### wifiで固定IP
 
 * 下記テンプレの、後述の項目を書き換え
   ```
@@ -55,19 +70,28 @@ ubuntu 18.04実機
   network:
     version: 2
     renderer: NetworkManager
-
     wifis:
-      enp3s0:
+      wlp2s0:
           dhcp4: n
           addresses: [192.168.11.100/24]
           gateway4: 192.168.11.1
           nameservers:
               addresses: [192.168.11.1]
-          dhcp6: n
+          access-points:
+              (-_-)zz:
+                  password: (パスワード)
+          
   ```
-  * "ethernets"直下のデバイス名
-    * ip addr コマンドで確認。上記では"enp3s0"
+  * "wifis"直下のデバイス名
+    * ip addr コマンドで確認。上記では"wlp2s0"
       * nmcli c コマンドでも確認できるかも
   * addresses: 固定IP
   * gateway4
   * nameservers.addresses
+  * access-points配下のSSID+password
+* 書き換え後に書き実行
+  * netplan generate
+  * netplan apply
+* 上記実行後、必要ないはずだが一応PC再起動したが、IP固定できなかった
+  * だが翌日、ルーターも夜間に自動再起動された後では、ip addr実行したところ、IPは固定されていた
+  * TODO: ルーター再起動必要なのか検証
