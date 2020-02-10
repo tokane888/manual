@@ -25,10 +25,6 @@ apt-get install -y docker-ce docker-ce-cli containerd.io
 
 ### 各種コマンド等
 
-* 一般userでdockerコマンド実行
-  * docker groupにubuntuユーザーを追加
-    * gpasswd --add (ユーザー名) docker
-      * ex) gpasswd --add ubuntu docker
 * image検索
   * docker search (image名)
   ```
@@ -40,6 +36,20 @@ apt-get install -y docker-ce docker-ce-cli containerd.io
   ```
   * tag一覧取得は標準のコマンドでは無理
     * おとなしくDocker Hub見ておく
+* docker残容量確認
+  * docker system df
+    * 容量が足りなくなるとコンテナ上で意味不明なエラーが頻出するので注意
+    ```
+    $ docker images
+    REPOSITORY            TAG                 IMAGE ID            CREATED             SIZE
+    sample_server         0.1                 758da91348f7        2 weeks ago         367MB
+    golang                1.13.6-alpine3.11   9954d1348cd8        3 weeks ago         359MB
+    jrei/systemd-ubuntu   latest              5b30d83c97b7        4 months ago        158MB
+    ```
+* 一般userでdockerコマンド実行可能に設定
+  * docker groupにubuntuユーザーを追加
+    * gpasswd --add (ユーザー名) docker
+      * ex) gpasswd --add ubuntu docker
 
 ### DockerHub
 
