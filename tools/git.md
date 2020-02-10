@@ -1,5 +1,14 @@
 ## git
 
+### 各種操作
+
+* リモート含むブランチ一覧表示
+  * git branch -a
+* リモートブランチ削除
+  * git push origin --delete (ブランチ名)
+
+### ssh関連
+
 * httpsでcloneしたリポジトリを後からsshに変更
     * httpsでcloneしていることの確認方法
         * git remote -v で、originがhttpsになっていればhttpsでcloneしている
