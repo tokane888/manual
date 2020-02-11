@@ -4,6 +4,8 @@
 
 * docker ps時のコマンド省略(...)しない方法
   * docker ps -a --no-trunc
+* コンテナのログ確認
+  * docker logs (コンテナID)
 * image検索
   * docker search (image名)
   ```
