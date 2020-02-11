@@ -2,8 +2,7 @@
 
 ### test用オプション
 
-* 以下参照
-    * https://qiita.com/wakayama-y/items/a9b7380263da77e51711
+* [一覧](https://qiita.com/wakayama-y/items/a9b7380263da77e51711)
 
 ### その他
 
@@ -18,6 +17,9 @@
     * 呼び出し元と同じシェル環境を使用
     * ";"又はwhite spaceは必須
     * groupコマンドと呼ばれる
+* sh -
+  * -: - オプションの末尾。以降はファイル名等とみなされる。--と同等
+  * [参考](https://unix.stackexchange.com/questions/423501/what-does-sh-mean)
 * nohup挙動
   * ssh接続時
     * nohup内のコマンドはsshdの子プロセスになる
