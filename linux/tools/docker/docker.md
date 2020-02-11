@@ -2,6 +2,8 @@
 
 ### 各種コマンド等
 
+* docker ps時のコマンド省略(...)しない方法
+  * docker ps -a --no-trunc
 * image検索
   * docker search (image名)
   ```
