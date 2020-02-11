@@ -6,6 +6,8 @@
   * docker ps -a --no-trunc
 * コンテナのログ確認
   * docker logs (コンテナID)
+  * 時刻も含めて確認したい場合は下記のログ参照
+    * /var/lib/docker/containers/(コンテナID)/(コンテナID)-json.log
 * image検索
   * docker search (image名)
   ```
