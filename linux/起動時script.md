@@ -2,6 +2,25 @@
 
 ### スクリプト実行順序
 
+#### StackExchangeより
+
+* [参考](https://askubuntu.com/questions/438150/scripts-in-etc-profile-d-being-ignored)
+* シェルの種類
+  * terminal-emurator(gnome-terminal)使用時 => interactive, non-login shell
+  * sshログイン時 => interactive, login shell
+  * その他(graphical shell) => システムによる
+* シェルスクリプトを実行すると、non-interactive, non-login shellで実行される
+* 実行順序
+  * interactive, login shell又はnon-interactive shellを--login付きで実行時(ssh)
+    1. /etc/profile
+    2. 下記から最初に見つかったものを実行
+      1. ~/.bash_profile
+      2. ~/.bash_login
+      3. ~/.profile 
+  * interactive, non-login shell実行時(sudo su時)
+    1. /etc/bash.bashrc
+    2. ~/.bashrc
+
 #### CentOSの場合
 
 ##### ssh接続時記録
