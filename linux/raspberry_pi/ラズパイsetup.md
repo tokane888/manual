@@ -64,6 +64,27 @@
     * "JP Japan"
     * "OK"
     * SSID入力
+    * TODO:  上記だけではwifiにつながらない。調査
+    * 参考) 上記の設定は下記に書き込まれる
+      * /etc/wpa_supplicant/wpa_supplicant.conf
+        * 複数wifi設定時
+          * priority: 高い値の方に優先して接続される
+        * 単一IPにした
+      * /etc/dhcpcd.conf
+        * 固定IP設定したけどだめ => ルーター再起動してもだめ
+      * /etc/network/interfaces は古い設定ファイル
+        * 当該ファイルにもコメントがあり、これの使用は非推奨
+      * wifi起動・停止コマンド
+        * ifdown wlan0
+        * ifup wlan0
+        * unknown interface wlan0出る
+      * systemctl status wpa_supplicant
+* ssh有効化
+    * `sudo raspi-config`
+    * "5 Interfacing Options"
+    * "P2 SSH"
+    * "YES"
+    * "OK"
 * timezone設定
     * `sudo raspi-config`
     * timezone設定
