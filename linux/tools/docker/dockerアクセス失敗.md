@@ -13,3 +13,5 @@ Failed to connect to localhost port 8081
 3. DockerfileにExpose命令が入っているか
 4. docker run時に-p指定が入っているか
     * -p (コンテナ外port):(コンテナ内port)
+
+[参考](https://qiita.com/amuyikam/items/01a8c16e3ddbcc734a46)
