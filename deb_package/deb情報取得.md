@@ -45,3 +45,5 @@
 * 特定ファイルを含むパッケージ名取得
     * `dpkg -S (ファイルパス)`
         * ex) `dpkg -S /usr/bin/gpg`
+* aptのログ
+    * /var/log/apt/history.log
