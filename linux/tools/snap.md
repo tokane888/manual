@@ -14,6 +14,7 @@
   apt  install gccgo-go
   ```
   * goのバージョンもaptより新しい
+  * ubuntu公式のdocker imageには入っていなかった
 
 ### コマンド
 
