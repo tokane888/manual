@@ -20,4 +20,6 @@
     * :%s/置換前/置換後/g
   * 最初の一致箇所だけ置換
     * :%s/置換前/置換後/
+* visudoにvimを使用
+  * sudo update-alternatives --set editor /usr/bin/vim.basic
     
