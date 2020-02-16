@@ -26,13 +26,13 @@
 ##### ssh接続時記録
 
 1. /etc/profile
-2. /etc/profile/*.sh
+2. /etc/profile.d/*.sh
 3. /etc/bashrc
 
 ##### sudo su時記録
 
 1. /etc/bashrc
-2. /etc/profile/*.sh
+2. /etc/profile.d/*.sh
 
 ##### $HOME配下のスクリプト実行順序(ソース確認結果)
 
@@ -51,7 +51,7 @@
 
 1. /etc/profile
 2. /etc/bash.bashrc
-3. /etc/profile/*.sh
+3. /etc/profile.d/*.sh
 
 ##### sudo su時記録
 
