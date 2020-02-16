@@ -16,3 +16,8 @@
 * historyコマンドに時刻付与
     * HISTTIMEFORMAT='%F %T '
     * history
+* tar.gz
+    * 圧縮
+        * tar -zcvf ~~.tar.gz .
+    * 解凍
+        * tar -zxvf ~~.tar.gz
