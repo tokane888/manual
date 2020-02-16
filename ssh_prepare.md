@@ -31,8 +31,8 @@
 * クライアントがwindowsの場合
     * 公開鍵登録
         ```
-        vim authorized_keys
+        vim ~/.ssh/authorized_keys
         (公開鍵をクリップボードから貼り付ける)
         (vim終了)
-        chmod 600 authorized_keys
+        chmod 600 ~/.ssh/authorized_keys
         ```
