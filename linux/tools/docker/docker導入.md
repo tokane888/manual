@@ -25,5 +25,8 @@ apt-get install -y docker-ce docker-ce-cli containerd.io
 
 ### docker-compose導入
 
-sudo curl -L https://github.com/docker/compose/releases/download/1.25.4/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
-$ sudo chmod +x /usr/local/bin/docker-compose
+sudo su
+curl -L https://github.com/docker/compose/releases/download/1.25.4/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
+chmod +x /usr/local/bin/docker-compose
+curl -L https://raw.githubusercontent.com/docker/compose/$(docker-compose version --short)/contrib/completion/bash/docker-compose > /etc/bash_completion.d/docker-compose
+(/etc/bash.bashrc の、bash_completion読み込み処理がコメントアウトされていたらコメントアウト解除して読み込み)
