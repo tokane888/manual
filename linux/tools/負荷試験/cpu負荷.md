@@ -9,9 +9,12 @@
     * Centの場合(未動確)
       * epelリポジトリ追加していなければ追加
         * yum -y install epel-release
-      * yum -y install stress
+      * sudo yum -y install stress
   * 使用方法
     * stress -c (プロセス数) &
+  * 使用終了方法
+    * kill (stressプロセスのPID)
+      * 何故か"-c 1"指定でも2プロセス作成される。1つは管理用で負荷をかけていない？
 
 ### 計測
 
