@@ -22,4 +22,13 @@
     * :%s/置換前/置換後/
 * visudoにvimを使用
   * sudo update-alternatives --set editor /usr/bin/vim.basic
-    
+* ターミナル開く
+  * 上に配置
+    * :terminal
+  * 左に配置
+    * :vert terminal
+
+## プラグイン
+
+* ctrlpvim/ctrlp.vim
+  * ctrl+pでファイルを開ける
