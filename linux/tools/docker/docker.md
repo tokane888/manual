@@ -29,6 +29,17 @@
     golang                1.13.6-alpine3.11   9954d1348cd8        3 weeks ago         359MB
     jrei/systemd-ubuntu   latest              5b30d83c97b7        4 months ago        158MB
     ```
+* build時引数指定
+  * --build-arg (引数名1)=(value1) --build-arg (引数名2)=(value2)
+  * Dockerfile内
+    
+    ```
+    ARG (引数名1)
+    ARG (引数名2)
+    ```
+
+### 設定
+
 * 一般userでdockerコマンド実行可能に設定
   * docker groupにubuntuユーザーを追加
     * gpasswd --add (ユーザー名) docker
