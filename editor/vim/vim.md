@@ -1,10 +1,5 @@
 ## vimコマンド
 
-* プラグインインストール
-    * コンソールからインストール
-        * vim +PluginInstall +qall
-    * vim上でインストール
-        * :PluginInstall
 * sudo権限でエディタ上から上書き保存
     * :w !sudo tee > /dev/null %
     * :w !sudo tee %
@@ -29,8 +24,3 @@
     * :vert terminal
 * 最近開いたファイル
   * :browse oldfiles => 'q' => 一覧から番号入力で開く
-
-## プラグイン
-
-* ctrlpvim/ctrlp.vim
-  * ctrl+pでファイルを開ける
