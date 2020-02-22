@@ -23,4 +23,4 @@
   * 左に配置
     * :vert terminal
 * 最近開いたファイル
-  * :browse oldfiles => 'q' => 一覧から番号入力で開く
+  * :old => 'q' => 一覧から番号入力で開く
