@@ -24,3 +24,9 @@
     * :vert terminal
 * 最近開いたファイル
   * :old => 'q' => 一覧から番号入力で開く
+* エクスプローラでカレントディレクトリを開く
+  * :silent ! start .
+* デフォルト設定使用
+  * vim -u NONE -N
+* 公式ガイド
+  * :h vimtutor
