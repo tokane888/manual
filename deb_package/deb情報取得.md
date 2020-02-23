@@ -47,3 +47,7 @@
         * ex) `dpkg -S /usr/bin/gpg`
 * aptのログ
     * /var/log/apt/history.log
+* .debファイル展開
+    * カレントディレクトリに展開
+        * ar vx *.deb
+            * 注) カレントディレクトリに大量のファイルが作成される
