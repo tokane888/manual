@@ -12,3 +12,5 @@
         * vim +PluginInstall +qall
     * vim上でインストール
         * :PluginInstall
+* プラグイン削除
+    * :PluginList => plugin選択してshift+d => :e ~/.vimrcで当該Pluginの記載削除
