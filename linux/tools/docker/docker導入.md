@@ -25,6 +25,10 @@ apt-get install -y docker-ce docker-ce-cli containerd.io
 
 ### docker-compose導入
 
+* 下記で最新版のバージョン番号確認
+  * https://github.com/docker/compose/releases/
+* 下記の(1.25.4)の部分を上記のバージョン番号に置き換えて実行
+
 sudo su
 curl -L https://github.com/docker/compose/releases/download/1.25.4/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
 chmod +x /usr/local/bin/docker-compose
