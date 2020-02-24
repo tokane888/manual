@@ -62,3 +62,10 @@
 * DB一覧取得
   * psql -l
   * \l
+* table一覧
+  
+  ```
+  select schemaname, tablename, tableowner 
+  from pg_tables 
+  where schemaname not like 'pg_%' and schemaname != 'information_schema';
+  ```
