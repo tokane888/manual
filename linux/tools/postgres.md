@@ -62,7 +62,7 @@
 * DB一覧取得
   * psql -l
   * \l
-* table一覧
+* table一覧取得
   
   ```
   select schemaname, tablename, tableowner 
