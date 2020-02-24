@@ -1,11 +1,4 @@
-## git
-
-### 各種操作
-
-* リモート含むブランチ一覧表示
-  * git branch -a
-* リモートブランチ削除
-  * git push origin --delete (ブランチ名)
+## gitエラー対応
 
 ### ssh関連
 
@@ -36,3 +29,21 @@
     User git
     IdentityFile ~/.ssh/git_id_rsa
     ```
+
+### その他
+
+* git push時に警告
+
+  ```
+  warning: push.default is unset; its implicit value has changed in
+  Git 2.0 from 'matching' to 'simple'. To squelch this message
+  and maintain the traditional behavior, use:
+
+    git config --global push.default matching
+  (省略)
+  ```
+  * 下記実行
+    * git config --global push.default simple
+      * upstream設定済み、かつそれが同名のブランチの場合のみpush
+      * 今後のデフォルトだが、明示しないとwarningが出される
+      
