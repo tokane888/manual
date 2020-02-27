@@ -2,6 +2,7 @@
 
 * sshでクライアントOSからlinuxへ、sshでパスワード入力無しで接続可能にするまでの手順
 * サーバ側手順含む
+* rootでのssh可能にする手順も記載
 
 ### クライアント側手順
 
@@ -38,7 +39,7 @@
         chmod 700 ~/.ssh
         ```
 
-### ssh接続先alias設定
+### クライアント側でssh接続先alias設定
 
 * vim ~/.ssh/config
     * 設定を書き込み
@@ -51,3 +52,16 @@
         ```
 * chmod 600 ~/.ssh/config
 * "ssh hubu" で接続可能に
+
+### rootでssh接続可能に設定
+
+* サーバ側手順
+    * sudo su
+    * vim /etc/ssh/sshd_config
+        * "PermitRootLogin"で検索し、下記のように書き換え
+            * PermitRootLogin yes
+    * systemctl restart ssh
+* クライアント側手順
+    * 一般ユーザーの場合と同様に公開鍵をサーバ側の下記パスへコピー
+        * /root/.ssh/authorized_keys
+    * chmod 600 /root/.ssh/authorized_keys
