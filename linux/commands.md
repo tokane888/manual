@@ -21,3 +21,7 @@
         * tar -zcvf ~~.tar.gz .
     * 解凍
         * tar -zxvf ~~.tar.gz
+* tree
+    * 表示階層制限
+        * tree -L 2
+            * 2階層下のディレクトリまで表示
