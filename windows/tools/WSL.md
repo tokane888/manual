@@ -1,5 +1,10 @@
 ## Windows Subsystem Linux
 
+### コマンド
+
+* カレントディレクトリでエクスプローラを開く
+  * explorer.exe .
+
 ### 初期設定作業
 
 * ctrl+shift+(c/v)でコピペ可能にする
