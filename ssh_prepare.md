@@ -37,3 +37,17 @@
         chmod 600 ~/.ssh/authorized_keys
         chmod 700 ~/.ssh
         ```
+
+### ssh接続先alias設定
+
+* vim ~/.ssh/config
+    * 設定を書き込み
+
+        ````
+        Host hubu
+        HostName hogehoge.mydns.jp
+        User tom
+        ServerAliveInterval 60  # 60秒ごとに接続通知を行い、勝手に切断されることを抑止
+        ```
+* chmod 600 ~/.ssh/config
+* "ssh hubu" で接続可能に
