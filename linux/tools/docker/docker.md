@@ -8,6 +8,8 @@
   * docker logs (コンテナID)
   * 時刻も含めて確認したい場合は下記のログ参照
     * /var/lib/docker/containers/(コンテナID)/(コンテナID)-json.log
+  * ログが多い場合直近数分のログだけ出力可能
+    * docker logs (コンテナID) --since 5m
 * image検索
   * docker search (image名)
   ```
@@ -38,6 +40,9 @@
       * docker container inspect --format '{{.NetworkSettings.Networks}}' (コンテナ名)
     * IP確認
       * docker container inspect --format '{{.NetworkSettings.Networks.(ネットワーク名).IPAddress}}' (コンテナ名)
+
+### ビルド関連コマンド
+
 * build時引数指定
   * --build-arg (引数名1)=(value1) --build-arg (引数名2)=(value2)
   * Dockerfile内
@@ -46,6 +51,10 @@
     ARG (引数名1)
     ARG (引数名2)
     ```
+* docker imageを.tar形式で出力
+  * docker save (image name:tag) > ~~.tar
+* .tar形式のdocker imageを読み込み
+  * docker load < ~~.tar
 
 ### 設定
 
