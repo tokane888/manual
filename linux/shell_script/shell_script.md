@@ -11,6 +11,13 @@
 * set -u 時に変数に値が設定されていることを確認
     * [[ -v (変数名) ]]
         * bash限定
+* 複数行出力
+    ```
+    cat << 'EOF' >> ~/.bashrc
+    export TZ=Asia/Tokyo
+    export LESSCHARSET=utf-8
+    EOF
+    ```
 * $()内でexit 1しても終了しない問題
   * ()内はサブシェルなので、exit 1しても終了しない
   * ${command;}を変わりに使っておけば終了する
