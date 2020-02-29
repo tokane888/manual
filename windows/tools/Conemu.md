@@ -18,3 +18,12 @@
     * 左メニューから"一般"選択
     * "あなたのスタートアップタスク..."から"{Bash::bash}"を選択
     * "設定を保存"
+* コンソールサイズが正しく認識されない場合
+    * checkwinsizeオプション確認
+        * shopt | grep checkwinsize
+    * checkwinsize on でない場合設定
+        * shopt -s checkwinsize
+    + 上記で直らない場合
+        * ctrl+L で直るとの情報も
+    * 他参考情報
+        * https://unix.stackexchange.com/questions/61584/how-to-solve-the-issue-that-a-terminal-screen-is-messed-up-usually-after-a-res
