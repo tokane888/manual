@@ -69,4 +69,5 @@ kubectl completion bash >/etc/bash_completion.d/kubectl
 * 上記からダウンロードダウンロードリンクを取得し、ダウンロード
   * wget https://github.com/kubernetes/minikube/releases/download/v1.7.3/minikube_1.7.3-0_amd64.deb
 * インストール
-  * dpkg -i minikube_1.7.2-0_amd64.deb
+  * apt install -y ./minikube_1.7.3-0_amd64.deb
+      * dpkg -iでも良いが、aptに履歴をまとめて持たせたい
