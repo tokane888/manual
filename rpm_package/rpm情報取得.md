@@ -53,3 +53,5 @@
         * ex) `rpm -qf /usr/bin/mv`
 * .rpmファイルの署名確認
     * `rpm --checksig *.rpm`
+* .rpmからインストール
+    * rpm -ivh ~~.rpm
