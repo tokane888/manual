@@ -9,7 +9,7 @@
 * 認証キー追加
 
   ```
-  sudo apt-get install curl ca-certificates
+  sudo apt-get install -y curl ca-certificates
   curl https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
   ```
 * インストール
@@ -24,20 +24,24 @@
 
 ### postgres設定
 
-* ユーザー作成
-  * postgresユーザーに変更
-    * su postgres
-  * パーミッション関連で以降のコマンドでエラーが出るのを避けるため$HOMEへ
-    * cd
-  * testdb作成
-    * createdb testdb
-      * 最初からあると警告出た。その場合はそのまま進める
+* postgresユーザーに変更
+  * su postgres
+* パーミッション関連で以降のコマンドでエラーが出るのを避けるため$HOMEへ
+  * cd
+* service開始
+  * initdの場合
+    * service postgresql start
+    * TODO: enable方法追記
+  * systemdの場合
+    * systemctl start postgresql && systemctl enable postgresql 
+* testdb作成
+  * createdb testdb
 * DB接続
   * psql testdb
 * role作成
   * create role test with login
 * 外部接続許可
-  * sed -i "s/^#listen_addresses = 'localhost'/listen_addresses = '*'\t/" /etc/postgresql/12/main/postgresql.Gconf
+  * sed -i "s/^#listen_addresses = 'localhost'/listen_addresses = '*'\t/" /etc/postgresql/12/main/postgresql.conf
 * 認証を受けるIPの範囲を拡大
   * echo "host    all             all             192.168.1.1/24          md5" >> /etc/postgresql/12/main/pg_hba.conf
 * ユーザー作成
