@@ -31,14 +31,24 @@ Ubuntu 18.04実機
   ResultActive=yes
   EOF
   ```
-* 再起動？
-  * TODO: 再起動必要か確認
+* 起動時に"Authentication is required to create a color managed device"等と表示される問題の対策
+  ```
+  echo "X-GNOME-Autostart-enabled=false" >> /etc/xdg/autostart/gnome-software-service.desktop
+  echo "X-GNOME-Autostart-enabled=false" >> /etc/xdg/autostart/gnome-settings-daemon.desktop
+  ```
+  * (参考) rootのパスワード？を求められるのか、sudo時のパスワードを入力しても失敗
+    * 一時的な対応としては"cancel"押しておけば問題無し
+* ログアウト
+  * ログインしたままだと、remote desktop接続に失敗時に"some problem..."等と表示されて接続失敗する
 
 ### Windows10(client)側セットアップ&接続作業
 
-* TightVNCダウンロード
-  * https://www.tightvnc.com/download.php
-* Windowsメニューから"TightVNC Viewer"起動
+* "Remote Desktop Connection"起動
 * RemoteHostにドメイン+port入力して接続
   * ex) ~~.mydns.jp:5900
 * TODO: 実際に接続できること確認
+
+### 作業メモ
+
+* vnc4server入れた
+  * 変化無し。~~ is required のまま
