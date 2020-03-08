@@ -57,6 +57,7 @@
 
 * サーバ側手順
     * sudo su
+    * passwd root
     * vim /etc/ssh/sshd_config
         * "PermitRootLogin"で検索し、下記のように書き換え
             * PermitRootLogin yes
