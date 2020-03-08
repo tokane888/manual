@@ -9,14 +9,11 @@ WindowsからUbuntu18.04にOpenVPNで接続する手順
 * 公式のインストーラー使用
   * https://www.openvpn.jp/download/
 
-#### Ubuntu
-
-sudo apt install -y openvpn
-
 ### 使用方法
 
 #### Ubuntu側(server)
 
+* sudo apt install -y openvpn
 * 共通鍵生成
   * openvpn --genkey --secret static.key
 * 設定ファイル作成
@@ -33,9 +30,12 @@ sudo apt install -y openvpn
     persist-tun
     persist-key
     ```
+* サーバ起動
+  * 
 
-#### windows側(client)
+#### WSL側(client)
 
+* sudo apt install -y openvpn
 * 共通鍵をサーバ側からコピー
 * 共通鍵と同じフォルダに設定ファイル作成
   * statickey_client.ovpn
@@ -52,5 +52,6 @@ sudo apt install -y openvpn
     persist-tun
     persist-key
     ```
-
 TODO: 接続方法追記
+* サーバへpingを打って動確
+  * ping 10.8.0.1
