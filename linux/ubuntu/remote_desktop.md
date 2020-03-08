@@ -48,7 +48,6 @@ Ubuntu 18.04実機
   * ex) ~~.mydns.jp:5900
 * TODO: 実際に接続できること確認
 
-### 作業メモ
+### ルーター設定
 
-* vnc4server入れた
-  * 変化無し。~~ is required のまま
+* 3350, 3389 portを当該PCへport forward
