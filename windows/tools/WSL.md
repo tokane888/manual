@@ -33,6 +33,83 @@
 * ssh用のid_rsa鍵とconfigを~/.ssh配下にコピーして権限設定
     * windowsのユーザーの$HOMEディレクトリは見に行かない
         * windowsのディレクトリでは権限設定(600)ができないので見に行ってもssh接続時にエラーになる
+* WSLの外のdocker toolboxへアクセス可能に設定
+    * 参考) https://medium.com/@joaoh82/setting-up-docker-toolbox-for-windows-home-10-and-wsl-to-work-perfectly-2fd34ed41d51
+    * WSL上へ下記を1行ずつコピペして実行
+        ```
+        # Update the apt package list.
+        sudo apt-get update -y
+
+        # Install Docker's package dependencies.
+        sudo apt-get install -y \
+            apt-transport-https \
+            ca-certificates \
+            curl \
+            software-properties-common
+
+        # Download and add Docker's official public PGP key.
+        curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+
+        # Verify the fingerprint.
+        sudo apt-key fingerprint 0EBFCD88
+
+        # Add the `stable` channel's Docker upstream repository.
+        #
+        # If you want to live on the edge, you can change "stable" below to "test" or
+        # "nightly". I highly recommend sticking with stable!
+        sudo add-apt-repository \
+          "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+          $(lsb_release -cs) \
+          stable"
+
+        # Update the apt package list (for the new apt repo).
+        sudo apt-get update -y
+
+        # Install the latest version of Docker CE.
+        sudo apt-get install -y docker-ce
+
+        # Allow your user to access the Docker CLI without needing root access.
+        sudo usermod -aG docker $USER
+        ```
+    * 一度コンソールを閉じて、再度開く
+        * dockerを一般ユーザーで使用可能にするため
+    * apt install -y docker-compose
+    * 下記のパスがPATHに含まれていなければ追加
+        * $HOME/.local/bin
+    * docker toolboxがexportしているportを確認
+        * powershellを開いて下記実行
+            * docker-machine config
+                ```
+                PS C:\Users\tom> docker-machine config
+                --tlsverify
+                --tlscacert="C:\\Users\\tom\\.docker\\machine\\machines\\default\\ca.pem"
+                --tlscert="C:\\Users\\tom\\.docker\\machine\\machines\\default\\cert.pem"
+                --tlskey="C:\\Users\\tom\\.docker\\machine\\machines\\default\\key.pem"
+                -H=tcp://192.168.99.101:2376
+                ```
+    * 上記のIP及びユーザー名を含む下記設定をWSL上の~/.bashrcに追加
+        ```
+        # WSL上からDocker Toolboxに接続可能に設定
+        export DOCKER_HOST=tcp://192.168.99.101:2376
+        export DOCKER_CERT_PATH=/mnt/c/Users/tom/.docker/machine/certs
+        export DOCKER_TLS_VERIFY=1
+        ```
+    * source ~/.bashrc
+        * これでdockerが最低限使用可能に
+    * dockerのvolume設定可能に
+        * WSLとDocker Toolboxはパス形式が異なる
+        * WSL: /mnt/c
+        * Docker Toolbox: /c
+        * シンボリックリンク作成して差異を吸収
+            * sudo ln -s /mnt/c /c
+    * sudo vim /etc/wsl.conf
+        * 下記コピペして保存
+            ```
+            [automount]
+            options = "metadata"
+            ```
+            * windowsの各ファイルにメータデータを設定可能に
+        * windows再起動
 
 ### リセット方法
 
