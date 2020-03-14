@@ -27,3 +27,5 @@
         * ctrl+L で直るとの情報も
     * 他参考情報
         * https://unix.stackexchange.com/questions/61584/how-to-solve-the-issue-that-a-terminal-screen-is-messed-up-usually-after-a-res
+* tmux, vimコンソール使用時に下のステータス表示が徐々にせり上がってくる問題
+    * windows terminal使えば問題無し。ConEmuでの解決方法は不明
