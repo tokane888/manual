@@ -14,7 +14,7 @@
 * 時刻整形して出力
     * date +%H:%M:%S
 * historyコマンドに時刻付与
-    * HISTTIMEFORMAT='%F %T '
+    * export HISTTIMEFORMAT='%F %T '
     * history
 * tar.gz
     * 圧縮
