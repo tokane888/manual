@@ -11,7 +11,9 @@
 
 * ctrl+shift+(c/v)でコピペ可能にする
     * ウィンドウのヘッダ上で右クリック=>Properties押下
-    * Optionsタブ選択 => "Use Ctrl+Shift+C/V as Copy/Paste"
+    * Optionsタブ選択
+    * "QuickEdit Mode"有効化
+    * "Use Ctrl+Shift+C/V as Copy/Paste"有効化
     * OK押下
 * 日本語入力可能に
     * 通常のubuntuと同じ。locale設定で対応
