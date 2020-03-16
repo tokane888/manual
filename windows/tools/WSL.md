@@ -15,6 +15,8 @@
     * "QuickEdit Mode"有効化
     * "Use Ctrl+Shift+C/V as Copy/Paste"有効化
     * OK押下
+    * 注意) 複数行コピー時は範囲選択後、"Enter"でコピー
+        * ctrl+shift+cでコピーすると改行が無視される
 * 日本語入力可能に
     * 通常のubuntuと同じ。locale設定で対応
         * ConEmu上のubuntuは問題ないが、Ubuntuを直接起動すると日本語が文字化け
