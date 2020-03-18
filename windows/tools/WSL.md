@@ -9,6 +9,9 @@
 
 ### 初期設定作業
 
+* 高速化のためにリポジトリをjpに変更
+    * sed -i -e 's/\(deb\|deb-src\) http:\/\/archive.ubuntu.com/\1 http:\/\/jp.archive.ubuntu.com/g' /etc/apt/sources.list
+    * あとからの変更だと依存関係で問題が生じる場合がある
 * ctrl+shift+(c/v)でコピペ可能にする
     * ウィンドウのヘッダ上で右クリック=>Properties押下
     * Optionsタブ選択
