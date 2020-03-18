@@ -55,6 +55,8 @@
   * docker save (image name:tag) > ~~.tar
 * .tar形式のdocker imageを読み込み
   * docker load < ~~.tar
+* dockerコンテナをimage化
+  * docker commit (コンテナ名) (image名):(タグ名)
 
 ### 設定
 
