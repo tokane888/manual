@@ -39,7 +39,9 @@
         * windowsのディレクトリでは権限設定(600)ができないので見に行ってもssh接続時にエラーになる
 * WSLの外のdocker toolboxへアクセス可能に設定
     * 参考) https://medium.com/@joaoh82/setting-up-docker-toolbox-for-windows-home-10-and-wsl-to-work-perfectly-2fd34ed41d51
-    * WSL上へ下記を1行ずつコピペして実行
+    * WSL上に空のtmp.sh作成
+      * vim tmp.sh
+    * 下記をtmp.shにコピペ
         ```
         # Update the apt package list.
         sudo apt-get update -y
@@ -75,6 +77,8 @@
         # Allow your user to access the Docker CLI without needing root access.
         sudo usermod -aG docker $USER
         ```
+    * chmod 777 tmp.sh
+    * sudo ./tmp.sh
     * 一度コンソールを閉じて、再度開く
         * dockerを一般ユーザーで使用可能にするため
     * apt install -y docker-compose
