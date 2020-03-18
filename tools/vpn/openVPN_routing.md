@@ -9,7 +9,7 @@ WindowsからUbuntu18.04にOpenVPNで接続する手順
 * 公式のインストーラー使用
   * https://www.openvpn.jp/download/
 
-### 使用方法
+### routring方式での接続
 
 #### Ubuntu側(server)
 
