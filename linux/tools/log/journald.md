@@ -6,3 +6,5 @@
   * journalctl -u (service名) -n (件数)
 * 右端で折り返す
   * journalctl --no-pager
+* 随時更新
+  * -f
