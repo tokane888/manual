@@ -30,3 +30,5 @@
   * vim -u NONE -N
 * 公式ガイド
   * :h vimtutor
+* ファイル名表示
+  * Ctrl+g
