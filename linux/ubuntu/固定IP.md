@@ -12,10 +12,6 @@ ubuntu 18.04実機
 * netplan, NetworkManagerがネットワーク情報を管理している
   * netplan
     * yamlでネットワーク設定
-  * NetworkManager
-    * netplanが使ってるrenderer？らしい
-    * netplanから呼び出されて使用される
-    * nmcli helpでヘルプ表示
 * 設定ファイル
   * /etc/netplan/*
     * 上記パスの設定ファイルがアルファベット順に読まれ、順次上書きされる
