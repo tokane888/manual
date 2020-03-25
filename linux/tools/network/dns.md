@@ -18,12 +18,16 @@
 
 * /etc/hosts
     * IPとホスト名の組み合わせ
-* /etc/resolv.conf
+* /etc/resolv.conf -> /run/systemd/resolve/stub-resolv.conf
     * 自動生成
     * DNSサーバ指定(127.0.0.53:53)
         * localのsystemd-resolvedへ問い合わせる
     * systemd以前から使われている設定ファイル
         * 今はsystemd-resolvedへ問い合わせるだけで編集不要
+    * シンボリックリンク
+        * 下記にリンク先を修正すると、NXDOMAINがどうとかのエラーも消えるとの情報あり
+            * /run/systemd/resolve/resolv.conf
+            * https://askubuntu.com/questions/1058750/new-alert-keeps-showing-up-server-returned-error-nxdomain-mitigating-potential
 * /etc/systemd/resolved.conf
     * DNSサーバ指定
 * /etc/nsswitch.conf
