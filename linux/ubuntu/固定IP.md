@@ -33,19 +33,19 @@ ubuntu 18.04実機
 #### ethernetで固定IP
 
 * 下記テンプレの、後述の項目を書き換え
-  ```
-  # Let NetworkManager manage all devices on this system
-  network:
-    version: 2
-    renderer: NetworkManager
-    ethernets:
-      enp3s0:
-          dhcp4: no
-          addresses: [192.168.11.100/24]
-          gateway4: 192.168.11.1
-          nameservers:
-              addresses: [192.168.11.1]
-  ```
+```
+# Let NetworkManager manage all devices on this system
+network:
+  version: 2
+  renderer: NetworkManager
+  ethernets:
+    enp3s0:
+        dhcp4: no
+        addresses: [192.168.11.100/24]
+        gateway4: 192.168.11.1
+        nameservers:
+            addresses: [192.168.11.1]
+```
   * "ethernets"直下のデバイス名
     * ip addr コマンドで確認。上記では"enp3s0"
       * nmcli c コマンドでも確認できるかも
@@ -60,23 +60,23 @@ ubuntu 18.04実機
 #### wifiで固定IP
 
 * 下記テンプレの、後述の項目を書き換え
-  ```
-  # Let NetworkManager manage all devices on this system
-  network:
-    version: 2
-    renderer: NetworkManager
-    wifis:
-      wlp2s0:
-          dhcp4: no
-          addresses: [192.168.11.100/24]
-          gateway4: 192.168.11.1
-          nameservers:
-              addresses: [192.168.11.1]
-          access-points:
-              (-_-)zz:
-                  password: (パスワード)
-          
-  ```
+```
+# Let NetworkManager manage all devices on this system
+network:
+  version: 2
+  renderer: NetworkManager
+  wifis:
+    wlp2s0:
+        dhcp4: no
+        addresses: [192.168.11.100/24]
+        gateway4: 192.168.11.1
+        nameservers:
+            addresses: [192.168.11.1]
+        access-points:
+            (-_-)zz:
+                password: (パスワード)
+        
+```
   * "wifis"直下のデバイス名
     * ip addr コマンドで確認。上記では"wlp2s0"
       * nmcli c コマンドでも確認できるかも
