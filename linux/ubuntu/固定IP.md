@@ -52,6 +52,7 @@ ubuntu 18.04実機
   * addresses: 固定IP
   * gateway4
   * nameservers.addresses
+    * ここでDNS設定を行う場合、/etc/systemd/resolved.conf を用いたDNS設定は行わないこと
 * 書き換え後に下記実行
   * netplan generate
   * netplan apply
