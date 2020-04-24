@@ -40,11 +40,11 @@ network:
   renderer: NetworkManager
   ethernets:
     enp3s0:
-        dhcp4: no
-        addresses: [192.168.11.100/24]
-        gateway4: 192.168.11.1
-        nameservers:
-            addresses: [192.168.11.1]
+      dhcp4: no
+      addresses: [192.168.11.100/24]
+      gateway4: 192.168.11.1
+      nameservers:
+          addresses: [192.168.11.1]
 ```
   * "ethernets"直下のデバイス名
     * ip addr コマンドで確認。上記では"enp3s0"
@@ -67,14 +67,14 @@ network:
   renderer: NetworkManager
   wifis:
     wlp2s0:
-        dhcp4: no
-        addresses: [192.168.11.100/24]
-        gateway4: 192.168.11.1
-        nameservers:
-            addresses: [192.168.11.1]
-        access-points:
-            (-_-)zz:
-                password: (パスワード)
+      dhcp4: no
+      addresses: [192.168.11.100/24]
+      gateway4: 192.168.11.1
+      nameservers:
+          addresses: [192.168.11.1]
+      access-points:
+          (-_-)zz:
+              password: (パスワード)
         
 ```
   * "wifis"直下のデバイス名
