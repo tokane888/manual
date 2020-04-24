@@ -15,6 +15,7 @@ ubuntu 18.04実機
 * 設定ファイル
   * /etc/netplan/*
     * 上記パスの設定ファイルがアルファベット順に読まれ、順次上書きされる
+    * ファイル内にtabを含めると、"expected mapping"等のエラーが出るので注意
 * ログ確認
   * systemctl status NetworkManager
 
@@ -75,7 +76,6 @@ network:
       access-points:
         (-_-)zz:
           password: (パスワード)
-        
 ```
   * "wifis"直下のデバイス名
     * ip addr コマンドで確認。上記では"wlp2s0"
