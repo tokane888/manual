@@ -16,6 +16,7 @@ ubuntu 18.04実機
   * /etc/netplan/*
     * 上記パスの設定ファイルがアルファベット順に読まれ、順次上書きされる
     * ファイル内にtabを含めると、"expected mapping"等のエラーが出るので注意
+  * 設定ファイルに記載されていない内容についてはnetplanは設定しない
 * ログ確認
   * systemctl status NetworkManager
 
@@ -74,7 +75,7 @@ network:
       nameservers:
         addresses: [192.168.11.1]
       access-points:
-        (-_-)zz:
+        (-_-)zzz:
           password: (パスワード)
 ```
   * "wifis"直下のデバイス名
