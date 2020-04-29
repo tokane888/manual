@@ -27,8 +27,8 @@
     * 左メニューの下記はaptから削除せず、右クリックでお気に入りから削除に留める
       * ubuntu software center => ファイルのアイコン右クリックで"詳細を表示"する機能が使えなくなる
       * help => 他の複数のソフトがこれに依存していそうなので
-* IP固定
-  * TODO: リンク追記
+* [IP固定](../linux/ubuntu/固定IP.md)
+* [sshでroot login可能に設定](../ssh_prepare.md)
 * [MyDNS登録](../linux/web_tools/mydns/MyDNS.md)
 * 日本語入力
   * OSインストール時に日本語設定を選択していても、実機のキーボードの全角/半角キーは無効になっている
