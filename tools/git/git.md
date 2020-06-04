@@ -11,3 +11,5 @@
     * git clean -n
   * clean実行
     * git clean -f
+  * ディレクトリ削除も含めたclean実行
+    * git clean -df
