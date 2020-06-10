@@ -1,4 +1,13 @@
-## digコマンド
+# dig
+
+## インストール
+
+* ubuntu
+  * apt install -y dnsutils
+* cent
+  * yum install -y bind-utils
+
+## コマンド
 
 * フルリゾルバー又は権威サーバにドメイン解決の問い合わせを行い、レスポンスのDNSメッセージを出力
 * 基本形式
