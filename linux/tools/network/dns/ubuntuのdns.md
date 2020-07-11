@@ -18,6 +18,11 @@
     * https://github.com/systemd/systemd/issues/5897
 * 暫定対応
     * /etc/resolv.conf のDNS指定を 127.0.0.53 => 8.8.8.8 に変更する等の対応が可能
+    * 下記記載の各dnsサーバに対して、直接digで問い合わせる
+      * /etc/netplan/***.yaml
+      * /etc/systemd/resolved.conf
+      * 問い合わせ例
+        * dig +trace (FQDN)
 * 恒久対応
   * 参考) 最新verではdig側対応で修正済み。ただデフォルトのdeb package repositoryには入っていない
     * 現状最新版を取得する方法は不明
