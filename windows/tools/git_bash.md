@@ -4,6 +4,7 @@
   * 下記実行
     * git config --global core.quotepath false
 * docker exec時にwinpty入力不要に
+    * 管理者権限でgit-bash実行
     * vim /etc/profile.d/aliases.sh
     * 当該箇所に下記のようにdocker追加
     ```
