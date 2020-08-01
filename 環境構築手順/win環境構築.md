@@ -41,6 +41,17 @@
   * win+iで設定表示
   * 簡単操作押下
   * "Windowsにアニメーションを表示する"をオフに
+* 画面の明るさ自動調整解除
+  * win+iで設定表示
+  * システム => ディスプレイ => "照明が変化した場合に明るさを自動的に調整する"をoffに
+  * intel CPUの場合、レジストリ編集で直る場合があるとの情報
+    * https://takumi9942.net/blog/?p=1726%E2%80%B3%20title=%E2%80%9DSurface%20Pro%206%E3%81%A7%E7%94%BB%E9%9D%A2%E3%81%AE%E6%98%8E%E3%82%8B%E3%81%95%E8%87%AA%E5%8B%95%E5%A4%89%E6%9B%B4%E3%82%92%E7%84%A1%E5%8A%B9%E3%81%AB%E3%81%99%E3%82%8B
+    * 今回はAMDなのでレジストリの当該項目なし
+  * TODO: surface laptop 3では上記実行後も変化無し。原因調査
+* (surfaceの場合)タッチパネル無効化
+  * display manager開く
+  * ヒューマンインターフェイスデバイス
+  * "Surface Touch Pen Processor"右クリック => "デバイスを無効にする"
 * StudyTimerインストール
 * cliborインストール
 * clibor設定
