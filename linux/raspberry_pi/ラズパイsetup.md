@@ -79,6 +79,9 @@
         * ifup wlan0
         * unknown interface wlan0出る
       * systemctl status wpa_supplicant
+    * 参考) トラブルシューティング
+      * アクセス可能なSSID一覧表示
+        * sudo iwlist wlan0 scan | grep ESSID
 * ssh有効化
     * `sudo raspi-config`
     * "5 Interfacing Options"
