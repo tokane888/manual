@@ -85,3 +85,5 @@
     - for name in node ipython php php5 psql python2.7 docker
     ```
     * git-bash再起動
+* visual studio code 設定同期設定
+    * visual studio code左下の歯車アイコン => Turn on preference sync
