@@ -12,6 +12,7 @@
 * データ永続化のため、volumeマウント先のディレクトリ作成
   * mkdir mariadb_data redmine_data
 * docker-compose up -d
+  * docker-compose.yaml内に下記の記載があるため、以後OS再起動時は自動的にredmineも起動する
 * ブラウザで下記へアクセスしてredmineのホームが表示されることを確認
   * Docker Toolbox使用時
     * Toolboxのコンソールに表示されているIP
