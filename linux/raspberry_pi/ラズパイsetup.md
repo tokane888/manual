@@ -70,6 +70,9 @@
         * 複数wifi設定時
           * priority: 高い値の方に優先して接続される
         * 単一IPにした
+        * ここの設定反映にはラズパイ再起動が必要
+          * 少なくとも下記のservice restartでは反映されないことを確認
+            * systemctl restart wpa_supplicant
       * /etc/dhcpcd.conf
         * 固定IP設定したけどだめ => ルーター再起動してもだめ
       * /etc/network/interfaces は古い設定ファイル
