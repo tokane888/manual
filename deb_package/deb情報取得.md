@@ -34,6 +34,7 @@
 * .debファイルをカレントディレクトリにダウンロード
     * `apt download (パッケージ名)`
 * .debファイル及び依存パッケージをカレントディレクトリにダウンロード
+    * apt install apt-rdepends
     * apt download $(apt-rdepends [package名] | grep -v "^ ")
         * 上記で、下記のエラーが出る場合がある
             * E: Can't select candidate version from package debconf-2.0 as it has no candidate
