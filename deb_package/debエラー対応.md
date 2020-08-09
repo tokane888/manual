@@ -21,6 +21,11 @@
           * apt --fix-broken install => ✕
           * 依存先パッケージapt purge => ○
             * openssh-serverのインストールに失敗する問題は、openssh-clientのuninstallで直った
+* `The following packages have unmet dependencies`
+  * dpkg -i (package名) でインストールしたパッケージの依存関係に問題があった場合に発生を確認
+    * 下記で当該パッケージを削除して対応
+      * dpkg -P (package名)
+        * 依存関係の問題で上記が実行できない場合もある
 
 ### 汎用対応策
 
