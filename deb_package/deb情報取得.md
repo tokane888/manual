@@ -33,6 +33,14 @@
 
 * .debファイルをカレントディレクトリにダウンロード
     * `apt download (パッケージ名)`
+* .debファイル及び依存パッケージをカレントディレクトリにダウンロード
+    * apt download $(apt-rdepends [package名] | grep -v "^ ")
+        * 上記で、下記のエラーが出る場合がある
+            * E: Can't select candidate version from package debconf-2.0 as it has no candidate
+                * エラーが出るパッケージ名は上記と別の場合もある
+                * 下記でエラーが出たパッケージをinstall対象から除外して対応
+                    * apt-get download $(apt-rdepends [package名] | grep -v "^ " | sed 's/debconf-2.0/debconf/g')
+
 * preinst, postinst, prerm, postrm取得
     * .debファイルから
         * `dpkg -e *.deb`
