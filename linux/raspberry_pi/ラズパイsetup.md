@@ -9,6 +9,8 @@
 
 ### 実機へOSインストール
 
+* OSイメージのLite版を以下からダウンロード
+    * https://www.raspberrypi.org/downloads/raspbian/
 * SD Card Formatterダウンロード、インストール
     * https://www.sdcard.org/downloads/formatter/
         * 公式推奨とのこと
@@ -26,8 +28,6 @@
             * Cluster size: 128 kilobytes
             * Volume label: boot
         * 確認時、カード挿入時はD, Eドライブがあったが、完了後はDドライブのみになった
-* OSイメージのLite版を以下からダウンロード
-    * https://www.raspberrypi.org/downloads/raspbian/
 * balena Etcherダウンロード、インストール
     * https://etcher.io/
     * 公式推奨とのこと
