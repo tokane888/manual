@@ -29,9 +29,7 @@
             * Volume label: boot
         * 確認時、カード挿入時はD, Eドライブがあったが、完了後はDドライブのみになった
 * balena Etcherダウンロード、インストール
-    * https://etcher.io/
-    * 公式推奨とのこと
-        * https://www.raspberrypi.org/documentation/installation/installing-images/README.md
+    * cinst --yes etcher
 * OSインストール
     * win10のスタートメニューから"balena Etcher"起動
     * "Select image"押下
@@ -46,6 +44,9 @@
 * デフォルトパスでログイン
     * user: pi
     * pass: raspberry
+* 必ずパスワード変更
+    * passwd
+    * バックドア(kaiten), ネットワークスキャナ(zmap)など仕掛けられるケースあり
 * 日本語キーボード配列に変更（半角／全角は効かない。追って調査）
     * `sudo raspi-config`
     * "4 Localisation Options"
@@ -64,7 +65,6 @@
     * "JP Japan"
     * "OK"
     * SSID入力
-    * TODO:  上記だけではwifiにつながらない。調査
     * 参考) 上記の設定は下記に書き込まれる
       * /etc/wpa_supplicant/wpa_supplicant.conf
         * 複数wifi設定時
