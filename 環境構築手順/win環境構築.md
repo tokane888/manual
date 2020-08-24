@@ -17,6 +17,8 @@
   * (参考) https://chocolatey.org/install
   * 下記で管理者権限のpowershell起動
     * win+x => a
+      * これで開くのはpowershell coreではなく、旧式のpowershell 5.x
+      * 一旦powershell coreは追ってインストール
   * 下記実行でpolicyがrestrictedになっていないか確認
     * Get-ExecutionPolicy
   * restrictedになっている場合、無制限のBypassに変更
@@ -86,4 +88,13 @@
     ```
     * git-bash再起動
 * visual studio code 設定同期設定
-    * visual studio code左下の歯車アイコン => Turn on preference sync
+  * visual studio code左下の歯車アイコン => Turn on preference sync
+* WindowsメニューからのEdge検索無効化
+  * 参考) https://www.howtogeek.com/224159/how-to-disable-bing-in-the-windows-10-start-menu/
+  * "regedit"でレジストリ開く
+  * 下記を入力してEnterで遷移
+    * HKEY_CURRENT_USER\SOFTWARE\Policies\Microsoft\Windows\Explorer
+  * "新規" => "DWord(32-bit)"
+  * 下記をセット
+    * Value Name: "DisableSearchBoxSuggestions"
+    * Value data: 1
