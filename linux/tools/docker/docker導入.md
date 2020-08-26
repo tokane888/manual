@@ -6,6 +6,8 @@ ubuntu 18.04
 
 ### 最新版インストール
 
+* docker, docker.io, docker-engineは古いバージョンのdockerなので削除
+  * apt remove -y docker docker-engine docker.io containerd runc
 * [参考リンク](https://docs.docker.com/install/linux/docker-ce/ubuntu#install-docker-engine---community-1)
   * バージョン指定してインストールしたい場合は上記参照
 ```
