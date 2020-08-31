@@ -1,5 +1,5 @@
 # Windowsセットアップ手順
-
+;
 ## 旧PC作業
 
 * 下記をデータ移行用のdropboxのディレクトリへ移動
@@ -29,6 +29,7 @@
     * Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
   * 下記でhelpを表示し、install成功を確認
     * choco -
+* TODO: パッケージ自動update設定方法確認
 
 ## 各種設定
 
@@ -98,3 +99,5 @@
   * 下記をセット
     * Value Name: "DisableSearchBoxSuggestions"
     * Value data: 1
+* manic timeの更新チェック無効化
+* visual studio codeの更新チェック無効化
