@@ -6,7 +6,8 @@
   * cisnt --yes (package名)
 * 全パッケージ更新
   * choco upgrade all --yes
-* パッケージリスト取得
+    * updateは同じ処理のコマンドだが、deprecated
+* インストール済みのパッケージリスト取得
   * clist -lo
 * パッケージuninstall
   * cuninst (package名)
