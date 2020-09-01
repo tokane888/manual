@@ -3,7 +3,7 @@
 ## 基本コマンド
 
 * パッケージinstall
-  * cisnt --yes (package名)
+  * cinst --yes (package名)
 * 全パッケージ更新
   * choco upgrade all --yes
     * updateは同じ処理のコマンドだが、deprecated
