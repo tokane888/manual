@@ -51,10 +51,15 @@
     * https://takumi9942.net/blog/?p=1726%E2%80%B3%20title=%E2%80%9DSurface%20Pro%206%E3%81%A7%E7%94%BB%E9%9D%A2%E3%81%AE%E6%98%8E%E3%82%8B%E3%81%95%E8%87%AA%E5%8B%95%E5%A4%89%E6%9B%B4%E3%82%92%E7%84%A1%E5%8A%B9%E3%81%AB%E3%81%99%E3%82%8B
     * 今回はAMDなのでレジストリの当該項目なし
   * TODO: surface laptop 3では上記実行後も変化無し。原因調査
+  * 他参考) 
+    * https://support.microsoft.com/en-us/help/4548623/adaptive-brightness-and-contrast-on-surface-devices
+    * https://www.reddit.com/r/Surface/comments/dw35aa/how_to_disable_adaptive_contrast_amd/
+      * 結局registryはいじったが、win updateで元に戻ったっぽい
 * (surfaceの場合)タッチパネル無効化
-  * display manager開く
+  * device manager開く
   * ヒューマンインターフェイスデバイス
   * "Surface Touch Pen Processor"右クリック => "デバイスを無効にする"
+  * TODO: これ有効化したらディスプレイの明るさ自動調整が無効化できた。両方無効化する方法調査
 * StudyTimerインストール
 * cliborインストール
 * clibor設定
