@@ -100,10 +100,11 @@
   * 参考) https://www.howtogeek.com/224159/how-to-disable-bing-in-the-windows-10-start-menu/
   * "regedit"でレジストリ開く
   * 下記を入力してEnterで遷移
-    * HKEY_CURRENT_USER\SOFTWARE\Policies\Microsoft\Windows\Explorer
+    * HKEY_CURRENT_USER\SOFTWARE\Policies\Microsoft\Windows
+    * "Windows"右クリック => "新規" => "キー" => "Explorer"と入力 => OK
   * "新規" => "DWord(32-bit)"
-  * 下記をセット
     * Value Name: "DisableSearchBoxSuggestions"
+  * 値をダブルクリックし、下記をセット
     * Value data: 1
 * manic timeの更新チェック無効化
 * visual studio codeの更新チェック無効化
