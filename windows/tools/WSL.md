@@ -7,6 +7,22 @@
 * クリップボードへコピー
   * echo hoge | clip.exe
 
+### WSL2導入手順
+
+* Window10のバージョンを2004以上にupdate
+* 参考) https://docs.microsoft.com/ja-jp/windows/wsl/install-win10
+* Linux用Windows subsystem有効化
+    * win+x => win+a
+    * dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
+* 仮想マシンプラットフォーム 有効化
+    * win+x => win+a
+    * dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
+    * Windows再起動
+    * 指示に従ってkernel update
+        * https://docs.microsoft.com/ja-jp/windows/wsl/wsl2-kernel
+    * wsl --set-default-version 2
+* Microsoft storeからUbuntu installして実行
+
 ### 初期設定作業
 
 * 高速化のためにリポジトリをjpに変更
