@@ -1,6 +1,8 @@
 # 接続先のsshパッケージを、ssh接続して更新
 
 * これは成功するっぽい
+* 下記でssh切断されないことは確認済み
+* systemctl restart ssh
 
 ## debパッケージ内容
 

@@ -22,6 +22,7 @@
         * https://docs.microsoft.com/ja-jp/windows/wsl/wsl2-kernel
     * wsl --set-default-version 2
 * Microsoft storeからUbuntu installして実行
+* Docker起動時にバックエンドをWSL2に変更したいと言われるので良ければ変更
 
 ### 初期設定作業
 

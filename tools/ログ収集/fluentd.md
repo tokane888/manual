@@ -65,6 +65,17 @@
     * flush_interval
     * total_limit_size
     * chunk_limit_size
+* buffer
+  * @type
+    * オプション
+    * 指定なしだとmemory buffer pluginが使用される？
+  * bufferの引数で、eventをどのようにchunkに分けるか指定
+    * 引数は省略可能
+      * 省略時は単一のchunkになる
+
+    ```
+    <buffer (arg)>
+    ```
 
 ## デバッグ
 
