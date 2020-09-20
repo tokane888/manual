@@ -82,3 +82,5 @@
 * .confファイルのフォーマット確認
   * td-agent --dry-run -c /etc/td-agent/td-agent.conf
     * 出力なしなら正常
+* ログファイル末尾欠損時
+  * 1行の最大文字数は2048なので、message_length_limitを設定
