@@ -23,6 +23,9 @@
     * wsl --set-default-version 2
 * Microsoft storeからUbuntu installして実行
 * Docker起動時にバックエンドをWSL2に変更したいと言われるので良ければ変更
+* WSL2上にpython3, pipを導入する場合
+    * apt update -y
+    * apt install -y python3 python3-pip
 
 ### 初期設定作業
 
