@@ -23,6 +23,14 @@
     * wsl --set-default-version 2
 * Microsoft storeからUbuntu installして実行
 * Docker起動時にバックエンドをWSL2に変更したいと言われるので良ければ変更
+* WSL2をデフォルトでrootユーザーで起動するように設定
+    * regeditでレジストリエディタ起動
+    * 下記へ移動
+        * HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Lxss
+    * 上記配下に複数あるUUIDのうち、"DefaultUid"が0以外になっている項目を選択
+        * "DefaultUid"の値を0に設定
+        * OS再起動
+        * 参考) キーのUUIDは自分のUUID？らしい
 * WSL2上にpython3, pipを導入する場合
     * apt update -y
     * apt install -y python3 python3-pip
