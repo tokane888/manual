@@ -77,20 +77,5 @@
   * 現在行から11行目まで
     * :.,11d
     * d11G
-
-## プラグインコマンド
-
-### NerdTree
-
-* 新ファイル作成
-  * ディレクトリ上でm => a
-
-### go-vim
-
-* 参考
-  * vim-go-tutorial
-    * https://github.com/fatih/vim-go-tutorial#go-to-definition
-* 定義へjump
-  * gd
-* 直前の位置へ戻る
-  * ctrl+[
+* 関数一覧表示
+  * :g/^func
