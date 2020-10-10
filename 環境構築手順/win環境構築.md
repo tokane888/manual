@@ -108,3 +108,7 @@
     * Value data: 1
 * manic timeの更新チェック無効化
 * visual studio codeの更新チェック無効化
+* Windows terminalの貼り付けコマンドをctrl+shift+vに変更
+  * vimの矩形選択と競合するため
+  * Windows terminal上で"ctrl+," => "keybindings"配下の"paste"設定を下記に変更
+    * { "command": "paste", "keys": "ctrl+shift+v" },
