@@ -40,3 +40,8 @@
     * :GFiles
 * commit検索
     * :Commits
+
+## rking/ag.vim
+
+* 検索
+    * :Ag (検索ワード)
