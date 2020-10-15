@@ -159,3 +159,8 @@
 * Reset押下
 * (option)昔MSが実験的に出していたbash on ubuntu on windowsを消す場合
     * [stack over flowの手順](https://superuser.com/questions/1261110/is-it-possible-to-uninstall-bash-on-ubuntu-on-windows-since-the-latest-updates#answer-1389786)に従う
+
+### 既知の問題
+
+* windows terminal上でtmuxを使用すると日本語コピーに失敗
+    * https://github.com/microsoft/terminal/issues/7819
