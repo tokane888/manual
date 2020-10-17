@@ -17,5 +17,6 @@
     * vendor
 * dep ensure
   * importしたいパッケージがvendor配下へインストールされ、Gopkg.toml, Gopkg.lockが追記される
+  * *.go内のimport文にimportしたいパッケージを記載し、`dep ensure`実行でpackageがimportされ、Gopkg.lockが更新される
 * dep status
   * パッケージの過不足等の状態表示
