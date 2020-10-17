@@ -75,6 +75,8 @@
     * d11G
 * 関数一覧表示
   * :g/^func
+* file再読み込み
+  * :e!
 
 ### vim terminal
 
