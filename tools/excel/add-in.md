@@ -9,3 +9,5 @@
   * アドイン
   * 管理ボックスで"COMアドイン" => 設定
   * "Microsoft Power Pivot for Excel"選択してOK
+* データモデル確認
+  * Power Pivotタブ => 管理 => ホーム => 表示 => ダイアグラムビュー
