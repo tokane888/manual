@@ -57,3 +57,8 @@
 
 * 検索
     * :Ag (検索ワード)
+
+## vim-fugitive
+
+* 横に並べてdiff表示
+    * :Gdiffsplit
