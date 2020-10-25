@@ -6,6 +6,8 @@
   * explorer.exe .
 * クリップボードへコピー
   * echo hoge | clip.exe
+* Windowsのfile pathをlinux向けに変換
+  * wslpath (Windows形式のpath)
 
 ### WSL2導入手順
 
