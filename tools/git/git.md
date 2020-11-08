@@ -13,3 +13,9 @@
     * git clean -f
   * ディレクトリ削除も含めたclean実行
     * git clean -df
+* git tag
+  * リモートのタグをpull
+    * git pull --tag
+      * git pullだけではtagは同期されない
+  * リモートへタグをpush
+    * git push origin --tags
