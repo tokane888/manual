@@ -39,5 +39,7 @@
     * ex) aptly mirror create ubuntu_test http://ap-northeast-1.ec2.archive.ubuntu.com/ubuntu/ bionic main
   * ダウンロード
     * aptly mirror update ubuntu_test
-      * 何故かarm64をダウンロードしようとしはじめて失敗
+      * 何故かarm64をダウンロードしようとし始めて失敗
         * TODO: あとで原因調査
+* mirror一覧確認
+  * aptly mirror list
