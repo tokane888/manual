@@ -19,3 +19,9 @@
       * git pullだけではtagは同期されない
   * リモートへタグをpush
     * git push origin --tags
+
+### トラブルシューティング
+
+* ブランチ切るのを忘れてコミットした場合
+  * 旧コミットからブランチ作成
+    * git checkout -b <new_branch> <commit_hash>
