@@ -40,6 +40,8 @@
       * docker container inspect --format '{{.NetworkSettings.Networks}}' (コンテナ名)
     * IP確認
       * docker container inspect --format '{{.NetworkSettings.Networks.(ネットワーク名).IPAddress}}' (コンテナ名)
+* :latest tagのついたdocker imageに対応するtagを探す
+  * https://github.com/ryandaniels/docker-script-find-latest-image-tag
 
 ### ビルド関連コマンド
 
