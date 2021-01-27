@@ -16,3 +16,4 @@
     * C:\Users\tom\Desktop\program\other\manual\open\linux\device.md
 * mount /dev/sdb1 /mnt/usb
   * /mnt/usbにusbがマウントされる
+  * /dev/sdb1 のように、末尾の数字まで記載する必要あり
