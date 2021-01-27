@@ -120,6 +120,8 @@
     * ausearch -i -m SERVICE_START
   * service終了
     * ausearch -i -m SERVICE_STOP
+* 対象実行ファイル指定
+  * ausearch -i -f /usr/bin/hoge
 * 成功/失敗
   * 成功
     * ausearch -i -sv yes
