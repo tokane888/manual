@@ -7,7 +7,7 @@
     * Cent OS 8
     * Ubuntu 20.04
     * 共存可能になったとの情報もあるが、上述のようにまだ不安定
-  * Docker for WindowsはHyper-V必須なので競合する
+  * Docker for Windowsは、WSL2をベースとして使用する設定にしていない場合、Hyper-V必須となり競合する
 
 ## Windows10へのVirtual Box導入手順
 
@@ -26,7 +26,7 @@
   * 補足
     * Virtual boxはHyper-V有効状態でもすぐにはゲストOSが落ちないが、、OSインストール中に落ちる
       * 無効化は必須
-    * Docker for WindowsはHyper-V必須なので競合する
+    * Docker for Windowsは、WSL2をベースとして使用する設定にしていない場合、Hyper-V必須となり競合する
 * ホストキー設定
   * 上部のmenuから"ファイル" => "環境設定"
   * "入力" => "仮想マシン"
