@@ -29,6 +29,8 @@ apt install -y ansible
     * /etc/ansible/ansible.cfg
 * サンプル参考に諸々設定
   * https://github.com/tokane888/ansible-sample
+* sshでパスを使用してログインする場合、下記インストール
+  * sudo apt install -y sshpass
 
 ## ansible.cfg
 
@@ -67,9 +69,62 @@ apt install -y ansible
   * -b: sudo権限で実行
   * -K: 認証時に手動でパス入力
 
-## 疑問点
+## role
 
-* virtual boxでのテスト方法は？
-* 環境をパラメータとして指定するには？
-  * group_vars適用
-* 標準入出力をログに残す方法
+* playbookから呼ばれるモジュールのようなもの
+* ミドルウェア単位で作成するのが良い
+
+
+## テスト
+
+* 基本的に最初に手動テストを一度行えば、その後はテスト不要
+  * debパッケージのインストール等は、ansibleが毎回実行結果確認する
+* スクリプト実行結果などはツールで確認が必要
+  * serverspec: ruby製のテストツール
+
+## 基本方針
+
+* role
+  * ミドルウェア1つ導入など、再利用可能なレベルで分ける
+  * なるべくtagを打つ
+  * include_tasksで、役割ごとにファイル分割
+    * 例
+      * check_install.yml
+      * configure.yml
+      * install.yml
+      * main.yml
+* 権限
+  * 基本的に特権必要になるので、プレイ全体でbecome: true
+
+## インベントリ管理
+
+* スタティックインベントリ
+  * .ini, .yml形式
+* ダイナミックインベントリ
+  * ターゲットノードを管理するクラウドや、特定のプロダクトが提供するAPIから、機器情報を動的に取得するインベントリ
+  * script形式のものもある
+
+## 高速化
+
+* ファクトキャッシュ有効化
+  * ansible.cfgに下記記載で、メモリ上にキャッシュ保存
+    * ANSIBLE_CACHE_PLUGIN = memory
+
+## デバッグ
+
+* ansible-playbookのオプション
+  * -v: 詳細ログ出力
+  * -C: インストールなどの変更は行わず、条件式、シンタックスの確認を行う
+* ターゲットノードの配置した実行ファイル保存
+  * ANSIBLE_KEEP_REMOTE_FILES = 1
+    * ターゲットノードの実行ユーザーの下記パスに実行スクリプトが削除されずに残る
+      * $HOME/.ansible/tmp/
+
+## 関連ツール
+
+* AWX Project
+  * プレイブック実行を管理するwebベースのインターフェース
+  * OSS
+* Ansible Tower
+  * AWX Projectの特定バージョンをRedHatがサポートする商用製品
+  
