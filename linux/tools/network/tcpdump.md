@@ -6,4 +6,8 @@
       * 送信元のportはプロトコル名で表示される
           * ssh => 22
           * 対応は /etc/services 参照
-      
+* dnsで名前解決先のサーバを確認する方法
+  * tcpdump -i tun0 -n -vv dst port 53
+    * -i: ネットワークインターフェース名
+    * -vv: 詳細ログ出力
+    * dst port: 宛先port指定
