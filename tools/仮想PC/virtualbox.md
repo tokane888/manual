@@ -103,6 +103,6 @@
     * ubuntuの場合: openssh-server
   * guest OSのIP確認
     * ip addr
-  * host OSから上記のIPへssh接続可能に
+  * 上記のIPは複数あるのでhost OSからpingが通るIPを確認
+  * host OSから、guest OSのpingが通るIPへssh接続可能に
     * ssh user@(ip)
-    
