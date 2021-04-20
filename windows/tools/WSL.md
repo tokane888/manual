@@ -151,6 +151,18 @@
             ```
             * windowsの各ファイルにメータデータを設定可能に
         * windows再起動
+* WSL上のvimからyyで行コピー等可能に設定
+    * .vimrcに下記記載
+
+        ```
+        " Windows Subsystem for Linux で、ヤンクでクリップボードにコピー
+        if system('uname -a | grep Microsoft') != ''
+        augroup myYank
+            autocmd!
+            autocmd TextYankPost * :call system('clip.exe', @")
+        augroup END
+        endif
+        ```
 
 ### リセット方法
 
