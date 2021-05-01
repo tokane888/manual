@@ -7,10 +7,13 @@
     * EC2のubuntu上で上記実行 => コンテナ起動。up状態に
     * windows10のdocker toolbox上で実行した際は失敗
 
-### 実機へOSインストール
+### SDカードへOS焼付
 
 * OSイメージのLite版を以下からダウンロード
     * https://www.raspberrypi.org/downloads/raspbian/
+
+#### Windows10上で焼き付ける場合
+
 * SD Card Formatterダウンロード、インストール
     * https://www.sdcard.org/downloads/formatter/
         * 公式推奨とのこと
@@ -38,6 +41,28 @@
     * target選択 => Continue
     * "Flash!"押下
         * 確認時はSDカードの容量が通常より大きい(64GB)と警告が出たが"OK"押下
+
+#### Ubuntu18.04上で焼き付ける場合
+
+* SDカード指す
+* SDカードのデバイスパス特定
+
+    ```
+    $ df
+    (省略)
+    /dev/mmcblk0p1  60747776      384  60747392   1% /media/tom/0123-4567
+    ```
+    * 下記コマンドでも可
+        * lsblk -p
+* SDカードをアンマウント
+    * sudo umount (/devパス)
+        * 例) sudo umount /dev/mmcblk0p1
+* SDカードフォーマット
+    * sudo mkfs.vfat -F32 (/devパス)
+    * 例) sudo mkfs.vfat -F32 /dev/mmcblk0p1
+* 焼付
+    * --パス指定を誤るとOSが消えるので注意--
+    * sudo dd if=(.imgのパス) of=(/devパス) bs=4M conv=fsync
 
 ### OSセットアップ
 
