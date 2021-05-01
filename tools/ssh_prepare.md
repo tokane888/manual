@@ -45,11 +45,19 @@
     * 設定を書き込み
 
         ````
+        # 同一接続先に複数セッションを貼る場合に、2つ目以降をパスなしで接続可能に
+        Host *
+        ControlMaster auto
+        ControlPath ~/.ssh/.tmp/master-%r@%h:%p.socket
+        ControlPersist 3m      # ssh切断後も3分間接続情報をキャッシュし、パス無しでログイン可能に
+
         Host hubu
         HostName hogehoge.mydns.jp
         User tom
         ServerAliveInterval 60  # 60秒ごとに接続通知を行い、勝手に切断されることを抑止
         ```
+* ssh接続情報キャッシュ先ディレクトリ作成
+    * mkdir ~/.ssh/.tmp
 * chmod 600 ~/.ssh/config
 * "ssh hubu" で接続可能に
 
