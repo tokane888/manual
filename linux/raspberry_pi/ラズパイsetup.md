@@ -127,6 +127,17 @@
     * TODO: 下記の方法では全角／半角キーが効かないので対応方法調査
         * localeをraspi-configで設定するとターミナルの日本語が■になってしまう等ややこしいのでやらない
     * sudo apt update -y; sudo apt install -y uim uim-anthy fonts-ipafont fonts-ipaexfont;
+* カメラ有効化
+    * sudo raspi-config
+        * 表示された設定項目一覧からcameraをenable
+    * 下記コマンド実行で配信
+        * sudo v4l2rtspserver
+    * VLC Media Playerで下記を"ネットワークストリームで開く"と視聴可能
+        * rtsp://(ラズパイIP):8554/unicast
+    * 下記で自動起動設定
+        * crontab -e
+        * 下記追記
+            * @reboot /usr/local/bin/v4l2rtspserver > /var/log/camera.log 2>&1
 
 ### 参考
 
