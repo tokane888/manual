@@ -25,4 +25,5 @@
     * sandboxの外に影響があるものは、警告が出るので --classic 付ける
 * インストール済みのパッケージ一覧表示
   * snap list
-  
+* パッケージ完全削除
+  * sudo snap remove (package名) --purge
