@@ -69,14 +69,18 @@
 * デフォルトパスでログイン
     * user: pi
     * pass: raspberry
-* 必ずパスワード変更
+* 他のユーザー作成
+    * adduser tom
+    * visudo修正
+* piユーザーを残す場合は必ずパスワード変更
     * passwd
     * バックドア(kaiten), ネットワークスキャナ(zmap)など仕掛けられるケースあり
-    * できればpiユーザー削除して他のユーザー作成した方が良い
+    * 削除する手順は後述。opensshでの接続及びsudo su成功後の削除
 * 日本語キーボード配列に変更（半角／全角は効かない。追って調査）
     * `sudo raspi-config`
-    * "4 Localisation Options"
+    * "Localisation Options"
     * "I3 Change Keyboard Layout"
+        * ラズパイ4では"L3 Keyboard"
     * "Generic 105-key PC (intl.)"
     * Keyboard layoutから"Other"選択
     * "Japanese"
@@ -87,10 +91,18 @@
 * ネットワーク設定
     * `sudo raspi-config`
     * "2 Network Options"
+        * ラズパイ4では"Localisation Options"
     * "N2 Wi-fi"
     * "JP Japan"
     * "OK"
     * SSID入力
+        * ラズパイ4の場合は、"1 System Options" => "S1 Wireless LAN"でSSID入力
+        * ラズパイzeroは5.0GHz非対応なので注意
+    * 課題
+        * 何故かwifi接続が不安定
+            * pingで一度叩いてやるまでssh接続できないなど
+                * zeroではこれ。pi4ではpingで叩いても接続できないことあり
+            * Low voltage detected 警告が出ているので、電源の問題かもしれない
     * 参考) 上記の設定は下記に書き込まれる
       * /etc/wpa_supplicant/wpa_supplicant.conf
         * 複数wifi設定時
@@ -100,7 +112,7 @@
           * 少なくとも下記のservice restartでは反映されないことを確認
             * systemctl restart wpa_supplicant
       * /etc/dhcpcd.conf
-        * 固定IP設定したけどだめ => ルーター再起動してもだめ
+        * 電源不安定だと固定IP設定、wifi設定が正常反映されないケースあり
       * /etc/network/interfaces は古い設定ファイル
         * 当該ファイルにもコメントがあり、これの使用は非推奨
       * wifi起動・停止コマンド
@@ -131,6 +143,8 @@
 * カメラ有効化
     * sudo raspi-config
         * 表示された設定項目一覧からcameraをenable
+    * rtspサーバインストール
+        * sudo snap install v4l2rtspserver
     * 下記コマンド実行で配信
         * sudo v4l2rtspserver
     * VLC Media Playerで下記を"ネットワークストリームで開く"と視聴可能
