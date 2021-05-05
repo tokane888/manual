@@ -48,18 +48,27 @@
 * SDカードのデバイスパス特定
 
     ```
-    $ df
+    lsblk -p
+    NAME             MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
     (省略)
-    /dev/mmcblk0p1  60747776      384  60747392   1% /media/tom/0123-4567
+    /dev/sda           8:0    0   477G  0 disk
+    ├─/dev/sda1        8:1    0   512M  0 part /boot/efi
+    └─/dev/sda2        8:2    0 476.4G  0 part /
+    /dev/mmcblk0     179:0    0  59.7G  0 disk
+    ├─/dev/mmcblk0p1 179:1    0   256M  0 part /media/tom/boot
+    └─/dev/mmcblk0p2 179:2    0  59.4G  0 part /media/tom/rootfs
     ```
     * 下記コマンドでも可
         * lsblk -p
 * SDカードをアンマウント
     * sudo umount (/devパス)
-        * 例) sudo umount /dev/mmcblk0p1
-* SDカードフォーマット
+        * 例) sudo umount /dev/mmcblk0p1 && sudo umount /dev/mmcblk0p2
+* パーティテョンフォーマット
     * sudo mkfs.vfat -F32 (/devパス)
     * 例) sudo mkfs.vfat -F32 /dev/mmcblk0p1
+* 全体フォーマット
+    * sudo mkfs.vfat -F32 -v -I (/devパス)
+    * 例) sudo mkfs.vfat -F32 -v -I /dev/mmcblk0
 * 焼付
     * --パス指定を誤るとOSが消えるので注意--
     * sudo dd if=(.imgのパス) of=(/devパス) bs=4M conv=fsync
