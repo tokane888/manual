@@ -9,8 +9,9 @@
 
 ### SDカードへOS焼付
 
-* OSイメージのLite版を以下からダウンロード
+* OSイメージのLite版zipを以下からダウンロード
     * https://www.raspberrypi.org/downloads/raspbian/
+    * zipは解凍と焼付を同時に行うため、ここでは解凍不要
 
 #### Windows10上で焼き付ける場合
 
@@ -71,7 +72,10 @@
     * 例) sudo mkfs.vfat -F32 -v -I /dev/mmcblk0
 * 焼付
     * --パス指定を誤るとOSが消えるので注意--
-    * sudo dd if=(.imgのパス) of=(/devパス) bs=4M conv=fsync
+    * unzip -p (.zipパス) | sudo dd of=(/devパス) bs=4M conv=fsync
+        * 例) unzip -p 2021-03-04-raspios-buster-armhf-lite.zip | sudo dd of=/dev/mmcblk0 bs=4M conv=fsync
+        * zip解凍済みの場合
+            * sudo dd if=(.imgのパス) of=(/devパス) bs=4M conv=fsync
 
 ### OSセットアップ
 
