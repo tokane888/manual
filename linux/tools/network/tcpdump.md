@@ -1,4 +1,10 @@
-## tcpdump
+# tcpdump
+
+## 導入
+
+* apt install -y tcpdump
+
+## コマンド等
 
 * tcpdumpで通信を出力
   * 10:09:50.352259 IP tom-PC-LZ550NSB.ssh > 192.168.11.3.50219: Flags [P.], seq 11667036:11667200, ack 6837, win 501, length 164
