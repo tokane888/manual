@@ -24,7 +24,32 @@
   * resolveconfを使用しない場合、/etc/resolv.confの最初の行に127.0.0.1を記載
   * /etc/dnsmasq.confにserver=(IP)の形式でdnsサーバを指定
 
+## サイトブロック方法
+
+* /etc/dnsmasq.hosts に下記形式でブロックするサイト記載
+  ```
+  address=/youtube.com/
+  address=/hoge.com/
+  ```
+* 上記へシンボリックリンクを貼る
+  * cd /etc/dnsmasq.d
+  * ln -s /etc/dnsmasq.hosts hosts
+* dnsmasq再起動
+  * systemctl daemon-reload
+  * systemctl restart dnsmasq
+
 ## 状態確認
 
 * IPリース状況
   * /var/lib/misc/dnsmasq.leases
+
+## 動作
+
+* DNS query forwarder
+* /etc/resolv.confを見て、dns query問い合わせ先のDNSサーバを決める
+* SIGHUP受信時
+  * キャッシュをクリアし、/etc/hosts, /etc/ethers, --dhcp-*** option等で指定されたファイルを再読み込み
+* SIGUSR1受信時
+  * system logに統計出力
+    * キャッシュサイズ
+    * キャッシュから削除されるドメインの数
