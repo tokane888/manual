@@ -92,8 +92,7 @@
 * 日本語キーボード配列に変更（半角／全角は効かない。追って調査）
     * `sudo raspi-config`
     * "Localisation Options"
-    * "I3 Change Keyboard Layout"
-        * ラズパイ4では"L3 Keyboard"
+    * "L3 Keyboard"
     * "Generic 105-key PC (intl.)"
     * Keyboard layoutから"Other"選択
     * "Japanese"
@@ -103,9 +102,8 @@
     * 参考）/etc/default/keyboard に設定追加されてるっぽい
 * ネットワーク設定
     * `sudo raspi-config`
-    * "2 Network Options"
-        * ラズパイ4では"Localisation Options"
-    * "N2 Wi-fi"
+    * "Localisation Options"
+    * "L4 WLAN Country"
     * "JP Japan"
     * "OK"
     * SSID入力
@@ -138,7 +136,7 @@
         * sudo iwlist wlan0 scan | grep ESSID
 * ssh有効化
     * `sudo raspi-config`
-    * "5 Interfacing Options"
+    * "Interface Options"
     * "P2 SSH"
     * "YES"
     * "OK"
@@ -157,15 +155,31 @@
     * sudo raspi-config
         * 表示された設定項目一覧からcameraをenable
     * rtspサーバインストール
-        * sudo snap install v4l2rtspserver
+        * ラズパイ4の場合
+
+            ```
+            git clone https://github.com/mpromonet/h264_v4l2_rtspserver.git
+            cd h264_v4l2_rtspserver
+            cmake .
+            sudo make install
+            cd ..
+            rm -rf h264_v4l2_rtspserver/
+            ```
     * 下記コマンド実行で配信
         * sudo v4l2rtspserver
     * VLC Media Playerで下記を"ネットワークストリームで開く"と視聴可能
         * rtsp://(ラズパイIP):8554/unicast
+    * カメラ使用権限設定
+        * sudo chmod 755 /dev/vchiq
+        * 静止画撮影時には必要。動画撮影時に必要かは不明瞭
     * 下記で自動起動設定
         * crontab -e
         * 下記追記
             * @reboot /usr/local/bin/v4l2rtspserver > /var/log/camera.log 2>&1
+    * 参考) 静止画撮影
+        * sudo raspistill -v -o test.jpg
+        * 上下左右逆の場合
+            * sudo raspistill -vf -hf -v -o test.jpg
 
 ### 参考
 
