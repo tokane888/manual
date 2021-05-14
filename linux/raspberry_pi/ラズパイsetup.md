@@ -167,6 +167,10 @@
             ```
     * 下記コマンド実行で配信
         * sudo v4l2rtspserver
+        * 解像度指定も可能
+            * 例) v4l2rtspserver -W 1920 -H 1080 -F 10
+        * カメラ映像は事前に角度を指定してからサーバを起動することで回転可能
+            * v4l2-ctl -c rotate=180
     * VLC Media Playerで下記を"ネットワークストリームで開く"と視聴可能
         * rtsp://(ラズパイIP):8554/unicast
     * カメラ使用権限設定
