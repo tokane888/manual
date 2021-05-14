@@ -11,6 +11,8 @@
   * その他(graphical shell) => システムによる
 * シェルスクリプトを実行すると、non-interactive, non-login shellで実行される
 * 実行順序
+  * OS起動時
+    * /etc/rc.local
   * interactive, login shell又はnon-interactive shellを--login付きで実行時(ssh)
     1. /etc/profile
     2. 下記から最初に見つかったものを実行
