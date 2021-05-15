@@ -74,3 +74,21 @@
     * 一般ユーザーの場合と同様に公開鍵をサーバ側の下記パスへコピー
         * /root/.ssh/authorized_keys
     * chmod 600 /root/.ssh/authorized_keys
+
+### ssh接続時のLC_ALL警告対応
+
+* 事象
+    * JP localeのclientから、JP locale未インストールのserverへssh接続すると、下記の警告が出る場合がある
+        ```
+        # ssh router
+        Last login: Sat May 15 18:31:51 2021 from 10.3.141.76
+        -bash: warning: setlocale: LC_ALL: cannot change locale (ja_JP.UTF-8)
+        ```
+* 原因
+    * ssh接続時に環境変数LC_ALLなどをclient側から渡せる設定になっているため
+* 下記設定ファイルで、当該環境変数を渡せないように、AcceptEnvをコメントアウト
+    * /etc/ssh/sshd_config
+        ```
+        # Allow client to pass locale environment variables
+        #AcceptEnv LANG LC_*
+        ```

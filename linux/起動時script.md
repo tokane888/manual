@@ -69,3 +69,28 @@
     3. ~/.profile
         * ~/.bashrc呼び出し
             * ~/.bash_aliases呼び出し
+
+### 関連情報
+
+* Debian系で起動時に表示されるメッセージ格納場所
+  * /etc/motd
+    * 例
+      ```
+      tom@raspberrypi:~$ cat /etc/motd
+
+      The programs included with the Debian GNU/Linux system are free software;
+      the exact distribution terms for each program are described in the
+      individual files in /usr/share/doc/*/copyright.
+
+      Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+      permitted by applicable law.
+      tom@raspberrypi:~$ cat /etc/motd
+
+      The programs included with the Debian GNU/Linux system are free software;
+      the exact distribution terms for each program are described in the
+      individual files in /usr/share/doc/*/copyright.
+
+      Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+      permitted by applicable law.
+      ```
+      
