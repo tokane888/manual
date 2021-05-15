@@ -9,6 +9,29 @@
   * /etc/dnsmasq.conf
   * /etc/default/dnsmasq
     * こちらはほとんどのケースで触らなくて良いとのこと
+  * /etc/dnsmasq.d/*
+    * 090_wlan0.conf
+      * DHCP割当設定
+      * RaspAP導入ラズパイで自動生成される
+      * 例)
+        ```
+        # RaspAP wlan0 configuration
+        interface=wlan0
+        dhcp-range=10.3.141.50,10.3.141.255,255.255.255.0,12h
+        ```
+    * 090_raspap.conf
+      * ログ、AP関連設定
+      * RaspAP導入ラズパイで自動生成される
+      * 例)
+        ```
+        # RaspAP default config
+        log-facility=/tmp/dnsmasq.log
+        conf-dir=/etc/dnsmasq.d
+        log-dhcp
+        log-queries
+        ```
+        * dnsクエリ関連は下記へログ出力されている
+          * /tmp/dnsmasq.log
 * dnsmasqへのクエリの転送先dnsサーバー
   * systemdのresolvconfを使用している場合
     * dnsmasqのクエリ転送先は下記に自動で記載される
@@ -56,3 +79,9 @@
   * system logに統計出力
     * キャッシュサイズ
     * キャッシュから削除されるドメインの数
+
+## トラブルシュート
+
+* journalctl status dnsmasqで出ている下記のwarningは詳細不明だが一旦無視して良さそう
+  * May 15 19:27:39 raspberrypi dnsmasq[918]: Too few arguments.
+  * 参考) https://raspberrypi.stackexchange.com/questions/120338/dnsmasq-error-dnsmasq1122-too-few-arguments
