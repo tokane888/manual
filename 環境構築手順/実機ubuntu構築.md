@@ -1,6 +1,9 @@
 ## 実機へubuntuインストール
 
 * [download image](https://ubuntu.com/download)
+  * ubuntu server, ubuntu desktopの違いに注意
+  * 古いimageのdownloadは下記から可能
+    * http://old-releases.ubuntu.com/releases/18.04.3/
 * [bootable usb作成](https://tutorials.ubuntu.com/tutorial/tutorial-create-a-usb-stick-on-windows)
   * live imageとしての使用も、ubuntuインストールも可能
 * 実機起動しつつ、F12, F2, ESC辺りを押してBIOS起動
