@@ -31,3 +31,32 @@
 * findmnt /dev/sdb1
   * 当該devのマウント先ディレクトリ確認
   * 未マウントの場合、出力は空
+
+## 自動マウント設定
+
+* ubuntu 18.04で動作確認
+* lsblkで現在のマウント状態確認
+  ```
+  [sudo] password for tom:
+  root@test:/home/tom# lsblk
+  NAME   MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
+  loop0    7:0    0   548K  1 loop /snap/gnome-logs/103
+  (省略)
+  loop16   7:16   0 149.9M  1 loop /snap/gnome-3-28-1804/67
+  sda      8:0    0   477G  0 disk
+  ├─sda1   8:1    0   512M  0 part /boot/efi
+  └─sda2   8:2    0 476.4G  0 part /
+  sdb      8:16   0 447.1G  0 disk
+  └─sdb1   8:17   0 447.1G  0 part /media/hdd
+  ```
+  * /dev/sdb1が/media/hddにマウントされていることが分かる
+* マウントするHDD等のUUID確認
+  * blkid (/devパス)
+    * 例)
+    ```
+    # blkid /dev/sdb1
+    /dev/sdb1: LABEL="SSD-PGCU3-A" UUID="B06EBF5B6EBF1954" TYPE="ntfs" PARTUUID="dc2663d6-01"
+    ```
+* /etc/fstabに下記記載
+  * UUID=B06EBF5B6EBF1954 /media/hdd auto nosuid,nodev,nofail,x-gvfs-show 0 0
+  
