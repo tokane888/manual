@@ -92,3 +92,9 @@
         # Allow client to pass locale environment variables
         #AcceptEnv LANG LC_*
         ```
+
+### ログ
+
+* debian系OS
+    * 認証ログ
+        * /var/log/auth.log
