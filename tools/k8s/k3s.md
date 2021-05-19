@@ -17,3 +17,7 @@ curl -sfL https://get.k3s.io | sh -
 
 * 下記実行
   * /usr/local/bin/k3s-uninstall.sh
+
+### 注意点
+
+* 1年経過で内部の証明書期限切れ
