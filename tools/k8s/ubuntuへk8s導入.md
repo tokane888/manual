@@ -17,6 +17,8 @@ Ubuntu 18.04実機
 
 ### Minikube導入
 
+* ローカルk8s
+  * kind等他のローカルk8sを使用する場合は不要
 * 参考) https://minikube.sigs.k8s.io/docs/start/
 * curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube_latest_amd64.deb
 * apt install -y ./minikube_latest_amd64.deb
@@ -30,6 +32,8 @@ Ubuntu 18.04実機
 
 ### kind導入(kubernetes in docker)
 
+* ローカルk8s
+  * minikube等他のローカルk8sを使用する場合は不要
 ```
 curl -Lo ./kind https://kind.sigs.k8s.io/dl/v0.10.0/kind-linux-amd64
 chmod +x ./kind
