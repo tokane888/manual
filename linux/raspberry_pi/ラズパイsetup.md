@@ -76,6 +76,38 @@
         * 例) unzip -p 2021-03-04-raspios-buster-armhf-lite.zip | sudo dd of=/dev/mmcblk0 bs=4M conv=fsync
         * zip解凍済みの場合
             * sudo dd if=(.imgのパス) of=(/devパス) bs=4M conv=fsync
+* SDカードをマウント
+    * mkdir /media/sd
+    * mount (/devパス) /media/sd
+        * /devパス2つある
+            * /devの末尾が2の方が恐らく正解
+            * マウントしてみてetc, boot等のディレクトリがあれば正解
+        * 例) mount /dev/mmcblk0p2 /media/sd
+* SSH有効化
+    * mkdir /media/sd/boot/ssh
+        * ディレクトリがあればOSの方でsshを有効化する
+* wi-fi設定
+    * sudo wpa_passphrase (SSID) (pass)
+        * 例) wpa_passphrase wi-fi password
+            ```
+            network={
+            ssid="(SSID)"
+            #psk="(生のWIFIパスワード)"
+            psk=(暗号化されたWIFIパスワード)
+            }
+            ```
+    * 上記で出力された設定を下記の末尾へ追記
+        * vim /media/sd/etc/wpa_supplicant/wpa_supplicant.conf
+* (option)IP固定
+    * ルーター側から新規追加のIPを把握できない場合等は固定必須
+    * 下記へIP追記
+        * vim /media/sd/etc/dhcpcd.conf
+            ```
+            interface wlan0
+            static ip_address=192.168.11.2/24
+            static routers=192.168.11.1
+            static domain_name_servers=192.168.11.1
+            ```
 
 ### OSセットアップ
 
