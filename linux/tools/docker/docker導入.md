@@ -31,6 +31,8 @@ ubuntu 18.04
   ```
 * 動作確認
   * sudo docker run hello-world
+* 一般ユーザーでもdocker使用可能に
+  * usermod -a -G docker tom
 
 ### docker-compose導入
 

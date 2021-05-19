@@ -28,6 +28,20 @@ Ubuntu 18.04実機
 * 下記でminikubeの起動確認
   * minikube status
 
+### kind導入(kubernetes in docker)
+
+```
+curl -Lo ./kind https://kind.sigs.k8s.io/dl/v0.10.0/kind-linux-amd64
+chmod +x ./kind
+sudo mv kind /usr/bin
+```
+
+* 正常に導入されていることを確認
+```
+$ kind version
+kind v0.10.0 go1.15.7 linux/amd64
+```
+
 ### kubectl導入(debパッケージ)
 
 * リポジトリ追加+インストール
