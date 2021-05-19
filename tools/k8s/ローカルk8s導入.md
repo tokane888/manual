@@ -59,6 +59,9 @@ kind v0.10.0 go1.15.7 linux/amd64
   sudo apt-get update
   sudo apt-get install -y kubectl
   ```
+* bash補完設定
+  * .bashrcに下記追記
+    * source <(kubectl completion bash)
 
 ### (参考)[Kubectl設定確認](https://kubernetes.io/docs/tasks/tools/install-kubectl/#verifying-kubectl-configuration)
 
