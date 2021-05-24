@@ -13,6 +13,21 @@ curl -sfL https://get.k3s.io | sh -
 * (option)worker node追加
   * curl -sfL https://get.k3s.io | K3S_URL=https://myserver:6443 K3S_TOKEN=mynodetoken sh -
 
+#### ネットに繋がっていないノードへインストール
+
+* 作業用PCで指定versionのk3sバイナリと、archが一致する.tarをダウンロード
+  * https://github.com/k3s-io/k3s/releases/tag/v1.20.4%2Bk3s1
+* k3sバイナリを下記へ移動し、実行可能で有ることを確認
+  * /usr/local/bin
+* .tarを下記へ配置
+  * /var/lib/rancher/k3s/agent/images
+* sudo mkdir -p /var/lib/rancher/k3s/agent/images/
+* sudo cp ./k3s-airgap-images-x86_64.tar /var/lib/rancher/k3s/agent/images/
+* 作業用PCでk3s install scriptダウンロードして送信
+  * curl -s https://get.k3s.io/ > install.sh
+* デプロイ先ノードで下記実行
+  * INSTALL_K3S_SKIP_DOWNLOAD=true ./install.sh
+
 ### アンインストール
 
 * 下記実行
