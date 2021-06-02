@@ -179,6 +179,10 @@
         * "Change Timezone"
         * Configuring tzdataで"Asia"選択
         * "Tokyo"
+* OS起動後にHDMIを指しても画面表示可能に
+    * /boot/config.txt
+    * 下記をコメントアウト解除して有効化
+        * hdmi_force_hotplug=1
 * 半角／全角キー有効化（調査中）
     * TODO: 下記の方法では全角／半角キーが効かないので対応方法調査
         * localeをraspi-configで設定するとターミナルの日本語が■になってしまう等ややこしいのでやらない
