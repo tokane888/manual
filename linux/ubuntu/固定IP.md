@@ -12,6 +12,9 @@ ubuntu 18.04実機
 * netplan, NetworkManagerがネットワーク情報を管理している
   * netplan
     * yamlでネットワーク設定
+  * NetworkManager
+    * 現状標準でインストールされているが、今後基本的にnetplanによる管理になるらしい
+      * 特にこちらは触れることなく固定IP設定が可能
 * 設定ファイル
   * /etc/netplan/*
     * 上記パスの設定ファイルがアルファベット順に読まれ、順次上書きされる
