@@ -81,5 +81,12 @@
     * systemctl daemon-reload
     * systemctl restart NetworkManager
   * wifiのpower management無効化
-    * rootのcronに下記を記載
+    * sudo crontab -e
     * @reboot /usr/sbin/iwconfig wlan0 power off
+* 起動時にLED off設定
+  * sudo crontab -e
+    * 下記追記
+      ```
+      @reboot echo "none" >/sys/class/leds/led0/trigger
+      @reboot echo "none" >/sys/class/leds/led1/trigger
+      ```
