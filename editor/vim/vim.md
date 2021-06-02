@@ -89,3 +89,12 @@
   * ctrl+w => shift+n
 * yankした内容を貼り付け
   * ctrl+w => " => "
+
+## トラブルシュート
+
+* vim上で文字列をドラッグしてctrl+shift+cでclip boardにコピーできない
+  * 下記を~/.vimrcに記載
+    ```
+    noremap <LeftDrag> <LeftMouse>
+    noremap! <LeftDrag> <LeftMouse>
+    ```
