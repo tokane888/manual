@@ -188,6 +188,7 @@
         * localeをraspi-configで設定するとターミナルの日本語が■になってしまう等ややこしいのでやらない
     * sudo apt update -y; sudo apt install -y uim uim-anthy fonts-ipafont fonts-ipaexfont;
 * カメラ有効化
+    * 最初はレンズに小さい保護シールが貼られているので、必要に応じて剥がす
     * sudo raspi-config
         * 表示された設定項目一覧からcameraをenable
     * rtspサーバインストール
