@@ -98,6 +98,8 @@
             ```
     * 上記で出力された設定を下記の末尾へ追記
         * vim /media/sd/etc/wpa_supplicant/wpa_supplicant.conf
+            * update_config=1の直下に下記も追記
+                * country=JP
 * (option)IP固定
     * ルーター側から新規追加のIPを把握できない場合等は固定必須
     * 下記へIP追記
