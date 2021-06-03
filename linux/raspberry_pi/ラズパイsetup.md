@@ -84,8 +84,11 @@
             * マウントしてみてetc, boot等のディレクトリがあれば正解
         * 例) mount /dev/mmcblk0p2 /media/sd
 * SSH有効化
-    * mkdir /media/sd/boot/ssh
-        * ディレクトリがあればOSの方でsshを有効化する
+    * touch /media/sd/boot/ssh
+        * ファイルがあればOSの方でsshを有効化する
+        * 実際にやってみたところ、sshが有効化されていなかった。sshがdisabledのまま
+            * sshファイルでも、sshディレクトリでも失敗
+            * TODO: 原因調査
 * wi-fi設定
     * sudo wpa_passphrase (SSID) (pass)
         * 例) wpa_passphrase wi-fi password
