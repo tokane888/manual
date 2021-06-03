@@ -103,6 +103,7 @@
         * vim /media/sd/etc/wpa_supplicant/wpa_supplicant.conf
             * update_config=1の直下に下記も追記
                 * country=JP
+                    * countryを記載しないと、rfkillにWi-Fiを無効化される
 * (option)IP固定
     * ルーター側から新規追加のIPを把握できない場合等は固定必須
     * 下記へIP追記
