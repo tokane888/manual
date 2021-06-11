@@ -173,7 +173,7 @@ sudo reboot
   interface wlan0
   static ip_address=192.168.11.1/24
   ```
-* /etc/network/interfaces に下記の項目が記載されていることを確認
+* プロバイダに接続する場合、/etc/network/interfaces に下記の項目が記載されていることを確認
   ```
   auto dsl-provider
   iface dsl-provider inet ppp
