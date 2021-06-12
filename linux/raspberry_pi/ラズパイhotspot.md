@@ -162,14 +162,10 @@ sudo reboot
 * テザリングなどのネット接続可能なネットワークへ接続
 * /etc/wpa_supplicant/wpa_supplicant.confのwifiアクセス設定削除
   * アクセスする側になってしまうことを防ぐため
-    * TODO: もっとスマートな方法があれば追記
-  * 下記で現在のwifiの状態を確認可能
-    * iwconfig
-      * Mode: masterであればOK
 * apt install -y hostapd dnsmasq
 * /etc/dhcpcd.conf末尾に下記記載
   ```
-  denyinterfaces eth0               # ppp0とデフォルトゲートウェイが重複することを防ぐため
+  denyinterfaces eth0               # ppp0とデフォルトゲートウェイが重複することを防ぐため。プロバイダ使用時のみ
   interface wlan0
   static ip_address=192.168.11.1/24
   ```
