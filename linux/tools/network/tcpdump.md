@@ -15,5 +15,6 @@
 * dnsで名前解決先のサーバを確認する方法
   * tcpdump -i tun0 -n -vv dst port 53
     * -i: ネットワークインターフェース名
+    * -n: ドメイン名とIPの変換を行わない
     * -vv: 詳細ログ出力
     * dst port: 宛先port指定
