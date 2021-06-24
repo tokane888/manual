@@ -49,6 +49,13 @@
     * /etc/network/interfaces
   * resolveconfを使用しない場合、/etc/resolv.confの最初の行に127.0.0.1を記載
   * /etc/dnsmasq.confにserver=(IP)の形式でdnsサーバを指定
+* dhcpサーバとしてのみ使用し、dnsサーバ機能を使用しない方法
+  * /etc/dnsmasq.d/*.conf に下記のようにdhcp関連設定だけを記載
+    ```
+    # RaspAP wlan0 configuration
+    interface=wlan0
+    dhcp-range=10.3.141.50,10.3.141.255,255.255.255.0,12h
+    ```
 
 ## サイトブロック方法
 
