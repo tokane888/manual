@@ -31,15 +31,16 @@
 * ルール削除
   * 単一のルール削除
     * 削除したいルールのindex確認
-      * iptables -L INPUT --line-numbers
+      * iptables -L INPUT --line-numbers -n
         ```
-        # iptables -L INPUT --line-numbers
+        # iptables -L INPUT --line-numbers -n
         Chain INPUT (policy ACCEPT)
         num  target     prot opt source               destination
         1    DROP       tcp  --  anywhere             anywhere             tcp dpt:domain
         2    DROP       udp  --  anywhere             anywhere             udp dpt:domain
         3    ACCEPT     udp  --  anywhere             10.168.11.1          udp dpt:domain
         ```
+      * -n: 表中のipをドメインに変換しない
     * chain名、index指定で削除
       * iptables -D INPUT 1
   * 特定chainのルール全削除
