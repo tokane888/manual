@@ -208,3 +208,27 @@
 * Google playからRoot Checkerをインストールし、root化されていることを確認
 * 自動システムアップデート無効化
   * 設定 => システム => 開発者向けオプション => 自動システムアップデート無効化
+
+## 関連ツールインストール
+
+* busybox
+  * google playから"Busybox(stericson)"インストール
+    * 恐らくProでなくても良さそう
+  * アプリ起動 => root要求されるので"Yes"
+  * Install Busybox
+  * ssh等でデプロイ先の下記パスが存在することを確認
+    * /system/xbin
+    * android 11では存在しなかったため、デプロイ先を下記に変更した
+      * /system/bin
+  * Install
+* AdAway
+  * /system/etc/hostsを書き換えて広告ブロックするアプリ
+    * root化しないと/systemに書き込めない
+  * MagiskでSystemless hosts有効化
+  * 設定有効化のためandroid再起動
+  * 下記から.apkダウンロード
+    * https://github.com/AdAway/AdAway
+  * .apkインストール
+* SSH Server
+  * root化しなくても使用可能だが、ほとんど何もできない
+  * Magiskでsudo権限付与
