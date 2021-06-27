@@ -45,9 +45,13 @@
       * iptables -D INPUT 1
   * 特定chainのルール全削除
     * iptables -F INPUT
-* 宛先が特定IPのパケットをブロック
-  * 133.152.43.29(www.nicovideo.jp)をブロックする場合
-    * iptables -A FORWARD -d 133.152.43.29 -j DROP
+* 設定例
+  * 宛先が特定IPのパケットをブロック
+    * 133.152.43.29(www.nicovideo.jp)をブロックする場合
+      * iptables -A FORWARD -d 133.152.43.29 -j DROP
+  * 外部DNSサーバへの問い合わせをブロック
+    * iptables -A FORWARD -p udp --dport 53 -j DROP
+      * udpは問い合わせ。tcpはゾーン転送等
 * ログ出力
   * iptablesコマンド末尾に下記記載で出力される
     * -j LOG
