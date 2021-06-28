@@ -77,6 +77,8 @@
   * :g/^func
 * file再読み込み
   * :e!
+* インデントを保持してinsert modeへ
+  * S
 
 ### vim terminal
 
