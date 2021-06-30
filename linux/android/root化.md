@@ -221,6 +221,10 @@
     * android 11では存在しなかったため、デプロイ先を下記に変更した
       * /system/bin
   * Install
+  * 注意点
+    * android再起動後に確認したところ、viコマンドがなくなっていた
+      * 再度busybox installで復活
+      * android OSが勝手に消した可能性がある
 * AdAway
   * /system/etc/hostsを書き換えて広告ブロックするアプリ
     * root化しないと/systemに書き込めない
