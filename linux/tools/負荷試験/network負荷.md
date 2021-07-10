@@ -1,5 +1,10 @@
 # network速度計測
 
+## 現在の特定のnetwork interfaceの通信量を確認
+
+* ip -s link | grep -A 5 eno1; sleep 60; ip -s link | grep -A 5 eno1
+  * OS起動後の当該network interfaceの通信量が出るので、60秒後の結果と比較して計測
+
 ## speedtest-cliを使用する方法
 
 * 検証環境
