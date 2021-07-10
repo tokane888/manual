@@ -1,4 +1,11 @@
-## chrome
+# chrome
+
+## 初期に行う設定
+
+* stackoverflow機械翻訳をgoogle検索結果から除外
+  * https://github.com/arosh/ublacklist-stackoverflow-translation
+
+## オプションの設定方法
 
 * private mode有効/無効切り替え
   * レジストリエディタ起動
