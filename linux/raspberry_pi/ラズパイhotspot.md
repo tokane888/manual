@@ -66,6 +66,14 @@
     * sudo iwconfig
   * 設定
     * sudo iwconfig wlan0 power off
+      * 下記のエラーが出て失敗する場合がある
+        ```
+        # iwconfig wlan0 power off
+        Error for wireless request "Set Power Management" (8B2C) :
+            SET failed on device wlan0 ; Invalid argument.
+        ```
+        * 上記エラーが出る場合は下記実行で設定変更
+          * iw dev wlan0 set power_save off
 
 ## RaspAPを使用する手順
 
@@ -272,3 +280,57 @@ sudo reboot
     * iptables-save > /etc/iptables.ipv4.nat
   * /etc/rc.local のexit 0直前に下記追記
     * sudo iptables-restore < /etc/iptables.ipv4.nat
+
+## ラズパイ配下の有線portで別subnetのIPをDHCPで提供する手順
+
+* 当該network interfaceに割り当てるIPを設定
+  * /etc/dhcpcd.conf
+    * 設定例
+      ```
+      interface wlan0
+      static ip_address=10.168.11.1/24
+      interface eth1
+      static ip_address=10.168.12.1/24
+      ```
+      * 無線のIPと同一subnetにするとroutingの問題で正常にip割当が行われないので注意
+* 提供するsubnetをdnsmasqで指定
+  * /etc/dnsmasq.d/router.conf
+    * 設定
+      ```
+      interface=wlan0
+      dhcp-range=10.168.11.2,10.168.11.64,255.255.255.0,12h
+      interface=eth1
+      dhcp-range=10.168.12.2,10.168.12.64,255.255.255.0,12h
+      ```
+
+## 2.4GHz同時提供用にusbドングル追加する手順
+
+* 注意
+  * 検証中手順。現状成功していない
+* 検証環境
+  * 筐体: raspberry pi 3B+
+  * OS: raspbian OS Buster
+  * usbドングル: Realtek 0xc811
+
+### セットアップ手順
+
+* usbドングルの種類確認
+  * usbドングルをラズパイに指す
+  * lsusb
+    ```
+    # lsusb
+    Bus 001 Device 006: ID 0bda:c811 Realtek Semiconductor Corp.
+    Bus 001 Device 005: ID 0424:7800 Standard Microsystems Corp.
+    Bus 001 Device 003: ID 0424:2514 Standard Microsystems Corp. USB 2.0 Hub
+    Bus 001 Device 002: ID 0424:2514 Standard Microsystems Corp. USB 2.0 Hub
+    Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+    ```
+    * 最もDevice番号の大きいものが一番あとに指したもの
+  * 詳細確認
+    * lsusb -s 001:006 -v
+      * 実行結果例抜粋
+        ```
+        idVendor           0x0bda Realtek Semiconductor Corp.
+        idProduct          0xc811
+        ```
+  * 当該usbのドライバをchrome等で検索
