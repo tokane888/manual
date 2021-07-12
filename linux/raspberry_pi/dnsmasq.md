@@ -89,6 +89,16 @@
 
 ## トラブルシュート
 
+* ログ出力場所
+  * ラズパイの場合
+    * /var/lib/misc/dnsmasq.leases
+      * 例
+        ```
+        # tail -f /var/lib/misc/dnsmasq.leases
+        1626123076 0c:8b:fd:ab:e9:8d 10.168.11.102 old *
+        ```
+  * Ubuntuの場合(未確認)
+    * /var/lib/dhcp/dhcpd.leases
 * journalctl status dnsmasqで出ている下記のwarningは詳細不明だが一旦無視して良さそう
   * May 15 19:27:39 raspberrypi dnsmasq[918]: Too few arguments.
   * 参考) https://raspberrypi.stackexchange.com/questions/120338/dnsmasq-error-dnsmasq1122-too-few-arguments
