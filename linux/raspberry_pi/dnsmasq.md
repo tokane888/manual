@@ -40,7 +40,7 @@
         * /etc/resolv.conf* resolvconfを使用している場合
   * resolvconfがなく、dhcpcdを使用している場合
     * dnsmasqのクエリ転送先は下記に自動で記載される
-      * /etc/dhcpc/resolv.conf
+      * /etc/dhcpcd/resolv.conf
   * resolvconfがなく、pppdを使用している
     * dnsmasqのクエリ転送先は下記に自動で記載される
       * /etc/ppp/resolv.conf
