@@ -1,6 +1,15 @@
 ## docker
 
-### 動確環境
+### ラズパイ上にインストールする場合
+
+* curl -sSL https://get.docker.com | sh
+* 一般ユーザーでもdocker使用可能に
+  * usermod -a -G docker tom
+  * sudo reboot
+* 動作確認
+  * sudo docker run hello-world
+
+### 下記動確環境
 
 ubuntu 18.04
 
