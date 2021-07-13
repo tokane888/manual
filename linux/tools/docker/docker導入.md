@@ -8,6 +8,7 @@ ubuntu 18.04
 
 * 基本的に公式にしたがってインストール
   * https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository
+    * ubuntuにインストールする前提の手順なので注意
 * docker, docker.io, docker-engineは古いバージョンのdockerなので削除
   * apt remove -y docker docker-engine docker.io containerd runc
 * deb repository設定
