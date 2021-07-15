@@ -95,4 +95,3 @@
     * systemctl enable pigpiod
     * pip3 install pigpiod
     * reboot
-  * TODO: 電気on/off試す
