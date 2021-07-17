@@ -79,6 +79,8 @@
   * :e!
 * インデントを保持してinsert modeへ
   * S
+* tabとspaceによるインデントを設定どおりに一括変更
+  * :retab
 
 ### vim terminal
 
