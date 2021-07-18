@@ -22,6 +22,8 @@
       * ルール自体は下記で確認可能
         * iptables-save
   * nftコマンドによるパケットフィルタなどを行う場合はnftablesパッケージのインストールが必要
+* table, chainについてはリンク先の図が分かりやすい
+  * https://upload.wikimedia.org/wikipedia/commons/3/37/Netfilter-packet-flow.svg
 
 ## 関連コマンド
 
