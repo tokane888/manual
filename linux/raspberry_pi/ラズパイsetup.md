@@ -189,6 +189,8 @@
     * /boot/config.txt
     * 下記をコメントアウト解除して有効化
         * hdmi_force_hotplug=1
+* 分かりやすいように適切なhostname設定
+    * sudo hostnamectl set-hostname (host名)
 * 半角／全角キー有効化（調査中）
     * TODO: 下記の方法では全角／半角キーが効かないので対応方法調査
         * localeをraspi-configで設定するとターミナルの日本語が■になってしまう等ややこしいのでやらない
