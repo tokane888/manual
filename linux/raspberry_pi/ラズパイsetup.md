@@ -191,6 +191,13 @@
         * hdmi_force_hotplug=1
 * 分かりやすいように適切なhostname設定
     * sudo hostnamectl set-hostname (host名)
+* hostname変更するとsudo時に下記のような警告が出るようになるので対応
+    ```
+    $ sudo su
+    sudo: unable to resolve host test: No address associated with hostname
+    ```
+    * /etc/hostsに下記追記
+        * 127.0.1.1 (host名)
 * 半角／全角キー有効化（調査中）
     * TODO: 下記の方法では全角／半角キーが効かないので対応方法調査
         * localeをraspi-configで設定するとターミナルの日本語が■になってしまう等ややこしいのでやらない
