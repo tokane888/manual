@@ -303,14 +303,6 @@ sudo reboot
       dhcp-range=10.168.12.2,10.168.12.64,255.255.255.0,12h
       ```
 
-## port forward設定
-
-* 下記で一時的に設定可能
-  * iptables -t nat -A PREROUTING -p tcp -d 123.217.81.218 --dport 40022 -j DNAT --to-destination 192.168.12.100:22
-  * ただDDNSだとルーター再起動時に外側IPが変更されるため、対策が必要
-    * interface指定？
-    * TODO: 対策方法調査
-
 ## 2.4GHz同時提供用にusbドングル追加する手順
 
 * 注意
