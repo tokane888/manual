@@ -86,7 +86,6 @@
     * * * * * /usr/bin/mkdir -p /var/log/sensor/$(/usr/bin/date +\%Y) && /usr/local/bin/rpz-sensor/python3/rpz_sensor.py -l /var/log/sensor/$(/usr/bin/date +\%Y)/$(/usr/bin/date +\%m\%d).log
     ```
 * 赤外線センサー
-  * 現状記録だけ恐らく成功。送信はできているのか不明。機器が反応しない
   * サンプル取得
     * git clone https://github.com/IndoorCorgi/cgir.git
   * 必要モジュールインストール及びstart, enable
@@ -95,3 +94,13 @@
     * systemctl enable pigpiod
     * pip3 install pigpiod
     * reboot
+  * 赤外線記録
+    * ./cgirtool.py send (赤外線名)
+      * 例) ./cgirtool.py rec fan_power
+  * 赤外線送信
+    * ./cgirtool.py send (赤外線名)
+      * 例) ./cgirtool.py send fan_power
+  * 古い照明など動かないものもあった
+  * 赤外線をデコードして書き出し
+    * ./cgirtool.py dec -f debug.log (赤外線名)
+    
