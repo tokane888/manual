@@ -1,6 +1,6 @@
 # todoist cli
 
-* 注意) 下記でインストールはしたが、
+* 注意) 下記でインストールはしたが、データの同期ができていない
 * 検証環境
   * raspberry pi 3B+
   * OS: raspbian OS buster
@@ -42,4 +42,3 @@
   * todoist sync
     * TODO: ここで下記のエラーが詰まったので調査
       * Error: json: cannot unmarshal number 2213172342 into Go struct field .filters.id of type int
-      
