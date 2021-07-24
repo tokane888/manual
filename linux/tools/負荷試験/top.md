@@ -1,0 +1,7 @@
+# top
+
+* 特定のプロセスの負荷のみ監視したい場合
+  * top -p $(pgrep (プロセス名))
+    * 例) sleepコマンドプロセスを監視
+      * top -p $(pgrep sleep)
+      
