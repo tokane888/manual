@@ -43,6 +43,14 @@
     * ただDDNSだとルーター再起動時に外側IPが変更されるため、その場合は上記のinterface指定する方法を使用
   * 内部ネットワークの192.168.12.103の80番portへ、40080portからアクセス可能に
     * iptables -t nat -A PREROUTING -p tcp -i ppp0 --dport 40080 -j DNAT --to-destination 192.168.12.103:80
+  * 特定macアドレスの全パケットを遮断
+    * iptables -A INPUT -m mac --mac-source F0:1D:BC:AA:BB:CC -j DROP
+      * ルールを削除する場合は、-A => -D に置き換えるだけ
+        * iptables -D INPUT -m mac --mac-source F0:1D:BC:AA:BB:CC -j DROP
+  * 特定macアドレスの全パケットFORWARDを許可
+    * iptables -I FORWARD 1 -m mac --mac-source 48:F1:7F:AA:BB:CC -j ACCEPT
+  * 特定の宛先への全パケットを遮断
+    * iptables -A FORWARD -d 142.250.196.110 -j DROP
 
 ## 設定永続化方法
 
