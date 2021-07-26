@@ -51,6 +51,16 @@
     * iptables -I FORWARD 1 -m mac --mac-source 48:F1:7F:AA:BB:CC -j ACCEPT
   * 特定の宛先への全パケットを遮断
     * iptables -A FORWARD -d 142.250.196.110 -j DROP
+  * 特定ruleの有無を確認(特定ルールの手前にC optionを付けるのみ)
+    * iptables -C FORWARD -d 142.250.196.110 -j DROP
+      * shellでの判定処理例
+        ```
+          local block_rule_exists=0
+          block_rule_exists=$(/usr/sbin/iptables -C FORWARD -d 142.250.196.110 -j DROP > /dev/null 2>&1; echo $?)
+
+          if [ $block_rule_exists -eq 0 ]; then
+            echo "block rule exists."
+        ```
 
 ## 設定永続化方法
 
