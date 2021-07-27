@@ -56,9 +56,10 @@
       lts/fermium -> v14.17.3 (-> N/A)
       ```
       * 上記のようにlong term support版のnodejsへのaliasも表示される
-  * 有効なバージョンを確認
-    * node -v
-      ```
-      $ node -v
-      v16.5.0
-      ````
+* 有効なnodejsのバージョンを確認
+  * node -v
+    ```
+    $ node -v
+    v16.5.0
+    ````
+  * 他のユーザーでは有効になっていないので注意
