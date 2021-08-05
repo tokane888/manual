@@ -19,6 +19,10 @@
       * git pullだけではtagは同期されない
   * リモートへタグをpush
     * git push origin --tags
+* masterブランチと特定のブランチのカレントディレクトリを比較
+  * git diff other_branch..master .
+* masterブランチから特定ファイル取得
+  * git ch master -- test.sh
 
 ### トラブルシューティング
 
