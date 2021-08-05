@@ -23,6 +23,8 @@
   * git diff other_branch..master .
 * masterブランチから特定ファイル取得
   * git ch master -- test.sh
+* merge済み、又はremoteで削除済み(upstream gone)のブランチを削除
+  * git fetch -p && for branch in $(git branch -vv | grep ': gone]' | awk '{print $1}'); do git branch -D $branch; done
 
 ### トラブルシューティング
 
