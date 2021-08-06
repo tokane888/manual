@@ -233,6 +233,7 @@
         * crontab -e
         * 下記追記
             * @reboot /usr/local/bin/v4l2rtspserver > /var/log/camera.log 2>&1
+        * 配信時のCPU使用率は5%以下
     * 参考) 静止画撮影
         * sudo raspistill -v -o test.jpg
         * 上下左右逆の場合

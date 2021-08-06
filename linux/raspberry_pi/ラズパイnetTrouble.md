@@ -1,5 +1,12 @@
 ## ラズパイネットワーク設定のトラブルシューティング
 
+### SSID関連
+
+* 自分のSSID確認
+  * iwgetid
+* 周囲のSSID一覧表示
+  * iwlist wlan0 scan | grep ESSID
+
 ### 設定ファイル
 
 * /etc/wpa_supplicant/wpa_supplicant.conf
