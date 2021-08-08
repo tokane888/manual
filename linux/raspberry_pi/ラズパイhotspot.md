@@ -338,3 +338,41 @@ sudo reboot
         idProduct          0xc811
         ```
   * 当該usbのドライバをchrome等で検索
+
+### 参考
+
+* 2.4GHz向けhostapd設定
+  ```
+  driver=nl80211
+  ctrl_interface=/var/run/hostapd
+  ctrl_interface_group=0
+  auth_algs=1
+  wpa_key_mgmt=WPA-PSK
+  beacon_int=100
+  ssid=(ssid)
+  channel=8
+  hw_mode=g
+  ieee80211n=1
+  wpa_passphrase=(pass)
+  interface=wlan0
+  bridge=br0
+  wpa=2
+  wpa_pairwise=CCMP
+  country_code=JP
+  ignore_broadcast_ssid=0
+  # phy ht(802.11n)のサポート必須
+  require_ht=1
+  # MAX=AMSDU-3839: 複数ethernetフレームを1つの802.11フレームにまとめる
+  # HT40+: 複数のchannelを使って通信
+  # SHORT-GI-20: ガードインターバルを短くし安定性と引き換えに速度向上
+  # SHORT-GI-40: ガードインターバルを短くし安定性と引き換えに速度向上
+  ht_capab=[MAX-AMSDU-3839][HT40+][SHORT-GI-20][SHORT-GI-40][DSSS_CCK-40]
+
+  ieee80211ac=1
+  ieee80211d=0
+  ieee80211h=0
+  # QoS
+  wmm_enabled=1
+  ```
+  * 現状これで安定動作
+    * ただdownloadが10Mbps程度なので、速度は改善の余地あり
