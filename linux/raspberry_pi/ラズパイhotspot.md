@@ -29,6 +29,10 @@
         * 電圧が不足しないこと
           * 2.4GHzのみ飛ばせるような低機能なものの方が安定する可能性もある
     * ラズパイルーターの先にbridgeモードのラズパイルーターを置く
+  * raspberry pi 3B+がサポートするwifiは下記
+    * 802.11b/g/n/ac
+  * raspberry pi zeroがサポートするwifiは下記
+    * 802.11b/g/n
 * 参考
   * https://www.instructables.com/id/Use-Raspberry-Pi-3-As-Router/
     * WAN側はpppoeではない
