@@ -15,6 +15,8 @@
 
 #### Windows10上で焼き付ける場合
 
+* 注意
+    * 公式のImage書き込みツールは書き込みに30分以上かかり非常に遅いので、ubuntuで焼いた方が良い
 * SD Card Formatterダウンロード、インストール
     * https://www.sdcard.org/downloads/formatter/
         * 公式推奨とのこと
