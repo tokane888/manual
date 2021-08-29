@@ -13,7 +13,7 @@
 
 * WSL上のUbuntu 20.04で検証
 
-### gvm(go version mansger)+goインストール
+### gvm(go version manager)+goインストール
 
 * gvm本体をインストール
   * bash < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)
