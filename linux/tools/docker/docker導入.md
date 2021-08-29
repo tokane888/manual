@@ -22,7 +22,6 @@ ubuntu 18.04
   * apt remove -y docker docker-engine docker.io containerd runc
 * deb repository設定
   ```
-  sudo usermod -aG docker $USER && newgrp docker
   sudo apt-get install \
     apt-transport-https \
     ca-certificates \
