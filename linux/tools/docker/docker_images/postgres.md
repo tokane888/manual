@@ -19,6 +19,9 @@
       * 必須の環境変数はPOSTGRES_PASSWORDのみ
       * 環境変数は公式の"How to extend this image"参照
     * docker特有の環境変数はdataディレクトリが空の場合にのみ設定反映される
+  * パス不要の場合の例
+    * docker run --rm -d -p 11111:5432 -v postgres-data:/var/lib/postgresql/data -e POSTGRES_HOST_AUTH_METHOD=trust postgres:13.4-alpine
+      * host側port 11111に設定
 * コンテナ内へ
   * docker exec -it some-postgres bash
   * 
