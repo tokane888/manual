@@ -23,6 +23,10 @@
     * docker run --rm -d -p 11111:5432 -v postgres-data:/var/lib/postgresql/data -e POSTGRES_HOST_AUTH_METHOD=trust postgres:13.4-alpine
       * host側port 11111に設定
 * コンテナ内のDBへ
+  * psqlがなければインストール。もしくはdockerコンテナへ入る
+    * インストールする場合
+      * sudo apt install -y postgresql-client-common
+      * sudo apt install postgresql-client
   * psql -h localhost -p 11111 -U postgres
 * 参考) docker-composeでの使用方法についても公式に記載あり
 
