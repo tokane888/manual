@@ -76,6 +76,7 @@
   * vscode左メニューでデバッグボタンのエイコンを押下してRUNコンソール画面へ移動
   * "create a launch.json file"選択し、launch.json作成
     * 一旦変更無しでOK
+  * ソースをGOPATH配下以外に配置するとデバッグ実行時にエラーになったので当面GOPATH配下に配置
 * go module対応
   * go.mod初期化
     * go mod init (remoteリポジトリ)
