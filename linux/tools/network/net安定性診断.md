@@ -30,3 +30,9 @@
 
 * 注意事項
   * vlc media playerで映像を視聴した場合、vlcのプロセス自体は映像が乱れてもpacket lostしない
+
+## 2台のlinux間の通信品質計測
+
+* 検証環境: raspberry pi3(buster) + raspberry pi4(buster)
+* 対象の2台のlinuxにiperf3をインストール
+  * sudo apt install -y iperf3
