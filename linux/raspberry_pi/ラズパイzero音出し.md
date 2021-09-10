@@ -47,5 +47,5 @@
 * mp3再生
   * mpg321 kisho.mp3
 * (オプション)音量調整
-  * alsamixer
+  * sudo alsamixer
     * GUI間隔で音量調整可能
