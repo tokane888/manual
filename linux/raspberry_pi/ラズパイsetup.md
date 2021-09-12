@@ -194,6 +194,8 @@
         * hdmi_force_hotplug=1
 * 分かりやすいように適切なhostname設定
     * sudo hostnamectl set-hostname (host名)
+    * sudo vi /etc/hosts
+        * sudo時のエラーを避けるため、127.0.0.1に(host名)を割り当て
 * hostname変更するとsudo時に下記のような警告が出るようになるので対応
     ```
     $ sudo su
