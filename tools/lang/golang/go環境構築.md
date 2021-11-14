@@ -15,6 +15,7 @@
 
 ### gvm(go version manager)+goインストール
 
+* (arm系はgvmサポート外)
 * gvm本体をインストール
   * bash < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)
     * ユーザー別にインストールされるっぽい
