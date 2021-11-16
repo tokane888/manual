@@ -11,6 +11,7 @@
 
 ### WSL2導入手順
 
+* TODO: 下記の手順でWSL1が導入されたので、詳細確認
 * Window10のバージョンを2004以上にupdate
 * 参考) https://docs.microsoft.com/ja-jp/windows/wsl/install-win10
 * Linux用Windows subsystem有効化
