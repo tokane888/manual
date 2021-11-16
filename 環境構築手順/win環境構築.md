@@ -79,9 +79,12 @@
   * タスクトレイから起動
   * 左メニューから"最新情報" => 左上の歯車アイコン押下 => 通知をoffに設定
   * 設定画面で"一般" => "バックグラウンドでアプリケーションを開く"
-* 共通マクロ移動
-  * 下記へ個人用マクロを配置
-    * C:\Users\[User]\Appdata\Roaming\Microsoft\Excel\XlStart
+* excel設定
+  * 開発タブ表示
+    * ファイル => オプション => リボンのユーザー設定 => (右側の一覧から"開発"選択)
+  * 共通マクロ移動
+    * 下記へ個人用マクロを配置
+      * C:\Users\[User]\Appdata\Roaming\Microsoft\Excel\XlStart
 * git-bash設定
   * git statusでの文字化け対策
     * git config --global core.quotepath false
