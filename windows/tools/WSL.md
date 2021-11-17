@@ -52,13 +52,6 @@
     * 通常のubuntuと同じ。locale設定で対応
         * ConEmu上のubuntuは問題ないが、Ubuntuを直接起動すると日本語が文字化け
             * TODO: 対策検討
-* ConEmuで起動可能に
-    * 起動方法
-        * ConEmuヘッダの'+'アイコンの横の下矢印押下
-        * "New Console Dialog"押下
-        * "新しいコマンド又または{タスク}名"から`{Bash::Git bash}`選択
-    * 起動しない場合の手順
-        * Settings -> Startup -> Tasks の Predefined tasks に新しいタスクを作成して “C:\Windows\System32\bash.exe ~” を設定
 * visual studio codeのデフォルトのshellに設定
     * ctrl+@ 押下
     * コンソール右上からプルダウン押下
