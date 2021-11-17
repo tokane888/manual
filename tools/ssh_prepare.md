@@ -98,3 +98,42 @@
 * debian系OS
     * 認証ログ
         * /var/log/auth.log
+
+### windowsへssh可能に
+
+* 調査中。下記手順はまだ成功していない
+    * sshのユーザー名はスペースなしのディレクトリ名に使用されている方でOK
+* WSL2へssh可能に
+    * 参考) https://docs.microsoft.com/ja-jp/windows-server/administration/openssh/openssh_install_firstuse
+    * power shellを管理者権限で起動
+        * ctrl+x => a
+    * openssh serviceの状態確認
+        * Get-WindowsCapability -Online | Where-Object Name -like 'OpenSSH*'
+    * openssh service有効化
+        * Add-WindowsCapability -Online -Name OpenSSH.Client~~~~0.0.1.0
+        * Add-WindowsCapability -Online -Name OpenSSH.Server~~~~0.0.1.0
+    * 参考手順の Start-Service sshd がNot foundだったため、後続の手順実行
+    * リンク先から最新のOpenSSH-Win64.zipをdownloadし、解凍
+    * 解凍ディレクトリの中の下記を管理者権限powershellから実行
+        * .\install-sshd.ps1
+    * serviceが登録されたことを確認
+        ```
+        PS C:\Users\sutea\Downloads\OpenSSH-Win64> Get-Service -Name sshd
+
+        Status   Name               DisplayName
+        ------   ----               -----------
+        Stopped  sshd               OpenSSH SSH Server
+        ```
+    * service開始
+        * Start-Service sshd
+        * Set-Service -Name sshd -StartupType 'Automatic'
+        * firewall設定コマンド実行
+            ```
+            if (!(Get-NetFirewallRule -Name "OpenSSH-Server-In-TCP" -ErrorAction SilentlyContinue | Select-Object Name, Enabled)) {
+                Write-Output "Firewall Rule 'OpenSSH-Server-In-TCP' does not exist, creating it..."
+                New-NetFirewallRule -Name 'OpenSSH-Server-In-TCP' -DisplayName 'OpenSSH Server (sshd)' -Enabled True -Direction Inbound -Protocol TCP -Action Allow -LocalPort 22
+            } else {
+                Write-Output "Firewall rule 'OpenSSH-Server-In-TCP' has been created and exists."
+            }
+            ```
+            
