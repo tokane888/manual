@@ -49,7 +49,7 @@
         * iptables -D INPUT -m mac --mac-source F0:1D:BC:AA:BB:CC -j DROP
   * 特定macアドレスの全パケットFORWARDを許可
     * iptables -I FORWARD 1 -m mac --mac-source 48:F1:7F:AA:BB:CC -j ACCEPT
-  * 特定の宛先への全パケットを遮断
+  * 特定のIPへの全パケットを遮断
     * iptables -A FORWARD -d 142.250.196.110 -j DROP
   * 特定ruleの有無を確認(特定ルールの手前にC optionを付けるのみ)
     * iptables -C FORWARD -d 142.250.196.110 -j DROP
