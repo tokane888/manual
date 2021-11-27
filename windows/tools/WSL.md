@@ -48,6 +48,11 @@
     * OK押下
     * 注意) 複数行コピー時は範囲選択後、"Enter"でコピー
         * ctrl+shift+cでコピーすると改行が無視される
+* 複数行paste時の警告無効化
+    * ctrl+,
+    * 左メニューから"JSONファイルを開く"押下
+    * 末尾の}の手前に書き追記
+        * "multiLinePasteWarning": false
 * 日本語入力可能に
     * 通常のubuntuと同じ。locale設定で対応
         * ConEmu上のubuntuは問題ないが、Ubuntuを直接起動すると日本語が文字化け
