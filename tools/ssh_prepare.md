@@ -98,6 +98,9 @@
 * debian系OS
     * 認証ログ
         * /var/log/auth.log
+* 接続時詳細ログ出力
+    * ssh -v ***
+        * 上記のように-vオプションつける
 
 ### windowsへssh可能に
 
