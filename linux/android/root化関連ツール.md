@@ -12,9 +12,18 @@
     * boot partitionだけ書き換える
     * 仮想化をうまく使って対応しているとのこと
   
-  ## ツール使用方法
-  
-  * OS起動時にコマンド実行(Magisk使用)
-    * 参考) https://github.com/topjohnwu/Magisk/blob/master/docs/guides.md#boot-scripts
-    * 下記パス配下に、実行可能形式のスクリプト配置
-      * /data/adb/service.d
+## ツール使用方法
+
+* OS起動時にコマンド実行(Magisk使用)
+  * 参考) https://github.com/topjohnwu/Magisk/blob/master/docs/guides.md#boot-scripts
+  * 下記パス配下に、実行可能形式のスクリプト配置
+    * /data/adb/service.d
+
+## Magisk
+
+* 参考) https://topjohnwu.github.io/Magisk/guides.html
+* busybox同梱
+  * /data/adb/magisk/busybox
+* OS起動時に下記ディレクトリの実行可能なファイル実行
+  * /data/adb/service.d
+* 

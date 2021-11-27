@@ -216,6 +216,9 @@
 * busybox
   * google playから"Busybox(stericson)"インストール
     * 恐らくProでなくても良さそう
+    * Magiskに同梱されていた
+      * /data/adb/magisk/busybox
+        * 参考) https://topjohnwu.github.io/Magisk/guides.html
   * アプリ起動 => root要求されるので"Yes"
   * Install Busybox
   * ssh等でデプロイ先の下記パスが存在することを確認
@@ -223,10 +226,25 @@
     * android 11では存在しなかったため、デプロイ先を下記に変更した
       * /system/bin
   * Install
+  * android reboot後に/system/bin配下がリセットされ、コマンドが使用不可になるため、busyboxを移動してパスを通す
+    * 注意) 下記手順で、OS起動時スクリプトからはコマンド実行可能になるが、terminalからは都度install必要
+    * cp /system/bin/busybox /data/media/0/
+    * 使用したいコマンドにパスを通す
+      * MagiskがOS起動時に実行するスクリプトが下記dirにあるので、readonlyでないdirにPATHを通す
+        * cd /data/adb/service.d
+        * mkdir /data/media/0/busybox_links
+        * 下記をOS起動時実行スクリプトに含める
+          * export PATH=$PATH:/data/media/0/busybox_links
+      * cd /data/media/0/busybox_links
+      * ln -s /data/media/0/ vi
+      * ln -s /data/media/0/ wget
+      * ln -s /data/media/0/ nslookup
   * 注意点
-    * android再起動後に確認したところ、viコマンドがなくなっていた
-      * 再度busybox installで復活
-      * android OSが勝手に消した可能性がある
+    * 通常設定では各コマンドのsymlinkを置き換えているのみ
+      * android再起動でsymlinkは元に戻り、コマンドは使用不可になる
+        * 再度使用可能にするにはbusybox app上からの再installが必要
+        * 下記も試したが、install pathの問題なのか、reboot後にはコマンド使用不可になった
+          * "Settings" => "Busybox will, on every boot, be reinstalled to /sbin
 * AdAway
   * /system/etc/hostsを書き換えて広告ブロックするアプリ
     * root化しないと/systemに書き込めない
