@@ -26,4 +26,10 @@
   * /data/adb/magisk/busybox
 * OS起動時に下記ディレクトリの実行可能なファイル実行
   * /data/adb/service.d
-* 
+
+## dnsmasq
+
+* デフォルトで入っているが、設定ファイルなどはない
+* テザリング時に使用されるらしい
+* android 6.1以降では基本的にdnsサーバをshellから変更不可能っぽい
+  * 参考) https://github.com/ukanth/afwall/wiki/DNS#dns-problems

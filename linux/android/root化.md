@@ -269,6 +269,13 @@
   * root化関係ないが。。
   * ケータイ配列での入力方法の設定 => ターンフリック(TFEi)
 
+## dns指定
+
+* 下記のコマンドはvalueは変わるものの動作に変化なし
+  * setprop (dns ip)
+* iptablesによる変更は機能した
+  * iptables -t nat -A OUTPUT -p udp --dport 53 -j DNAT --to-destination 118.6.172.66:53
+
 ## 課題
 
 * 下記アプリがログイン失敗
