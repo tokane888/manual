@@ -2,6 +2,14 @@
 
 * 検証環境
   * Ubuntu 20.04
+
+## 型
+
+* 文字列
+  * TEXT型使えばOK
+  * char(n)型: 文字数分までspaceがpaddingされる
+  * varchar(n)型: 文字数可変の文字列型。文字数超過でエラー。基本textで良い
+
 ## sql例
 
 * create table
