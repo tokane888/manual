@@ -115,3 +115,10 @@
   * vimの矩形選択と競合するため
   * Windows terminal上で"ctrl+," => "keybindings"配下の"paste"設定を下記に変更
     * { "command": "paste", "keys": "ctrl+shift+v" },
+* 拡大鏡ショートカット無効化
+  * ショートカットを無効化する設定項目はないため、下記手順で実行ファイルをrename
+  * 管理者権限でコマンドプロンプト開き下記実行
+    * takeown /f C:\Windows\System32\Magnify.exe
+    * cacls C:\Windows\System32\Magnify.exe /G administrators:F
+  * 下記を適当にrename
+    * C:\Windows\System32\magnify.exe
