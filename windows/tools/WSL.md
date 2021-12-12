@@ -51,8 +51,11 @@
 * 複数行paste時の警告無効化
     * ctrl+,
     * 左メニューから"JSONファイルを開く"押下
-    * 末尾の}の手前に書き追記
-        * "multiLinePasteWarning": false
+    * 末尾の}の手前に下記追記
+        ```
+        "multiLinePasteWarning": false,
+        "largePasteWarning": false
+        ```
 * 日本語入力可能に
     * 通常のubuntuと同じ。locale設定で対応
         * ConEmu上のubuntuは問題ないが、Ubuntuを直接起動すると日本語が文字化け
