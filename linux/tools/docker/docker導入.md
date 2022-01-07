@@ -15,6 +15,7 @@ ubuntu 18.04
 
 ### 最新版インストール
 
+* 補足) wsl2上に、docker Desktopを使用しない、wsl2上でのみ動作するdockerを導入する場合も下記手順を使用可能
 * 基本的に公式にしたがってインストール
   * https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository
     * ubuntuにインストールする前提の手順なので注意
@@ -38,6 +39,9 @@ ubuntu 18.04
   sudo apt-get update
   sudo apt-get install docker-ce docker-ce-cli containerd.io
   ```
+* wsl2の場合service明示的に有効化
+  * service docker start
+    * 自動起動する方法は不明。。暫定で.bashrcにif付けて上記記載？
 * 動作確認
   * sudo docker run hello-world
 * 一般ユーザーでもdocker使用可能に
