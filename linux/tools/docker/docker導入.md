@@ -62,6 +62,7 @@ chmod +x /usr/local/bin/docker-compose
   * ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 
 * 下記を実行して、docker-composeの補完を有効化
+  * TODO: docker-compose ver 2以降ではcurlが404。恐らく補完未対応なので対応後にコマンド修正
 
 ```
 curl -L https://raw.githubusercontent.com/docker/compose/$(docker-compose version --short)/contrib/completion/bash/docker-compose > /etc/bash_completion.d/docker-compose
