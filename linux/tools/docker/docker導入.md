@@ -58,6 +58,9 @@ sudo su
 curl -L https://github.com/docker/compose/releases/download/1.25.4/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
 chmod +x /usr/local/bin/docker-compose
 
+* WSL2上に導入する場合はシンボリックリンク作成
+  * ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+
 * 下記を実行して、docker-composeの補完を有効化
 
 ```
