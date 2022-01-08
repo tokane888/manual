@@ -10,28 +10,36 @@
     * .m3u8
   * 動画を分割したセグメントファイル
     * .ts
-* ffmpegで配信できるっぽい
-* 参考サイト候補
-  * http://blog.livedoor.jp/linuxer2006/archives/65936430.html
-    * 具体的だがrpm+apache
-  * https://www.yaz.co.jp/tec-blog/web%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9/212
-    * appleツール使用前提
-    * .m3u8ファイルの仕様が詳細
-
-## man ffmpeg
-
-* オプション指定は個々の入出力先指定の前で行う
-* 
+* HLS2 RFS
+  * https://datatracker.ietf.org/doc/html/draft-pantos-hls-rfc8216bis-07.html
+* 公式仕様
+  * 参考
+    * https://developer.apple.com/documentation/http_live_streaming/hls_authoring_specification_for_apple_devices
+    * https://ja.wikipedia.org/wiki/H.264#%E3%83%97%E3%83%AD%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%81%A8%E3%83%AC%E3%83%99%E3%83%AB
+  * コーデック: H.264又はH.265
+  * H.264のコンテナは.mp4又はmpeg transport stream
+  * プロファイル
+    * 目的用途別の機能の集合
+  * レベル
+    * 処理の負荷や仕様メモリ量
+  * 互換性のため、一部のH.264はhigh profile level 4.1以下が望ましい
+  * H.264ではmain, baseline profileよりhigh profileを使うのが望ましい
+  * live/linearコンテンツ
+    * 1時間以上の長期平均segment bit rateはAVERAGE-BANDWIDTHの110%以下でなくてはならない
+    * ピーク時のbit rateはBANDWIDTHの125%以下でなくてはならない
+  * liveとvodの違い
+    * live: 常に新しい映像が追加で届く可能性がある
+    * vod: 今又は将来のある時点で動画が終了
+* 参考
+  * https://ja.wikipedia.org/wiki/H.264#%E3%83%97%E3%83%AD%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%81%A8%E3%83%AC%E3%83%99%E3%83%AB
 
 ## 配信試し
 
 * mkdir video
-* ffmpeg -re -i input.mp4 -bsf:v h264_mp4toannexb -c copy -f hls -hls_list_size 0 -flags +global_header video/video.m3u8
-  * input.mp4は配信する.mp4ファイルのパスに置き換え
+* ffmpeg -i (入力) -bsf:v h264_mp4toannexb -c copy -f hls -hls_list_size 0 -flags +global_header video/video.m3u8
   * videoディレクトリ配下に.tsファイルが順次生成されるのみ
     * これを配信するAPIとかどうすれば良いのか確認
 * オプション
-  * -re ファイルから配信
   * -i 入力.mp4ファイル指定
   * -bsf:v h264_mp4toannexb .tsファイル出力する際に指定
   * -c copy コーデックオプションでcopy modeを選択

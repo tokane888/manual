@@ -2,6 +2,26 @@
 
 * 公式解説: https://docs.fluentd.org/
 
+## 導入
+
+### raspberry pi
+
+* 動確環境
+  * OS: raspbian OS buster
+  * raspberry pi 3B+
+* 参考
+  * https://docs.fluentbit.io/manual/installation/linux/raspbian-raspberry-pi
+* 手順
+  * curl https://packages.fluentbit.io/fluentbit.key | sudo apt-key add -
+  * /etc/apt/sources.list の末尾に下記追記
+    * deb https://packages.fluentbit.io/raspbian/buster buster main
+  * apt update -y
+  * apt-get install td-agent-bit
+  * systemctl enable td-agent-bit
+    * ubuntuなどと異なりservice名がtd-agent-bit
+  * systemctl start td-agent-bit
+  * /var/log/syslogへcpu使用率等が出力される
+
 ## 概要
 
 * install手順
