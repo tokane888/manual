@@ -49,8 +49,9 @@
 * デプロイ
   * ln -fs /usr/local/go/bin/go /usr/bin/go
   * ln -fs /usr/local/go/bin/gofmt /usr/bin/gofmt
+* mkdir -p /root/.go/src
 * 下記を.bashrcに記載
-  * GOPATH="/usr/local/go"
+  * GOPATH="/root/.go"
 
 ## GOPATH, GOROOT関連設定
 
