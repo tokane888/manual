@@ -38,6 +38,20 @@
 * 現在のgoのversion確認
   * go version
 
+## raspberry piでの環境構築
+
+* cd /usr/local
+* 下記のバイナリダウンロードページから最新版取得
+  * https://go.dev/dl/
+  * 例) curl -LO https://go.dev/dl/go1.17.6.linux-armv6l.tar.gz
+* 解凍
+  * tar -zxvf *.tar.ga
+* デプロイ
+  * ln -fs /usr/local/go/bin/go /usr/bin/go
+  * ln -fs /usr/local/go/bin/gofmt /usr/bin/gofmt
+* 下記を.bashrcに記載
+  * GOPATH="/usr/local/go"
+
 ## GOPATH, GOROOT関連設定
 
 * go get
