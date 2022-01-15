@@ -9,6 +9,18 @@
 * 動作確認
   * sudo docker run hello-world
 
+#### ラズパイにdocker-composeインストールする場合
+
+* 動確環境
+  * raspberry pi zero WH
+    * OS: buster
+* 下記から最新のarmv6のurl取得
+  * https://github.com/docker/compose/releases/
+* zero上でdownload
+  * 例)
+    * curl -L https://github.com/docker/compose/releases/download/v2.2.3/docker-compose-linux-armv6 -o /usr/local/bin/docker-compose
+    * chmod +x /usr/local/bin/docker-compose
+
 ### 下記動確環境
 
 ubuntu 18.04
