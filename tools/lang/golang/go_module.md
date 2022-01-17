@@ -51,8 +51,10 @@
   * go list -u -m all
 * 使用module一覧表示
   * go list -m all
-* module update
+* go.modで参照しているmodule update
   * go get -u (repo url)
+* go.modで参照している全module update
+  * go get -u all
 * 既存のprojectにgo.modを追加する場合
   * 下記のどちらかの方法でmodule modeを有効化
     * $GOPATH/srcの外のmodule source treeのrootへ移動
