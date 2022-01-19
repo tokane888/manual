@@ -18,6 +18,7 @@
 * 注意
     * 公式のImage書き込みツールは書き込みに30分以上かかり非常に遅いので、ubuntuで焼いた方が良い
         * デフォルトだとdesktop版が焼かれているためだった
+        * raspbian OS Lite 32-bitのインストールでも時間はかかるがdownloadなど考えるとコンソールより体感だが早い
 * SD Card Formatterダウンロード、インストール
     * https://www.sdcard.org/downloads/formatter/
         * 公式推奨とのこと
