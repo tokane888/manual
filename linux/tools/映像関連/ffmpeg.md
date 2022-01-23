@@ -10,7 +10,13 @@
     [rtsp @ 0x564506b428c0] max delay reached. need to consume packet
     ```
 
-## その他コマンド
+## 入力オプション
 
-* 映像ファイルのメタデータ確認
-  * forever -i ***.mp4
+## 出力オプション
+
+* -t 00:00:30
+  * 動画開始時刻から指定時間切り取り
+* -crf
+  * constant rate factor
+  * 映像品質指定
+    * -qpで指定すると動きのない部分でもサイズが下がらないが、crfだと自動で調整される
