@@ -2,6 +2,11 @@
 
 * submodule追加
   * git submodule add -b (必要ならブランチ名) https://gitlab.***
+* private repoをsubmoduleとして使用する方法
+  * go 1.16以降をインストール
+  * GOPATH配下へ親repoをgit clone
+  * ~/.netrcでuser名とpassを記載
+  * privateとみなすgroupをGOPRIVATEに記載してgo get
 * git submoduleのurl変更方法
   * 変更前後のrepositoryに同じcommit IDのcommitがある場合
     * .gitmoduleのurl書き換え
