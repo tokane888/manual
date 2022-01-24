@@ -1,5 +1,7 @@
 # git submodule
 
+* submodule追加
+  * git submodule add -b (必要ならブランチ名) https://gitlab.***
 * git submoduleのurl変更方法
   * 変更前後のrepositoryに同じcommit IDのcommitがある場合
     * .gitmoduleのurl書き換え
