@@ -20,3 +20,19 @@
   * constant rate factor
   * 映像品質指定
     * -qpで指定すると動きのない部分でもサイズが下がらないが、crfだと自動で調整される
+* -preset
+  * エンコードの速度と圧縮率に影響するオプション
+  * ultrafast, superfast, veryfast, faster, fast, medium, slow, slower, veryslow
+    * 速度は名前順になるが、圧縮率は必ずしもそうならないとのこと
+  * デフォルトはmedium
+  * veryfastが圧縮率が良いとのこと
+
+## エンコード時間
+
+### h.264 => h.265
+
+* 対象元動画
+  * big buck bunny 1080p avi
+    * curl -LO https://download.blender.org/peach/bigbuckbunny_movies/big_buck_bunny_1080p_stereo.avi
+* 劣化をほぼ無くす
+  * ffmpeg -i in.mp4 -c:a copy -c:v hevc_nvenc -crf 18 out.mp4
