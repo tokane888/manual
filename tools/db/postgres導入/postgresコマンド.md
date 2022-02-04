@@ -143,4 +143,5 @@
     * savepointを指定すると、rollbackしてもsavepointまでは確定される
     * savepointに戻るときの構文は下記
       * rollback to (savepoint名)
-      
+* 予約語確認
+  * select * from pg_get_keywords();
