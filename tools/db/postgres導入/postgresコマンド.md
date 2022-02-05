@@ -145,3 +145,10 @@
       * rollback to (savepoint名)
 * 予約語確認
   * select * from pg_get_keywords();
+
+## 注意点
+
+* timestamp型のdefault値をCURRENT_TIMESTAMPにすると、現在のtransaction開始時点の時刻が入る
+  * 1950年とかになったりする
+  * now()等も同じ
+  
