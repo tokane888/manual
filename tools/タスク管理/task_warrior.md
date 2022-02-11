@@ -18,12 +18,10 @@
   make install
   ```
   * 実行ファイルデプロイ
-    * 何故か下記で動いたが、正直2箇所に配置する意味が分からない(2箇所に配置しないと実行時エラー)
-      ```
-      cd src
-      cp task /usr/local/bin/
-      cp task /usr/bin/
-      ```
+    ```
+    cd src
+    cp task /usr/bin/
+    ```
 * (option)tasksh
   * apt install -y tasksh
     * 専用のshellが開き、頭の"task"の入力を省略可能に
