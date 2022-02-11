@@ -44,3 +44,5 @@
   * 定期実行推奨
 * taskwarrior-tui
   * 拡張。vim感覚で操作可能
+  * 詳細ガイド
+    * https://kdheepak.com/taskwarrior-tui/quick_start/
