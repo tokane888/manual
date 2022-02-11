@@ -46,3 +46,4 @@
   * 拡張。vim感覚で操作可能
   * 詳細ガイド
     * https://kdheepak.com/taskwarrior-tui/quick_start/
+  * ? でhelp表示
