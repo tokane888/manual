@@ -145,6 +145,11 @@
       * rollback to (savepoint名)
 * 予約語確認
   * select * from pg_get_keywords();
+* 試験的にコンテナ作成
+  ```
+  docker run --name some-postgres -e POSTGRES_PASSWORD=mysecretpassword -d postgres
+  docker exec -it some-postgres psql postgres postgres
+  ```
 
 ## 注意点
 
