@@ -53,7 +53,13 @@ ubuntu 18.04
   ```
 * wsl2の場合service明示的に有効化
   * service docker start
-    * 自動起動する方法は不明。。暫定で.bashrcにif付けて上記記載？
+    * 自動起動する場合は下記を.bashrcに記載
+      ```
+      service docker status > /dev/null 2>&1
+      if [ $? = 1 ]; then
+          sudo service docker start
+      fi
+      ```
 * 動作確認
   * sudo docker run hello-world
 * 一般ユーザーでもdocker使用可能に
