@@ -30,3 +30,12 @@
     * https://github.com/jfeliu007/goplantuml
 * クラス図生成
   * goplantuml -recursive (解析対象のディレクトリ) > tmp.pu
+
+## 既存DBからER図生成
+
+* planterインストール
+  * go install github.com/achiku/planter@latest
+* DBへ接続してER図生成
+  * planter postgres://planter@localhost/planter?sslmode=disable -o example.uml
+    * postgresのURLフォーマットは下記
+      * postgresql://[user[:password]@][netloc][:port][/dbname][?param1=value1&...]
