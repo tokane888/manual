@@ -1,4 +1,4 @@
-# nfs
+# nfs(network file system)
 
 * 主にlinux向けのファイルサーバ
 * nfsプロトコルでファイルをやり取りする
