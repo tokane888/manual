@@ -4,7 +4,10 @@
 
 * vscode拡張のPlant UMLインストール
 * 下記実行でChocolateyからGraphvizインストール
-  * cinst --yes Graphviz
+  * windows(WSL2以外)の場合
+    * cinst --yes Graphviz
+  * WSL2の場合
+    * apt install -y graphviz
 * jdkインストール
   * chocolateyからのjdk11のインストールは、パッケージにエラーがあるのかfailしたためwebからインストール
   * https://java.com/ja/download/
