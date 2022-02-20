@@ -1,4 +1,5 @@
 # gitlab use case
 
 * sub group作成
-  * 右上のmenu => Groups => Create group => create group => 設定入力して作成
+  * group名表示の右辺りから"New subgroup"押下
+    * 左上のmenuから作成するとsubgroupではなく完全新規のgroupになるため注意
