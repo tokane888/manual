@@ -12,6 +12,9 @@
 
 ## 入力オプション
 
+* 出力オプションを含む全オプションを確認
+  * ffmpeg --help full | less
+
 ## 出力オプション
 
 * -t 00:00:30
@@ -36,3 +39,20 @@
     * curl -LO https://download.blender.org/peach/bigbuckbunny_movies/big_buck_bunny_1080p_stereo.avi
 * 劣化をほぼ無くす
   * ffmpeg -i in.mp4 -c:a copy -c:v hevc_nvenc -crf 18 out.mp4
+
+## 特定ケース
+
+* 30fps映像を受信し、5秒間隔の、頭にキーフレームを含む.tsファイルに分割
+  * ffmpeg -rtsp_transport tcp -stimeout 1000000 -i rtsp://192.168.11.1/video -f hls  -hls_time 5 -g 150 -keyint_min 150 -sc_threshold 0 out.m3u8
+    * -hls_time
+      * .tsファイルを分割する秒数(推奨値)
+    * -g
+      * Group Of Pictureに含まれるフレーム数
+        * キーフレーム以外も含む
+        * ここでは30fpsの映像を5秒で切りたいので、フレーム数は30*5=150
+      * なおGroup Of Pictureには最低1つのキーフレームが含まれる
+    * -keyint_min
+      * 最低キーフレーム間隔
+      * ここでは5秒(150フレーム)毎に映像を切るように設定
+    * -sc_threshold
+      * シーン変更時？などに自動的ににキーフレームを挿入されることを禁止
