@@ -12,8 +12,8 @@
   * nvm公式ページでcurlで叩くurlを確認して実行
     * 公式) https://github.com/nvm-sh/nvm#installing-and-updating
     * user毎にインストールされるので、rootではなく、自分のユーザーで実行
-    * 2021/7/28現在は下記
-      * curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
+    * 2022/3/06現在は下記
+      * curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
         * nvmのインストールもupdateも同じコマンドで可能
   * 設定読み込み
     * . ~/.bashrc
@@ -33,33 +33,34 @@
         v0.1.22
         v0.1.23
         (省略)
-        v16.5.0
+        v17.6.0
         ```
   * version指定してインストール
-    * nvm install v16.5.0
+    * nvm install v17.6.0
   * インストールしたバージョンを一覧表示
     * nvm list
       ```
       $ nvm list
-      ->      v16.5.0
-      default -> v16.5.0
+      ->      v17.6.0
+      default -> v17.6.0
       iojs -> N/A (default)
       unstable -> N/A (default)
-      node -> stable (-> v16.5.0) (default)
-      stable -> 16.5 (-> v16.5.0) (default)
-      lts/* -> lts/fermium (-> N/A)
+      node -> stable (-> v17.6.0) (default)
+      stable -> 17.6 (-> v17.6.0) (default)
+      lts/* -> lts/gallium (-> N/A)
       lts/argon -> v4.9.1 (-> N/A)
       lts/boron -> v6.17.1 (-> N/A)
       lts/carbon -> v8.17.0 (-> N/A)
       lts/dubnium -> v10.24.1 (-> N/A)
-      lts/erbium -> v12.22.3 (-> N/A)
-      lts/fermium -> v14.17.3 (-> N/A)
+      lts/erbium -> v12.22.10 (-> N/A)
+      lts/fermium -> v14.19.0 (-> N/A)
+      lts/gallium -> v16.14.0 (-> N/A)
       ```
       * 上記のようにlong term support版のnodejsへのaliasも表示される
 * 有効なnodejsのバージョンを確認
   * node -v
     ```
     $ node -v
-    v16.5.0
+    v17.6.0
     ````
   * 他のユーザーでは有効になっていないので注意
