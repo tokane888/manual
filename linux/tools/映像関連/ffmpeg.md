@@ -56,3 +56,9 @@
       * ここでは5秒(150フレーム)毎に映像を切るように設定
     * -sc_threshold
       * シーン変更時？などに自動的ににキーフレームを挿入されることを禁止
+
+## mp3編集
+
+* mp3を2回繰り返すmp3を作成
+  * ffmpeg -stream_loop 1 -fflags +genpts -i kisho.mp3 -c copy kisho2.mp3
+    * genptsは、mp3を接続したあとでptsを振り直している
