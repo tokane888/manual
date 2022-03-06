@@ -18,3 +18,16 @@
     * -n: ドメイン名とIPの変換を行わない
     * -vv: 詳細ログ出力
     * dst port: 宛先port指定
+* 自身の80番portへのリクエストを取得
+  * tcpdump -i wlan0 -Q in -n -vv dst port 80
+    ```
+    192.168.12.100.33024 > 192.168.12.101.80: Flags [P.], cksum 0xe0d7 (correct), seq 0:191, ack 1, win 491, options [nop,nop,TS val 3576595338 ecr 3328893325], length 191: HTTP, length: 191
+    POST /lte-button/click HTTP/1.1
+    Host: joyhome.mydns.jp:50080
+    User-Agent: curl/7.68.0
+    Accept: */*
+    Content-Type: application/json
+    Content-Length: 36
+
+    {"serial": "test", "type": "single"}[!http]
+    ```
