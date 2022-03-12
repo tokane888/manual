@@ -151,9 +151,14 @@
   docker exec -it some-postgres psql postgres postgres
   ```
 
-## 注意点
+## トラブルシュート
 
-* timestamp型のdefault値をCURRENT_TIMESTAMPにすると、現在のtransaction開始時点の時刻が入る
+* ラズパイでtimestamp型のdefault値をCURRENT_TIMESTAMPにすると、現在のtransaction開始時点の時刻が入る
   * 1950年とかになったりする
   * now()等も同じ
-  
+  * ラズパイ上のdockerコンテナはバグ？で時刻が正常にhostと同期しないことがあるため
+* 実行中のsql確認
+  * 後述のコマンドの出力が見にくいので、まず拡張表示をonに
+    * 
+  * select * from pg_stat_activity;
+    * 
