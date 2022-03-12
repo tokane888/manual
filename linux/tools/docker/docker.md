@@ -32,14 +32,10 @@
     jrei/systemd-ubuntu   latest              5b30d83c97b7        4 months ago        158MB
     ```
 * コンテナIP確認
-  * docker container inspect (コンテナ名)
-    * "Networds"配下の"IPAddress"参照
-      * 注)"NetworkSettings"直下ではない
-  * 下記手順でも確認可能
-    * ネットワーク名確認
-      * docker container inspect --format '{{.NetworkSettings.Networks}}' (コンテナ名)
-    * IP確認
-      * docker container inspect --format '{{.NetworkSettings.Networks.(ネットワーク名).IPAddress}}' (コンテナ名)
+  * コンテナID確認
+    * docker ps
+  * コンテナIP確認
+    * docker exec -it (コンテナID) hostname -i
 * :latest tagのついたdocker imageに対応するtagを探す
   * https://github.com/ryandaniels/docker-script-find-latest-image-tag
 
