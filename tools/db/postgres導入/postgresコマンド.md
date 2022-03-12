@@ -159,6 +159,12 @@
   * ラズパイ上のdockerコンテナはバグ？で時刻が正常にhostと同期しないことがあるため
 * 実行中のsql確認
   * 後述のコマンドの出力が見にくいので、まず拡張表示をonに
-    * 
+    * \x
   * select * from pg_stat_activity;
-    * 
+* ロック状態確認
+  ```
+  SELECT l.pid,l.granted,d.datname,l.locktype,relation,relation::regclass,transactionid,l.mode
+    FROM pg_locks l  LEFT JOIN pg_database d ON l.database = d.oid
+    WHERE  l.pid != pg_backend_pid()
+    ORDER BY l.pid;
+  ```
