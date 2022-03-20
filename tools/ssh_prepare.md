@@ -69,6 +69,8 @@
     * vim /etc/ssh/sshd_config
         * "PermitRootLogin"で検索し、下記のように書き換え
             * PermitRootLogin yes
+        * 何か問題が生じた場合は下記も追記してデバッグログ出力
+            * LogLevel debug
     * systemctl restart ssh
 * クライアント側手順
     * 一般ユーザーの場合と同様に公開鍵をサーバ側の下記パスへコピー
