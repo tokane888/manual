@@ -39,6 +39,6 @@
 * planterインストール
   * go install github.com/achiku/planter@latest
 * DBへ接続してER図生成
-  * planter postgres://planter@localhost/planter?sslmode=disable -o ER.uml
+  * planter postgres://planter@localhost/planter?sslmode=disable -o ER.puml
     * postgresのURLフォーマットは下記
       * postgresql://[user[:password]@][netloc][:port][/dbname][?param1=value1&...]
