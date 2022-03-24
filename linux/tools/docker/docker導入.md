@@ -70,10 +70,10 @@ ubuntu 18.04
 
 * 下記で最新版のバージョン番号確認
   * https://github.com/docker/compose/releases/
-* 下記の(1.25.4)の部分を上記のバージョン番号に置き換えてdocker-composeインストール
+* 下記のバージョン番号部分を上記のバージョン番号に置き換えてdocker-composeインストール
 
 sudo su
-curl -L https://github.com/docker/compose/releases/download/1.25.4/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
+curl -L https://github.com/docker/compose/releases/download/v2.3.3/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
 chmod +x /usr/local/bin/docker-compose
 
 * WSL2上に導入する場合はシンボリックリンク作成
