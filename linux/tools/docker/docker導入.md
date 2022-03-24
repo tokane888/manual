@@ -55,9 +55,9 @@ ubuntu 18.04
   * service docker start
     * 自動起動する場合は下記を.bashrcに記載
       ```
-      service docker status > /dev/null 2>&1
-      if [ $? = 1 ]; then
-          sudo service docker start
+      service docker status > /dev/null
+      if [ $? != 0 ]; then
+        service docker start > /dev/null
       fi
       ```
 * 動作確認
