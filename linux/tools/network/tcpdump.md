@@ -31,3 +31,8 @@
 
     {"serial": "test", "type": "single"}[!http]
     ```
+* wireshark向けのフォーマットでキャプチャ結果を保存
+  * tcpdump -i eno2 -w dump.pcap
+    * ssh接続先で実行し、pcapをlocalに転送して解析等可能
+* 送受信先ip指定
+  * tcpdump -i eno2 host 10.18.113.233
