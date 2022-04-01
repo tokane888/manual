@@ -38,6 +38,8 @@
     * docker exec -it (コンテナID) hostname -i
 * :latest tagのついたdocker imageに対応するtagを探す
   * https://github.com/ryandaniels/docker-script-find-latest-image-tag
+* コンテナ内のrootディレクトリに複数ファイルまとめてコピー
+  * tar -cv *.deb | docker cp - (コンテナ名):/root/
 
 ### ビルド関連コマンド
 
