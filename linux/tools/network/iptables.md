@@ -61,6 +61,8 @@
           if [ $block_rule_exists -eq 0 ]; then
             echo "block rule exists."
         ```
+  * 全部のforwardパケットを最優先でdrop
+    * iptables -I FORWARD 1 -j DROP
 
 ## 設定永続化方法
 
