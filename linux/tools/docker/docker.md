@@ -40,6 +40,14 @@
   * https://github.com/ryandaniels/docker-script-find-latest-image-tag
 * コンテナ内のrootディレクトリに複数ファイルまとめてコピー
   * tar -cv *.deb | docker cp - (コンテナ名):/root/
+* volume一覧表示
+  * docker volume ls
+* volume削除
+  * 特定のvolume削除
+    * docker volume rm (volume_name)
+  * 使用していない全volume削除
+    * docker volume prune -f
+  * 注) docker rm -f (コンテナID) ではvolumeは削除されない
 
 ### ビルド関連コマンド
 
