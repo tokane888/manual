@@ -243,6 +243,19 @@
         * 上下左右逆の場合
             * sudo raspistill -vf -hf -v -o test.jpg
 
+### リモートデスクトップ接続可能にする場合
+
+* 前提
+  * GUI有りのOSを使用していること
+* 手順
+  * server(ラズパイ)側
+    * apt update -y
+    * apt install -y xrdp
+    * gpasswd -a xrdp ssl-cert
+  * client側
+    * windowsからRDPで接続
+      * server側でportを変更していなければ、3389番portで接続成功する
+
 ### 参考
 
 * https://www.1ft-seabass.jp/memo/2018/07/23/raspbian-install-201807-memo/
