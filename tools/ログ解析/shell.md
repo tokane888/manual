@@ -8,3 +8,5 @@
 * 複数行を、space区切りの単一行に変換
   * cat source.txt | paste -sd' ' -
     * 参考) https://unix.stackexchange.com/questions/593993/convert-multi-lines-to-single-line-with-spaces-and-quotes
+* stdout, stderrを両方ともhoge.txtへリダイレクト
+  * echo fuga &>hoge.txt
