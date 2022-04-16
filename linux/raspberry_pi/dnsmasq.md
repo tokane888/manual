@@ -56,6 +56,11 @@
     interface=wlan0
     dhcp-range=10.3.141.50,10.3.141.255,255.255.255.0,12h
     ```
+* ip割当を、有効期限前にリセットする方法
+  * 下記から当該ipに関する設定行を削除
+    * /var/lib/misc/dnsmasq.leases
+  * systemctl restart dnsmasq
+  * ip割り当てられる側のOS再起動
 
 ## サイトブロック方法
 
