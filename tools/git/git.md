@@ -25,6 +25,9 @@
   * git ch master -- test.sh
 * merge済み、又はremoteで削除済み(upstream gone)のブランチを削除
   * git fetch -p && for branch in $(git branch -vv | grep ': gone]' | awk '{print $1}'); do git branch -D $branch; done
+* localで作成した、remoteに存在しないbranchをremoteに作成してpush
+  * git checkout (当該ブランチ)
+  * git push origin -u HEAD
 
 ### トラブルシューティング
 
