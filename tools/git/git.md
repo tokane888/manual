@@ -28,6 +28,8 @@
 * localで作成した、remoteに存在しないbranchをremoteに作成してpush
   * git checkout (当該ブランチ)
   * git push origin -u HEAD
+* branch名変更
+  * git branch -m main master
 
 ### トラブルシューティング
 
