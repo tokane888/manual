@@ -60,3 +60,9 @@
 * /etc/fstabに下記記載
   * UUID=B06EBF5B6EBF1954 /media/hdd auto nosuid,nodev,nofail,x-gvfs-show 0 0
   
+## デバイスがHDDかSSDか判定する方法
+
+* fdisk -lで当該デバイス探す
+  * mainのストレージはefiを含む
+* 当該Diskがrotationalか確認し、0ならSSD
+  * cat /sys/block/sda/queue/rotational
