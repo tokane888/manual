@@ -47,3 +47,5 @@
   * trapでは、sshdが死んだ際にmain.shが死んでしまう関係で、nohupの代替にはならない
 * -u オプション有効時に未定義の変数を検知
   * if [ -v "START_TIME" ]; then
+* timezoneに関係なく時間加算
+  * date -d '2022-04-28T11:00:00+09:00 +1 hours' +%s
