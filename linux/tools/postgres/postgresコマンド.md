@@ -70,3 +70,26 @@
   from pg_tables 
   where schemaname not like 'pg_%' and schemaname != 'information_schema';
   ```
+* trigger一覧表示
+  * select * from pg_trigger;
+* triggerに紐づく関数名取得
+  * SELECT tgname, proname FROM pg_trigger t, pg_proc f where t.tgfoid = f.oid and tgname = '[trigger名]';
+* 関数の中身の確認
+  * SELECT prosrc FROM pg_proc WHERE proname = '[関数名]';
+
+### パフォーマンス・チューニング
+
+* 完了まで一定時間以上かかっているsqlをpostgresでログ出力
+  * 設定
+    * set log_min_duration_statement to 1000;
+      * 多分必要ないけどreload
+        * SELECT pg_reload_conf();
+  * sleep投げてテスト
+    * SELECT pg_sleep(3);
+* 実行計画確認
+  * explain (sqlクエリ)
+  * 実際にクエリを実行して処理時間取得
+    * explain analyze (sqlクエリ)
+  * 概要
+    * index scanが行われていると比較的高速
+    * seq scanは低速
