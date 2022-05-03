@@ -35,3 +35,18 @@
   * git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
   * ~/.zshrcの"plugins=(***)"の行に項目追記
     * plugins=(git zsh-syntax-highlighting zsh-autosuggestions)
+* ctrl+u押下でカーソル手前の文字が削除されない場合、下記で割り当て明示
+  * ~/.zshrc
+    * bindkey \^U backward-kill-line
+
+## plugin
+
+### oh-my-zsh導入時
+
+* plugin追加方法
+  * 下記パス配下のディレクトリ名を~/.zshrcのpluginsに記載
+    * ~/.oh-my-zsh/plugins/
+  * 下記で反映
+    * omz reload
+* 良さそうなplugin
+  * zaw
