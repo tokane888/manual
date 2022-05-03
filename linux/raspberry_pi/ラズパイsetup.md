@@ -256,6 +256,19 @@
     * windowsからRDPで接続
       * server側でportを変更していなければ、3389番portで接続成功する
 
+### zeroでDB使用する場合
+
+* 標準の方法でインストールした場合、コンテナ内の時刻が不正になる
+  * current_timestampでの時刻取得などに影響
+* 下記で修正
+  * apt source追記
+    * /etc/apt/sources.list.d/docker-time-fix.list
+      * 下記を追記
+        * deb http://raspbian.raspberrypi.org/raspbian/ testing main
+  * apt update -y
+  * apt-get install libseccomp2/testing
+  * systemctl daemon-reload && systemctl restart docker
+
 ### 参考
 
 * https://www.1ft-seabass.jp/memo/2018/07/23/raspbian-install-201807-memo/
