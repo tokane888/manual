@@ -1,7 +1,8 @@
 # aws lambda
 
 * 外部api呼び出し許可
-  * デフォルトの設定では不可
+  * VPC環境ではデフォルトの設定では不可
+    * 非VPC環境であれば特殊な設定なしで可能
   * マニュアルに従ってnat gateway等作成することで可能に
     * https://aws.amazon.com/jp/premiumsupport/knowledge-center/internet-access-lambda-function/
     * 概要は下記
@@ -19,19 +20,10 @@
 * 外部api呼び出しのコスト最適化
   * nat gatewayを使用する方式は金がかかる
     * nat gatewayは起動しているだけで料金かかるため
-  * natインスタンスに置き換える方式がある？
-* 調査
-  * natとnat gatewayの比較
-    * amazonはnat gateway推奨
-    * nat gateway
-      * メリット
-        * 高可用性
-        * 帯域
-        * 管理の手間がかからない
-      * デメリット
-        * 金がかかる
-    * 今からnat instance使うのは非推奨+結局内部的にec2立てるので金かかる
-  * 非VPC設定のlambdaを使えば良い
-    * nat不要なので
+  * natインスタンスに置き換える方式はあるが、amazonがnat gateway推奨しているため、基本使用しない
+  * 非VPCのlambdaを使用する方式が良い
     * lambdaの設定画面から下記で非VPCに変更可能
       * 設定 => VPC => 編集 => VPCから"なし"を選択
+* timeout
+  * lambdaはデフォルト3秒でtimeoutする
+    * lambda画面で"設定" => "一般設定" => "編集"からタイムアウト編集可能
