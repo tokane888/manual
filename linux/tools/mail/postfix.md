@@ -4,6 +4,7 @@
     * 他にexim4もメインリポジトリに入っている
     * MTAはSMTPプロトコルでメッセージをやり取りするのでSMTPサーバとも呼ばれる
     * ubuntu, debianではeximを標準に採用したとのこと
+    * CentOSではpostfixを標準に採用
 * 動確環境
     * Ubuntu 18.04
 
