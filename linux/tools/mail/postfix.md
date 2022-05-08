@@ -3,6 +3,7 @@
 * UbuntuのdefaultのMTA(Mail Transfer Agent)
     * 他にexim4もメインリポジトリに入っている
     * MTAはSMTPプロトコルでメッセージをやり取りするのでSMTPサーバとも呼ばれる
+    * ubuntu, debianではeximを標準に採用したとのこと
 * 動確環境
     * Ubuntu 18.04
 
