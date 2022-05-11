@@ -25,3 +25,10 @@
   (API token入力)
   todoist list
   ```
+  * todoist syncが403エラーになる場合下記のtoken設定を確認
+    * $HOME/.config/todoist/config.json
+* 主なコマンド
+  * 今日のタスク一覧表示
+    * todoist l --filter 'today'
+  * 今日のp1タスク一覧表示
+    * todoist l --filter 'today&p1'
