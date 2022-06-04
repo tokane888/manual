@@ -16,10 +16,10 @@
   * 下記はmail-managerという名前のユーザーを作成する例
     * adduser mail-manager
     * usermod -aG sudo mail-manager
-* sudo apt-get install -y postfix
+* sudo DEBIAN_PRIORITY=low apt install postfix
     * 後で設定するので質問されたらデフォルト値を選択
 * sudo dpkg-reconfigure postfix
-    * (インストール時設定より詳細な設定が可能)
+    * (インストール時設定より詳細な設定が可能。必要に応じて実行)
     * "あなたの用途にあったメールサーバ設定形式を選んでください"
       * gitlabなどの通知メールサーバとして使用する場合
         * "インターネットサイト"
@@ -60,11 +60,13 @@
       * sudo apt install -y s-nail
     * /etc/s-nail.rcの末尾に下記追記
       ```
+      set emptystart
       set folder=Maildir
       set record=+sent
       ```
-      * Maildirディレクトリを内部folder変数に設定
-      * 送信済みメールをfolder変数として設定されたディレクトリ内に保存するためsend mboxファイル作成
+      * set emptystart: クライアントが空の受信トレイでも開けるように
+      * set folder: Maildirディレクトリを内部folder変数に設定
+      * 送信済みメールをfolder変数として設定されたディレクトリ内に保存するためsend mboxファイル作成。今回はMaildirディレクトリ
   * home dirにMaildir構造を作成するため、s-nailで自分にメール送信
     * sentファイルはMaildirが作成されないと利用できない
       * 最初のメールでは書き込みを無効化する必要がある
@@ -75,8 +77,10 @@
   * 送信済みのメッセージが受信出来ているか確認
     * 一度terminalを閉じて環境変数再読み込み
     * s-nail
-    * メール一覧が表示され、enter押下でメッセージが表示される
-    * h入力後enter押下でメッセージ一覧に戻る
+    * メール一覧が表示され、(番号) => enterでメッセージが表示される
+    * q押下でメッセージ一覧に戻る
+      * ? => enterでhelp閲覧可能
+    * h => enterでメッセージ一覧表示
     * 読んだメールのstatusがR(Read)になったことが確認できる
     * 当該メッセージは不要なのでd => enter で削除
     * q => enter でターミナルに戻る
@@ -85,7 +89,43 @@
       * vi ~/test_message
     * 送信
       * cat ~/test_message | s-nail -s 'Test email subject' -r mail-manager@joyhome.mydns.jp (送信先メールアドレス)
-    * 
+  * ここまでではlocalのmail addrへはmail送信可能だが、gmailなどへは送信不可
+
+### gmailなどへも送信可能にするための追加設定(OP25B回避)
+
+* 参考) https://qiita.com/mizuki_takahashi/items/1b33e1f679359827c17d
+* 自分でSMTPサーバを立てただけでは基本的に受信側に信用されていないのでメール受信してもらえない
+* デバッグ関連情報
+  * コマンド
+    * デフォルトの設定を確認
+      * postconf -d
+    * 上書きされた設定を確認
+      * postconf -n
+  * mailログ
+    * /var/log/mail.log
+  * /etc/postfix/main.cf 必要に応じて調整
+    * mydomain: domain名
+    * myhostname: host名。基本的にdomain名より1要素以上多い
+    * inet_interfaces: メールを受け取るネットワーク・インターフェースアドレス
+      * デフォルトはall
+    * inet_protocols = ipv4
+      * ipv4を使用してメール送信
+  * 試験的なメール送信のため、パッケージインストール
+    * apt install -y mailutils
+  * メール送信
+    * mail (メールアドレス)
+      * 諸々入力後にctrl+dで送信
+* 方法1: サブミッションポート（代替ポート）を使用
+  * プロバイダのメールサーバに対する？認証が必要になる
+  * 587番ポート
+    * SMTP AUTHが必要
+  * 465番ポート(SMTP over SSL/TLS)
+    * 他のサービスにも割り当てられており、現在は非推奨
+* 方法2: メールリレーサービス使用
+  * プロバイダの詳細な情報がない場合はこれを使用するのが良さそう
+  * sendgrid等無料のサービスもある
+    * https://sendgrid.kke.co.jp/
+  * IP reputationの高いIPを持つSMTPサーバをリレーサーバとして使用すると送信成功率が上がる
 
 ### 設定ファイル
 
