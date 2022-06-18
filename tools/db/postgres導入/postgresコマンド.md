@@ -161,6 +161,8 @@
   * 後述のコマンドの出力が見にくいので、まず拡張表示をonに
     * \x
   * select * from pg_stat_activity;
+  * activeなsqlに限定して必要な項目のみ表示する場合は下記
+    * SELECT pid, query_start, query AS query FROM pg_stat_activity WHERE state='active' ORDER BY query_start;
 * ロック状態確認
   ```
   SELECT l.pid,l.granted,d.datname,l.locktype,relation,relation::regclass,transactionid,l.mode
