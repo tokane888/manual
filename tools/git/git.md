@@ -30,6 +30,10 @@
   * git push origin -u HEAD
 * branch名変更
   * git branch -m main master
+* gitの全branchを含めてclone
+  * for remote in `git branch -r`; do git branch --track ${remote#origin/} $remote; done
+  * git fetch --all
+  * git pull --all
 * remote branch名変更
   * git branch -m test/before test/after
   * git push origin test/after
