@@ -92,6 +92,11 @@ gitlab/gitlab-ce:13.11.1-ce.0
   * https://about.gitlab.com/install/#ubuntu
 * おすすめ関連設定資料確認
   * https://docs.gitlab.com/omnibus/index.html
+* 下記警告が出る場合
+  * Open registration is enabled on your instance.
+  * 下記開く
+    * (ドメイン)/admin/application_settings/general#js-signup-settings
+    * "Sign-up enabled"無効化して"Save changes"
 
 ## トラブルシューティング
 

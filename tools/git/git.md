@@ -30,6 +30,10 @@
   * git push origin -u HEAD
 * branch名変更
   * git branch -m main master
+* remote branch名変更
+  * git branch -m test/before test/after
+  * git push origin test/after
+  * git push origin :test/before
 
 ### トラブルシューティング
 
