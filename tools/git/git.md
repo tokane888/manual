@@ -38,6 +38,10 @@
   * git branch -m test/before test/after
   * git push origin test/after
   * git push origin :test/before
+* git push先がhttpsかsshか確認
+  * git remote -v
+* git push先のhttps/ssh切り替え
+  * git remote set-url origin (url)
 
 ### トラブルシューティング
 
