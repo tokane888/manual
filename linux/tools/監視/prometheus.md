@@ -11,9 +11,9 @@
 * 下記から対象環境向けの.tar.gzダウンロード
   * https://prometheus.io/download#prometheus
     * アーキはプルダウンから選択
-  * curl -LO https://github.com/prometheus/prometheus/releases/download/v2.32.1/prometheus-2.32.1.linux-armv7.tar.gz
+  * curl -LO https://github.com/prometheus/prometheus/releases/download/v2.40.6/prometheus-2.40.6.linux-amd64.tar.gz
 * 解凍
-  * tar -zxvf prometheus-2.32.1.linux-armv7.tar.gz
+  * tar -zxvf prometheus-*.tar.gz
 * cd prometheus-*
 * 自身を監視するよう設定
   * prometheus.ymlとして下記のページの設定を保存

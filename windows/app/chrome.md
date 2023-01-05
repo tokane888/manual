@@ -19,3 +19,9 @@
       * 1: 無効
       * 2: 常時private mode
   * Windows再起動
+
+## ubuntuで使用する場合
+
+* デフォルトではlocalで動かしているdnsmasqなどを使用せずに名前解決を試みるので修正
+  * chrome://settings/security?search=dns
+    * 設定画面から"セキュアDNSを使用する"無効化

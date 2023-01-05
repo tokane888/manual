@@ -107,3 +107,33 @@
 * journalctl status dnsmasqで出ている下記のwarningは詳細不明だが一旦無視して良さそう
   * May 15 19:27:39 raspberrypi dnsmasq[918]: Too few arguments.
   * 参考) https://raspberrypi.stackexchange.com/questions/120338/dnsmasq-error-dnsmasq1122-too-few-arguments
+
+## Ubuntu 22.04への導入手順
+
+* 53 portを使用しているsystemd-resolved停止
+  * systemctl disable --now systemd-resolved
+* apt -y install dnsmasq
+* /etc/dnsmasq.conf 末尾に下記追記
+  ```
+  domain-needed
+  bogus-priv
+
+  # ログの出力先
+  log-facility=/var/log/dnsmasq/dnsmasq.log
+
+  # DNSクエリのログを取る
+  log-queries
+  ```
+* mkdir /var/log/dnsmasq
+* ログローテーション設定追加
+  * 
+* systemd-resolvedがリンクしていた設定ファイルをunlink
+  * unlink /etc/resolv.conf
+* /etc/resolv.conf のnameserver指定を下記に変更
+  ```
+  nameserver 127.0.0.1
+  nameserver 8.8.8.8
+  ```
+* 設定反映のため再起動
+  * systemctl restart dnsmasq
+* dig hoge.com で正常に名前解決出来ること確認
