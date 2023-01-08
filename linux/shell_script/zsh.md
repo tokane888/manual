@@ -14,6 +14,7 @@
     * wsl --shutdown
 * oh-my-zshインストール
   * sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+    * default shellをzshに切り替えて良いか質問されるので変更
 * .bashrcから.zshrcに移行
   * cat ~/.bashrc >> ~/.zshrc
   * .zshrcからbash依存の行を削除
