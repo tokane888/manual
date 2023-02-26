@@ -67,3 +67,5 @@
 * mp3を2回繰り返すmp3を作成
   * ffmpeg -stream_loop 1 -fflags +genpts -i kisho.mp3 -c copy kisho2.mp3
     * genptsは、mp3を接続したあとでptsを振り直している
+* 音量を2倍に
+  * ffmpeg -i input.wav -filter:a "volume=2.0" output.wav
