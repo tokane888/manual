@@ -11,3 +11,7 @@
 
 * Microsoft製の拡張
 * 何故か何度かretryしないとssh接続成功しない場合が多い
+
+## ubuntuのrootで`code .`でターミナルから開けない問題
+
+* 
