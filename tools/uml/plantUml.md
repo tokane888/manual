@@ -9,8 +9,11 @@
   * WSL2の場合
     * apt install -y graphviz
 * jdkインストール
-  * chocolateyからのjdk11のインストールは、パッケージにエラーがあるのかfailしたためwebからインストール
-  * https://java.com/ja/download/
+  * windowsの場合
+    * chocolateyからのjdk11のインストールは、パッケージにエラーがあるのかfailしたためwebからインストール
+    * https://java.com/ja/download/
+  * ubuntuの場合
+    * apt install -y default-jdk
 * OS再起動
 * 動作確認
   * vscodeでtest.puを作成し、下記記載
