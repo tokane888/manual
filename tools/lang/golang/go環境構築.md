@@ -29,13 +29,16 @@
   * gvm use go1.4
 * インストール可能なgoのver一覧取得
   * gvm listall
-* 特定verのgoをインストールして有効化
+* ver 1.17をインストールして有効化
   * gvm install go1.17
     * 1.20以降を使用する場合も1.17以上のgoでないとコンパイルが出来ないので一旦インストール
   * gvm use go1.17 --default
     * --defaultを付けておかないと、terminalから抜けた際に設定が保持されない
 * ダウンロード済みのgoのver一覧取得
   * gvm list
+* 最新版をインストールし、デフォルト設定
+  * gvm install go1.20.2
+  * gvm use go1.20.2 --default
 * 現在のgoのversion確認
   * go version
 
