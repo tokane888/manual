@@ -4,7 +4,13 @@
   * ubuntu server, ubuntu desktopの違いに注意
   * 古いimageのdownloadは下記から可能
     * http://old-releases.ubuntu.com/releases/18.04.3/
-* [bootable usb作成](https://tutorials.ubuntu.com/tutorial/tutorial-create-a-usb-stick-on-windows)
+* bootable usb作成
+  * windows上で作成する場合
+    * https://tutorials.ubuntu.com/tutorial/tutorial-create-a-usb-stick-on-windows
+  * ubuntu上で作成する場合
+    * dd if=ubuntu-22.04.2-desktop-amd64.iso of=/dev/sda1 conv=fdatasync
+      * data dumpコマンド
+      * if: input file, of: output fileは適宜変更
   * live imageとしての使用も、ubuntuインストールも可能
 * 実機起動しつつ、F12, F2, ESC辺りを押してBIOS起動
   * Boot順でUSB最優先に
@@ -36,3 +42,7 @@
 * 日本語入力
   * OSインストール時に日本語設定を選択していても、実機のキーボードの全角/半角キーは無効になっている
   * winキー+space で全角/半角キー有効化
+* ctrl+.でなぜかeが入力されるので下記で解消
+  * 参考) https://askubuntu.com/questions/1404448/key-combination-ctrlperiod-not-working-ubuntu-22-04
+  * ibus-setup
+  * GUI開くので`絵文字`タブ => ctrl+periodのショートカット無効化
