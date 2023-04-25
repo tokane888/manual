@@ -27,6 +27,9 @@
                             C-Media Electronics Inc. USB Audio Device at usb-20980000.usb-1, full speed
       ```
       * この場合USBは1番なので、1番へ出力したい
+* (オプション)音量調整
+  * sudo alsamixer
+    * GUI間隔で音量調整可能
 * サウンド出して確認
   * aplay /usr/share/sounds/alsa/Noise.wav
     * 最初はHDMIの出力優先度が高いので、hdmi接続していなければ音が出ない
@@ -46,6 +49,3 @@
 * 任意のmp3ダウンロード
 * mp3再生
   * mpg321 kisho.mp3
-* (オプション)音量調整
-  * sudo alsamixer
-    * GUI間隔で音量調整可能

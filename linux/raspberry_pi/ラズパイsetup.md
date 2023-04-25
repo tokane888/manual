@@ -9,9 +9,11 @@
 
 ### SDカードへOS焼付
 
-* OSイメージのLite版zipを以下からダウンロード
+* (winの場合)OSイメージのLite版zipを以下からダウンロード
     * https://www.raspberrypi.org/downloads/raspbian/
     * zipは解凍と焼付を同時に行うため、ここでは解凍不要
+* OSイメージのLite版.img.xzを以下からダウンロード
+    * https://www.raspberrypi.com/software/operating-systems/
 
 #### Windows10上で焼き付ける場合
 
@@ -94,6 +96,7 @@
             * sshファイルでも、sshディレクトリでも失敗
             * TODO: 原因調査
 * wi-fi設定
+    * 注意) raspberry pi zeroは2.4GHzにしか接続出来ないので接続先注意
     * sudo wpa_passphrase (SSID) (pass)
         * 例) wpa_passphrase wi-fi password
             ```
@@ -121,27 +124,14 @@
 
 ### OSセットアップ
 
-* デフォルトパスでログイン
-    * user: pi
-    * pass: raspberry
-* 他のユーザー作成
-    * adduser tom
-    * visudo修正
-* piユーザーを残す場合は必ずパスワード変更
-    * passwd
-    * バックドア(kaiten), ネットワークスキャナ(zmap)など仕掛けられるケースあり
-    * 削除する手順は後述。opensshでの接続及びsudo su成功後の削除
-* 日本語キーボード配列に変更（半角／全角は効かない。追って調査）
-    * `sudo raspi-config`
-    * "Localisation Options"
-    * "L3 Keyboard"
-    * "Generic 105-key PC (intl.)"
+* 通電して初回起動
+* キーボード選択画面出るので選択
     * Keyboard layoutから"Other"選択
     * "Japanese"
     * "Japanese (OADG 109A)"
-    * AltGrキーの役割選択で"The default for the keyboard layout"選択
-    * "No compose key"
-    * 参考）/etc/default/keyboard に設定追加されてるっぽい
+    * しばらく待機時間があるので待機
+* ユーザー作成画面出るのでユーザー名とpass指定して作成
+* ログイン
 * ネットワーク設定
     * `sudo raspi-config`
     * "Localisation Options"
@@ -202,6 +192,8 @@
     ```
     * /etc/hostsに下記追記
         * 127.0.1.1 (host名)
+* wifi安定化のため、power management offに
+    * iwconfig wlan0 power off
 * 半角／全角キー有効化（調査中）
     * TODO: 下記の方法では全角／半角キーが効かないので対応方法調査
         * localeをraspi-configで設定するとターミナルの日本語が■になってしまう等ややこしいのでやらない
