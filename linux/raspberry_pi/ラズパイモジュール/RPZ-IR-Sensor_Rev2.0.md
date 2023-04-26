@@ -43,7 +43,7 @@
   * Yes
 * i2c関連ツールインストール
   * apt update -y
-  * apt install -y python-smbus python3-smbus python-dev python3-dev i2c-tools
+  * apt install -y python3-smbus python-dev python3-dev i2c-tools
 * reboot
 * i2cで接続されているデバイス一覧表示して動作確認
   * i2cdetect -y 1
@@ -83,7 +83,7 @@
   * pip3 install docopt
   * cronに下記のような形で登録しておけば定期実行可能
     ```
-    * * * * * /usr/bin/mkdir -p /var/log/sensor/$(/usr/bin/date +\%Y) && /usr/local/bin/rpz-sensor/python3/rpz_sensor.py -l /var/log/sensor/$(/usr/bin/date +\%Y)/$(/usr/bin/date +\%m\%d).log
+    * * * * * /usr/bin/mkdir -p /var/log/sensor/$(/usr/bin/date +\%Y) && /usr/local/bin/lib/rpz-sensor/python3/rpz_sensor.py -l /var/log/sensor/$(/usr/bin/date +\%Y)/$(/usr/bin/date +\%m\%d).log
     ```
 * 赤外線センサー
   * サンプル取得
