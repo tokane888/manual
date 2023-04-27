@@ -1,6 +1,21 @@
 # WSL上のdns
 
-* 名前解決に失敗する場合があった
-  * /etc/resolv.conf に下記を記載しておく
-    * nameserver 8.8.8.8
-  * WSLは特殊な環境で、systemdが使用不可能なため、詳細な原因を追い辛い
+* /etc/resolv.conf に下記を記載しておく
+  * nameserver 8.8.8.8
+* /etc/wsl.confに下記を上書きし、/etc/resolv.confが自動で上書きされることを抑止
+  ```
+  % cat /etc/wsl.conf
+  [boot]
+  systemd = true
+
+  [network]
+  generateResolvConf = false
+  ```
+* WSL上でのdocker使用時は下記を/etc/docker/daemon.jsonに追記
+  ```
+  {
+    "dns": ["8.8.8.8"]
+  }
+  ```
+  * 上記記載後、下記実行
+    * systemctl restart docker
