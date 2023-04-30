@@ -37,10 +37,10 @@ Ubuntu 18.04実機
   * go 1.17+インストール済みであれば下記でインストール可能
     * go install sigs.k8s.io/kind@v0.18.0 && kind create cluster
 * 正常に導入されていることを確認
-```
-$ kind version
-kind v0.10.0 go1.15.7 linux/amd64
-```
+  ```
+  $ kind version
+  kind v0.10.0 go1.15.7 linux/amd64
+  ```
 
 ### kubectl導入(debパッケージ)
 
