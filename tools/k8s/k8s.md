@@ -261,6 +261,9 @@
 * 設定ファイル  
   * ~/.kube/config
     * kubectlコマンドで設定変更すると上記設定ファイルも自動で変更される
+* context切り替え
+  * kubectl config use-context (context)
+  * 例) kubectl config use-context kind-kindcluster
 
 ## マニフェスト
 
