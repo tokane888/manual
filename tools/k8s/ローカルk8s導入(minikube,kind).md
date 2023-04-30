@@ -34,11 +34,8 @@ Ubuntu 18.04実機
 
 * ローカルk8s
   * minikube等他のローカルk8sを使用する場合は不要
-```
-curl -Lo ./kind https://kind.sigs.k8s.io/dl/v0.10.0/kind-linux-amd64
-chmod +x ./kind
-sudo mv kind /usr/bin
-```
+  * go 1.17+インストール済みであれば下記でインストール可能
+    * go install sigs.k8s.io/kind@v0.18.0 && kind create cluster
 
 * 正常に導入されていることを確認
 ```
