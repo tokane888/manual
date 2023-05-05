@@ -22,7 +22,7 @@
   * 下記追記
     * WaylandEnable=false
   * 再起動
-* caps lock => ctrl置き換え
+* 自動起動有効化
   * autokey起動
   * Edit => preferences => general => Automatically start Autokey at login有効化
 * pip3で導入したパッケージ使用可能に

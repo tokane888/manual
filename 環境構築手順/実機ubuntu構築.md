@@ -46,3 +46,6 @@
   * 参考) https://askubuntu.com/questions/1404448/key-combination-ctrlperiod-not-working-ubuntu-22-04
   * ibus-setup
   * GUI開くので`絵文字`タブ => ctrl+periodのショートカット無効化
+* settings => Resion & Language => Manage Installed Languages => install
+* logout
+* settings => Keyboard => View and Customize Shortcuts => super+l
