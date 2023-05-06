@@ -49,4 +49,6 @@
 * 参考) https://hirooka.pro/ubuntu-22-04-lts-japanese-input-ibus-fcitx-mozc/
 * settings => Resion & Language => Manage Installed Languages => install
 * logout
+* autokeyをコンソールなどでも有効化するため、Xorgでログイン
+  * password入力前に右下歯車アイコン押下 => Ubuntu on Xorg
 * settings => Keyboard => View and Customize Shortcuts => super+l
