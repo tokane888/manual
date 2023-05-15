@@ -1,0 +1,22 @@
+@startuml chromeでhttps://google.comを開く
+
+participant chrome
+entity DNS
+entity webサーバ
+
+chrome -> DNS: google.com名前解決
+DNS --> chrome: 216.58.220.142
+chrome -> webサーバ: 216.58.220.142:443に暗号化スイート送信し、SSL/TLS接続開始要求
+note over DNS
+    暗号化スイートには下記が含まれる
+    - SSL version(基本TLS1.3)
+    - サーバ認証アルゴリズム
+    - 鍵交換アルゴリズム
+    - 共通鍵暗号方式アルゴリズム
+    - MACアルゴリズム
+    - 圧縮アルゴリズム
+end note
+
+
+
+@enduml
