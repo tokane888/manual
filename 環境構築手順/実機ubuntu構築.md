@@ -42,10 +42,10 @@
 * 日本語入力
   * OSインストール時に日本語設定を選択していても、実機のキーボードの全角/半角キーは無効になっている
   * winキー+space で全角/半角キー有効化
-* ctrl+.でなぜかeが入力されるので下記で解消
+* ctrl+.でなぜかアンダーバー付きのeが入力されるので下記で解消
   * 参考) https://askubuntu.com/questions/1404448/key-combination-ctrlperiod-not-working-ubuntu-22-04
   * ibus-setup
-  * GUI開くので`絵文字`タブ => ctrl+periodのショートカット無効化
+  * GUI開くので`Emoji`タブ => Emoji annotationで`<Control>period`削除
 * 参考) https://hirooka.pro/ubuntu-22-04-lts-japanese-input-ibus-fcitx-mozc/
 * settings => Resion & Language => Manage Installed Languages => install
 * logout
