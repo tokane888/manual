@@ -56,3 +56,4 @@
   * settings => Appearance => Dock => Position on screen => right
 * ctrl + .でアンダーバー付きのeが出力される問題
   * ibus-setup => Emojiタブ => Emoji annotationで`<Control>period`削除
+  * 参考) https://askubuntu.com/questions/1404448/key-combination-ctrlperiod-not-working-ubuntu-22-04
