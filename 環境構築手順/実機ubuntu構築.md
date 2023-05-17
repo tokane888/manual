@@ -51,9 +51,9 @@
 * logout
 * autokeyをコンソールなどでも有効化するため、Xorgでログイン
   * password入力前に右下歯車アイコン押下 => Ubuntu on Xorg
-* settings => Keyboard => View and Customize Shortcuts => super+l
+* ロック無効化
+  * settings => Keyboard => View and Customize Shortcuts => Lock screen => 選択 => Backspace => Set
 * ランチャーのバーを右端へ
   * settings => Appearance => Dock => Position on screen => right
-* ctrl + .でアンダーバー付きのeが出力される問題
-  * ibus-setup => Emojiタブ => Emoji annotationで`<Control>period`削除
-  * 参考) https://askubuntu.com/questions/1404448/key-combination-ctrlperiod-not-working-ubuntu-22-04
+* ctrl + alt + iによるスクリーンロック無効化
+  * win => settings => Keyboard 
