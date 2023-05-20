@@ -71,3 +71,6 @@
   * "outputCapture": "std"
   * debug実行時にログ出力可能にするため
   
+## 静的htmlを表示
+
+* http_serverというnpmパッケージ使うのが簡単

@@ -16,7 +16,18 @@ note over DNS
     - MACアルゴリズム
     - 圧縮アルゴリズム
 end note
-
-
+webサーバ --> chrome: 利用するアルゴリズム選択 + サーバ証明書(公開鍵)
+note over DNS
+    サーバ証明書とは具体的には？
+    下記でSSL/TLS接続を確立し、証明書チェーン詳細を表示可能。
+    openssl s_client -showcerts -connect google.com:443
+end note
+chrome -> chrome: 共通鍵生成
+chrome -> chrome: 共通鍵をサーバの公開鍵で暗号化
+chrome -> webサーバ: 公開鍵で暗号化した共通鍵
+webサーバ -> webサーバ: 秘密鍵で共通鍵を復号
+note over DNS
+    以後は共通鍵で通信
+end note
 
 @enduml
