@@ -1,6 +1,10 @@
 # task warrior
 
-## 関連ツール含めてインストール
+## aptでインストール
+
+* apt update -y && apt install -y taskwarrior
+
+## 最新版インストール(通常は上記のapt installでOK)
 
 * 最新のtaskwarriorインストール
   * aptでは最新版が提供されておらず、後述のtaskwarrior-tuiは最新版のtaskwarriorに依存しているため
@@ -22,6 +26,9 @@
     cd src
     cp task /usr/bin/
     ```
+
+## 関連ツールインストール
+
 * (option)tasksh
   * apt install -y tasksh
     * 専用のshellが開き、頭の"task"の入力を省略可能に

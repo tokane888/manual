@@ -42,6 +42,8 @@
   * git remote -v
 * git push先のhttps/ssh切り替え
   * git remote set-url origin (url)
+* 特定のメンバーが1日に追加／削除したソース行数取得
+  * git log --author=<メンバー名> --since="1 day ago" --until="1 day ago" --oneline --shortstat
 
 ### トラブルシューティング
 

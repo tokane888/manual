@@ -11,9 +11,7 @@
 * 下記から対象環境向けの.tar.gzダウンロード
   * https://prometheus.io/download#prometheus
     * アーキはプルダウンから選択
-  * curl -LO https://github.com/prometheus/prometheus/releases/download/v2.40.6/prometheus-2.40.6.linux-amd64.tar.gz
-* 解凍
-  * tar -zxvf prometheus-*.tar.gz
+  * curl https://github.com/prometheus/prometheus/releases/download/v2.44.0/prometheus-2.44.0.linux-amd64.tar.gz | tar -zxv
 * cd prometheus-*
 * 自身を監視するよう設定
   * prometheus.ymlとして下記のページの設定を保存
@@ -31,8 +29,6 @@
 * 参考 ) https://prometheus.io/docs/guides/node-exporter/
 * downloadページからダウンロード
   * https://prometheus.io/download/#node_exporter
-    * 例) curl -LO https://github.com/prometheus/node_exporter/releases/download/v1.3.1/node_exporter-1.3.1.linux-armv7.tar.gz
-* 解凍
-  * tar -zxvf node_exporter-*
+    * 例) curl -L https://github.com/prometheus/node_exporter/releases/download/v1.5.0/node_exporter-1.5.0.linux-amd64.tar.gz | tar -zxv
 * cd node_exporter-1.3.1.linux-armv7
 * 
