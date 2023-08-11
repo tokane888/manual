@@ -55,7 +55,7 @@
 * SDカードのデバイスパス特定
 
     ```
-    lsblk -p
+    # lsblk -p
     NAME             MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
     (省略)
     /dev/sda           8:0    0   477G  0 disk
@@ -65,8 +65,6 @@
     ├─/dev/mmcblk0p1 179:1    0   256M  0 part /media/tom/boot
     └─/dev/mmcblk0p2 179:2    0  59.4G  0 part /media/tom/rootfs
     ```
-    * 下記コマンドでも可
-        * lsblk -p
 * SDカードをアンマウント
     * sudo umount (/devパス)
         * 例) sudo umount /dev/mmcblk0p1 && sudo umount /dev/mmcblk0p2
