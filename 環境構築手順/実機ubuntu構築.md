@@ -56,4 +56,4 @@
 * ランチャーのバーを右端へ
   * settings => Appearance => Dock => Position on screen => right
 * ctrl + alt + iによるスクリーンロック無効化
-  * win => settings => Keyboard 
+  * win => settings => Keyboard

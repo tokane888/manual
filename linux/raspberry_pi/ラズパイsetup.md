@@ -73,10 +73,12 @@
     * 例) sudo mkfs.vfat -F32 /dev/mmcblk0p1
 * 全体フォーマット
     * sudo mkfs.vfat -F32 -v -I (/devパス)
-    * 例) sudo mkfs.vfat -F32 -v -I /dev/mmcblk0
+      * 例) sudo mkfs.vfat -F32 -v -I /dev/mmcblk0
 * 焼付
     * --パス指定を誤るとOSが消えるので注意--
     * unzip -p (.zipパス) | sudo dd of=(/devパス) bs=4M conv=fsync
+        * パーティションではなく、ディスク全体に焼くこと
+          * 例: /dev/sda1
         * 例) unzip -p 2021-03-04-raspios-buster-armhf-lite.zip | sudo dd of=/dev/mmcblk0 bs=4M conv=fsync
         * zip解凍済みの場合
             * sudo dd if=(.imgのパス) of=(/devパス) bs=4M conv=fsync
