@@ -57,3 +57,6 @@
   * settings => Appearance => Dock => Position on screen => right
 * ctrl + alt + iによるスクリーンロック無効化
   * win => settings => Keyboard
+* vscode
+  * autokey関連設定後、無変換押下でメニューバーの"file"にフォーカスが当たる問題
+  * ctrl + , => "menu bar"で検索 => Menu Bar Visivilityをhiddenに変更
