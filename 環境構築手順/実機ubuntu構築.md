@@ -64,3 +64,13 @@
   * ディレクトリ名が青で見にくいのでtheme変更
     * 右上3段バーガーアイコン => preferences => profilesのunnamed
     * colors => Built-in schemes => Solarized
+
+## shell-gpt導入
+
+* api key確認
+  * https://platform.openai.com/account/api-keys
+* sgpt設定
+  * sgpt
+    * api key入力求められるので入力
+  * sgpt hello
+    * 何か返事が返って来ればok
