@@ -31,4 +31,9 @@
   * https://prometheus.io/download/#node_exporter
     * 例) curl -L https://github.com/prometheus/node_exporter/releases/download/v1.5.0/node_exporter-1.5.0.linux-amd64.tar.gz | tar -zxv
 * cd node_exporter-1.3.1.linux-armv7
+
+## alert manager導入
+
+* 下記からダウンロード
+  * https://prometheus.io/download/#alertmanager
 * 

@@ -60,3 +60,7 @@
 * vscode
   * autokey関連設定後、無変換押下でメニューバーの"file"にフォーカスが当たる問題
   * ctrl + , => "menu bar"で検索 => Menu Bar Visivilityをhiddenに変更
+* terminal
+  * ディレクトリ名が青で見にくいのでtheme変更
+    * 右上3段バーガーアイコン => preferences => profilesのunnamed
+    * colors => Built-in schemes => Solarized
