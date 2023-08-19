@@ -36,4 +36,24 @@
 
 * 下記からダウンロード
   * https://prometheus.io/download/#alertmanager
-* 
+* 標準設定だとalertの最低連続発報期間が長い
+  * 関連設定項目
+    * 参考) intervalの種類の違いば分かりやすい
+      * https://www.techscore.com/blog/2017/12/07/prometheus-monitoring-setting/
+    * 参考) 下記でintervalで検索
+      * https://prometheus.io/docs/alerting/latest/configuration/
+    * group_wait
+      * 同種のalertを1つのグループとしてまとめる期間
+      * default: 30s
+    * group_interval
+      * 同種のalertが発生したときに再度発報するまでの期間
+      * default: 5m
+    * repeat_interval
+      * 正常に発報されたalertが再度通知されるまでの期間
+      * default: 4h
+  
+## インストルメンテーション
+
+* カウンタ
+  * イベントの数又はサイズを追跡
+  * 

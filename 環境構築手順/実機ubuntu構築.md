@@ -64,11 +64,14 @@
   * ディレクトリ名が青で見にくいのでtheme変更
     * 右上3段バーガーアイコン => preferences => profilesのunnamed
     * colors => Built-in schemes => Solarized
+* super + d無効化
+  * settings => Keyboard => View and Customize Shortcuts => Hide all normal windows => 選択 => Backspace => Set
 
 ## shell-gpt導入
 
 * api key確認
   * https://platform.openai.com/account/api-keys
+  * apiは使った分だけ課金され、chatGPTの課金とは別
 * sgpt設定
   * sgpt
     * api key入力求められるので入力
