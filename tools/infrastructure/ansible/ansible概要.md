@@ -42,3 +42,7 @@
   * ディストリビューションによっては/usr/bin/python3に配置されるため"module_stdout"エラーになる
     * 必要に応じてansible_python_interpreterでpython3の実行バイナリパスを設定
 
+## vscode拡張セットアップ
+
+- 大体下記にしたがっておけばOK
+  - https://speakerdeck.com/stopendy/vs-code-ansible-extension-for-dummies?slide=11

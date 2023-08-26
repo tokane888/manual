@@ -1,6 +1,7 @@
 # aws認証情報
 
 * awsの各種サービスに必要なkeyとsecretを取得する方法
+* 参考) https://docs.aws.amazon.com/keyspaces/latest/devguide/access.credentials.html
 
 ## 手順
 
