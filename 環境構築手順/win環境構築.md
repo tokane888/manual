@@ -74,7 +74,6 @@
   * ウィンドウ => デフォルトの文字コード => 改行はLF, 文字コードはUTF-8
 * chrome private mode無効化
   * REG ADD HKLM\SOFTWARE\Policies\Google\Chrome /v IncognitoModeAvailability /t REG_DWORD /d 1
-* pico viewerインストール
 * teams設定
   * タスクトレイから起動
   * 左メニューから"最新情報" => 左上の歯車アイコン押下 => 通知をoffに設定
@@ -122,3 +121,4 @@
     * cacls C:\Windows\System32\Magnify.exe /G administrators:F
   * 下記を適当にrename
     * C:\Windows\System32\magnify.exe
+* chromeのtampermonkey拡張で、バックアップしていた設定をimport
