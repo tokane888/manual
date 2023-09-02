@@ -189,3 +189,5 @@
 
 * windows terminal上でtmuxを使用すると日本語コピーに失敗
     * https://github.com/microsoft/terminal/issues/7819
+* たまにハングアップする
+    * powershellから下記実行でwsl終了
