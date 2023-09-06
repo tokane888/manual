@@ -77,3 +77,6 @@
     * api key入力求められるので入力
   * sgpt hello
     * 何か返事が返って来ればok
+* shell補完機能追加
+  * sgpt --install-integration
+  * ctrl + lで補完
