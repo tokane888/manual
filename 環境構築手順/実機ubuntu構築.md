@@ -80,3 +80,11 @@
 * shell補完機能追加
   * sgpt --install-integration
   * ctrl + lで補完
+
+## ショートカット設定
+
+* setting => keyboard => custom shortcuts
+  * ctrl+alt+dでダウンロードディレクトリを開くよう設定
+    * name: open download directory
+    * command: nautilus Downloads
+    * shortcut: ctrl + alt + d
