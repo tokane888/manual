@@ -14,6 +14,13 @@
 * chocolateyでインストール
   * cinst --yes virtualbox
 
+## Ubuntu 22.04でのVirtual Box導入手順
+
+* 下記でのインストールは失敗
+  * apt install -y virtualbox
+  * oracleのdeb repository追加してのinstall
+* 直接下記から7系をdeb downloadしてインストールしたところ成功
+
 ## 各種設定
 
 * ハードウェア仮想化が有効であることを確認

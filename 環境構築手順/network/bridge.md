@@ -30,3 +30,4 @@
     net.ipv4.ip_forward = 1
     ```
   - 有効化されていなければ/etc/sysctl.confいじって有効化
+  - 
