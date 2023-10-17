@@ -1,0 +1,35 @@
+@startuml docker network
+rectangle 172.17.0.255/16 {
+	agent docker0 [
+		docker0
+		172.17.0.1/16
+	]
+	agent container1 [
+			container1
+			eth0@if16
+			172.17.0.2/16
+		]
+	agent container2 [
+		container2
+		eth0@if14
+		172.17.0.3/16 
+	]
+	docker0 -up- container1
+	docker0 -right- container2
+}
+
+rectangle 172.18.0.255/16 {
+	agent br [
+		br-bab8caa2f74b
+		172.18.0.1/16
+	]
+}
+
+rectangle 172.19.0.255/16 {
+	agent container3 [
+		container3
+		eth0@if19
+		172.19.0.2/16
+	]
+}
+@enduml
