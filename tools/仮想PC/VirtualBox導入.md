@@ -20,6 +20,7 @@
   * apt install -y virtualbox
   * oracleのdeb repository追加してのinstall
 * 直接下記から7系をdeb downloadしてインストールしたところ成功
+  * https://www.virtualbox.org/wiki/Linux_Downloads
 
 ## 各種設定
 
