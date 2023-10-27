@@ -1,0 +1,61 @@
+@startuml ffmpeg
+agent inputStream
+queue demuxer [
+  demuxer
+  ....
+  libavformat libraryに
+  含まれる
+]
+agent encodedDataPackets1
+queue streamcopy [
+  streamcopy
+  ....
+  copyで指定。
+  コンテナレベルの
+  meta data書き換え。
+  高速で劣化なし。
+  filterは不可
+]
+queue decoder [
+  decoder
+  ....
+  非圧縮frameを
+  生成
+]
+agent decodedFrames
+queue simpleFilterGraph [
+  simpleFilterGraph
+  ....
+  libavfilterのfilterを使用。
+  -vf, -af等で指定
+]
+queue complexFilterGraph [
+  complexFilterGraph
+  ....
+  libavfilterのfilterを使用。
+  global option。
+  -filter_complexで指定
+]
+agent filteredFrames
+queue encoder
+agent encodedDataPackets2
+queue muxer
+agent outputFile
+
+inputStream -> demuxer
+demuxer -> encodedDataPackets1
+encodedDataPackets1 ---> streamcopy
+streamcopy ---> encodedDataPackets2
+' encodedDataPackets1 .....> encodedDataPackets2 : streamcopy
+encodedDataPackets1 -> decoder
+decoder --> decodedFrames
+decodedFrames --> simpleFilterGraph
+simpleFilterGraph --> filteredFrames
+decodedFrames --> complexFilterGraph
+complexFilterGraph --> filteredFrames
+filteredFrames --> encoder
+encodedDataPackets2 <- encoder
+muxer <- encodedDataPackets2
+outputFile <- muxer
+
+@enduml
