@@ -18,8 +18,10 @@
     ```
 - 試験的にbox install
   - vagrant box add hashicorp/bionic64
-- Vagrant file作成
+- Vagrantfile作成
   - vagrant init hashicorpd/bionic64
+- (WSL2の場合)Vagrantfileに下記追記
+  - config.vm.synced_folder '.', '/vagrant', disabled: true
 - vagrant起動
   - vagrant up
 - vagrantへ試験的にssh接続
@@ -39,4 +41,3 @@
   - 参考) https://ngrok.com/download
   - curl -s https://ngrok-agent.s3.amazonaws.com/ngrok.asc | sudo tee /etc/apt/trusted.gpg.d/ngrok.asc >/dev/null && echo "deb https://ngrok-agent.s3.amazonaws.com buster main" | sudo tee /etc/apt/sources.list.d/ngrok.list && sudo apt update && sudo apt install ngrok
 - このあとport forward周り等設定必要。あまり使わない気がするので未検証
-- 
