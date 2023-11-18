@@ -41,3 +41,15 @@
   - 参考) https://ngrok.com/download
   - curl -s https://ngrok-agent.s3.amazonaws.com/ngrok.asc | sudo tee /etc/apt/trusted.gpg.d/ngrok.asc >/dev/null && echo "deb https://ngrok-agent.s3.amazonaws.com buster main" | sudo tee /etc/apt/sources.list.d/ngrok.list && sudo apt update && sudo apt install ngrok
 - このあとport forward周り等設定必要。あまり使わない気がするので未検証
+
+## トラブルシューティング
+
+- WSL2上で動かない
+  - Vagrantfileに下記突っ込むと動くこともある
+
+    ```
+    config.vm.provider "virtualbox" do |vb|
+      vb.customize [ "modifyvm", :id, "--uartmode1", "disconnected" ]
+    end
+    ```
+    - 参考: https://github.com/hashicorp/vagrant/issues/8604#issuecomment-303259512
