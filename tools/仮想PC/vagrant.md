@@ -9,7 +9,7 @@
 - 参考
   - 公式
     - https://developer.hashicorp.com/vagrant/downloads
-- vagranインストール
+- vagrantインストール
 
     ```
     wget -O- https://apt.releases.hashicorp.com/gpg | sudo gpg --dearmor -o /usr/share/keyrings/hashicorp-archive-keyring.gpg
