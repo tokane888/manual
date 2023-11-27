@@ -19,7 +19,7 @@
 - 試験的にbox install
   - vagrant box add hashicorp/bionic64
 - Vagrantfile作成
-  - vagrant init hashicorpd/bionic64
+  - vagrant init hashicorp/bionic64
 - (WSL2の場合)Vagrantfileに下記追記
   - config.vm.synced_folder '.', '/vagrant', disabled: true
 - vagrant起動
