@@ -1,8 +1,26 @@
 # tmux
 
-参考) https://neos21.hatenablog.com/entry/2019/09/20/080000#%E3%83%84%E3%83%BC%E3%83%AB%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB--Windows-%E7%B7%A8
+- 参考
+  - 公式getting started
+    - https://github.com/tmux/tmux/wiki/Getting-Started
+  - 公式clipboard
+    - https://github.com/tmux/tmux/wiki/Clipboard
 
 ## 主要コマンド
 
 * 検索
   * ctrl-b => [ => / or ? => (検索文字列) => enter
+* 確認の上windowをkill
+  * ctrl-b => &
+* コマンドプロンプトでコマンド実行
+  * ctrl-b => : => (コマンド)
+
+## コマンドプロンプトのコマンド
+
+* :list-keys
+  * key-bind一覧表示
+
+## ターミナル上のコマンド
+
+* tmux lsk -Tcopy-mode-vi
+  * copy-mode-viのkey-bind一覧表示
