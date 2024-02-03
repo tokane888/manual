@@ -44,6 +44,11 @@
   * git remote set-url origin (url)
 * 特定のメンバーが1日に追加／削除したソース行数取得
   * git log --author=<メンバー名> --since="1 day ago" --until="1 day ago" --oneline --shortstat
+* カレントブランチのlogからログ文字列を含むコミット抽出
+   * git log -S "ログ文字列"
+* 全ブランチのlogからログ文字列を含むコミット抽出
+   * git log -S "ログ文字列" --all
+
 
 ### トラブルシューティング
 
