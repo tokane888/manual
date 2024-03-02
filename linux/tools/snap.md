@@ -3,18 +3,6 @@
 * linuxのディストリビューション非依存のパッケージ管理ソフト
 * 依存パッケージも含めてパッケージ化されており、独立性が高いとか
   * 依存問題に時間取られないのはありがたい
-* go未インストールのPCで"go"と打ったらおすすめされた
-  ```
-  root@tom-PC-LZ550NSB:/home/tom/learn/k8s/sampleDockerfiles/HelloServer# go
-
-  Command 'go' not found, but can be installed with:
-
-  snap install go         # version 1.13.7, or
-  apt  install golang-go
-  apt  install gccgo-go
-  ```
-  * goのバージョンもaptより新しい
-  * ubuntu公式のdocker imageには入っていなかった
 
 ### コマンド
 
@@ -27,3 +15,9 @@
   * snap list
 * パッケージ完全削除
   * sudo snap remove (package名) --purge
+* パッケージに含まれるファイル一覧表示
+  * 注) コマンド1発では無理っぽい
+  * cd /var/lib/snapd/snaps
+  * ls
+    * それっぽいパッケージ.snapを探す
+  * sudo unsquashfs -l xmind_29.snap
