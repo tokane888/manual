@@ -36,3 +36,18 @@
 * 検証環境: raspberry pi3(buster) + raspberry pi4(buster)
 * 対象の2台のlinuxにiperf3をインストール
   * sudo apt install -y iperf3
+
+## TCP/IP関連
+
+- ubuntuでwindow size確認
+  - sudo sysctl -a 2>/dev/null | grep net.core.*mem
+    - 出力例
+
+      ```
+      root@edge-br-b-1:/tmp# sudo sysctl -a 2>/dev/null | grep net.core.*mem
+      net.core.optmem_max = 20480
+      net.core.rmem_default = 212992
+      net.core.rmem_max = 212992
+      net.core.wmem_default = 212992
+      net.core.wmem_max = 212992
+      ```
