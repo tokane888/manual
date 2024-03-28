@@ -48,7 +48,8 @@
    * git log -S "ログ文字列"
 * 全ブランチのlogからログ文字列を含むコミット抽出
    * git log -S "ログ文字列" --all
-
+* マージ済みブランチ削除
+  * git branch --merged|egrep -v '\*|develop|master|main'|xargs git branch -d
 
 ### トラブルシューティング
 
