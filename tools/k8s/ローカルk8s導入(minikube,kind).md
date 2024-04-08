@@ -21,10 +21,11 @@ Ubuntu 18.04実機
   * kind等他のローカルk8sを使用する場合は不要
 * 参考) https://minikube.sigs.k8s.io/docs/start/
 * curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube_latest_amd64.deb
-* sudo apt install -y ./minikube_latest_amd64.deb
-* minikubeのdockerドライバはrootで使用できないが、dockerはrootでないと使用できないので対応
-  * minikubeを使用するuserの権限でdocker使用可能に設定
-    * sudo usermod -aG docker $USER && newgrp docker
+* sudo dpkg -i minikube_latest_amd64.deb
+* minikubeは一般ユーザーで使用するのが良いが、rootで使用する場合は下記対応
+  * minikubeのdockerドライバはrootで使用できないが、dockerはrootでないと使用できないので対応
+    * minikubeを使用するuserの権限でdocker使用可能に設定
+      * sudo usermod -aG docker $USER && newgrp docker
 * rootユーザー以外、dockerグループのuserで、下記実行でminikube起動可能に
   * minikube start
 * 下記でminikubeの起動確認
