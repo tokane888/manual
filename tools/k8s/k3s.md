@@ -50,3 +50,8 @@ curl -sfL https://get.k3s.io | sh -
     * https://github.com/k3s-io/k3s/issues/1621#issuecomment-626115939
   * 関連する鍵は下記のパスにある
     * /var/lib/rancher/k3s/server/tls
+
+## 証明書確認
+
+- cd /var/lib/rancher/k3s/server/tls
+- for i in `ls *.crt`; do echo $i; openssl x509 -enddate -noout -in $i; done

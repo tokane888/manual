@@ -40,6 +40,9 @@
 
 * 下記参照
   * linux\tools\docker\docker_images\postgres.md
+* テスト用postgresコンテナ作成
+  * docker run --name some-postgres -e POSTGRES_PASSWORD=mysecretpassword -d postgres
+  * docker exec -it some-postgres psql postgres postgres
 
 ## 動作確認
 
