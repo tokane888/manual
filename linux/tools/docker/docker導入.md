@@ -1,5 +1,13 @@
 ## docker
 
+### Amazon linux 2023上にインストールする場合
+
+sudo yum update -y
+sudo yum install -y docker
+sudo service docker start
+sudo usermod -a -G docker ec2-user
+(OS再起動)
+
 ### ラズパイ上にインストールする場合
 
 * curl -sSL https://get.docker.com | sh
