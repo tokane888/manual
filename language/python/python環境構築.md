@@ -1,7 +1,21 @@
 # python環境構築
 
-* pip3導入
-  * sudo apt-get -y install python3-pip
-  * 動作確認
-    * pip3 --version
-    
+- pip3導入
+  - sudo apt-get -y install python3-pip
+  - 動作確認
+    - pip3 --version
+- repository毎のsetup
+  - venv
+    - 仮想環境作成
+      - python3 -m venv [仮想環境名]
+        - 通常は.venvという名前で作成
+    - 仮想環境有効化
+      - source [仮想環境名]/bin/activate
+    - 仮想環境が有効になっていることを確認
+      - sudo -u "$SUDO_USER" 
+    - 仮想環境無効化
+      - deactivate
+    - 現在の仮想環境の設定ファイル書き出し
+      - pip freeze > requirements.txt
+    - 他の環境でrequirements.txt記載のパッケージをインストール
+      - pip install -r requirements.txt
