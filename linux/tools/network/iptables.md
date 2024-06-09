@@ -74,3 +74,4 @@
   * 設定ファイルは下記に出力される
     * /etc/iptables/rules.v4
     * /etc/iptables/rules.v6
+* 方法2: iptables-save > /etc/iptables/rules.v4
