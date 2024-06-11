@@ -5,6 +5,7 @@
 - 下記2つは同じ意味らしい
   - EC2 Container registry
   - Elastic Container registry
+- 基本的に1つのDockerfileに対して1つのregistryを作成するのが良い
 
 ## 参考
 
