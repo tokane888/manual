@@ -25,6 +25,8 @@ An error occurred (AccessDeniedException) when calling the GetAuthorizationToken
 
 ## image登録手順
 
+- 動作確認用に下記に認証情報記載
+  - ~/.aws/credentials 
 - Dockerfile作成
 - build
   - docker build -t hello-world .
@@ -46,5 +48,11 @@ An error occurred (AccessDeniedException) when calling the GetAuthorizationToken
   - docker push `aws_account_id`.dkr.ecr.`region`.amazonaws.com/hello-repository
 - repositoryに登録されているimage一覧表示
   - aws ecr describe-images --repository-name (repository名)
-- docker image pull
+- docker image pull出来ること確認
   - docker pull `aws_account_id`.dkr.ecr.`region`.amazonaws.com/hello-repository:latest
+
+## タスク定義時注意点
+
+- タスク内でAWS認証情報が必要な場合
+  - IAMで必要な権限を付与したroleを作成
+  - 当該roleのarnを、imageを使用するタスク定義内でtaskRoleArnという項目を追加して記載
