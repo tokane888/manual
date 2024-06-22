@@ -36,7 +36,6 @@
             "editor.defaultFormatter": "biomejs.biome"
           }
         }
-
       ```
 
 ## vscodeにlive server導入
