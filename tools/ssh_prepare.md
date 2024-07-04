@@ -15,8 +15,10 @@
 
 * 上記ディレクトリにパスなしのid_rsa.pubが無い場合
     * 公開鍵／秘密鍵ペア生成
-        * `ssh-keygen -N '' -f id_rsa -t rsa -b 4096`
-            * -fでのファイル名指定はなくてもOK
+        * `ssh-keygen -t ed25519 -C "メールアドレス"`
+            * 上記で問題がある場合は下記使用
+                * `ssh-keygen -N '' -f id_rsa -t rsa -b 4096`
+                    * -fでのファイル名指定はなくてもOK
     * (clientがlinux系の場合)サーバ側へ公開鍵連携
         * `ssh-copy-id -i id_rsa.pub `[サーバ側user名]@[サーバ側IPorドメイン]`
 * クライアントがwindowsの場合
