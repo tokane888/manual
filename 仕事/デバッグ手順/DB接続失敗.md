@@ -19,10 +19,15 @@
    1. 成功時
       1. コンテナ起動順序の問題
          1. docker-compose.ymlにdepends_on指定追記で対応
-            1. 必要に応じてhealth_checkも追記
+            1. health_checkも追記
+            2. mysqlでは起動時に毎回DB初期化処理を行うと、healthcheck後にclientを起動しても0.2秒程度clientの起動がmysqlより早くなってしまう
+               1. mysql build時にデータ初期化することで回避可能
+               2. DB側とclient側のログをミリ秒単位で出力し、時系列を整理することで切り分け可能
    2. 失敗時
       1. 起動順序の問題ではないことが確定
 4. clientコンテナが接続失敗してもしばらく終了しないよう、例外発生箇所等にsleepを入れてterminalからコンテナ内へ
    1. DBコンテナへpingが通ること確認
    2. DBコンテナのnameが名前解決可能であること確認
       1. docker commitし、再度runする方法だとnetwork周りの設定が保持されないので注意
+   3. mysqlコマンドなどで当該DBへ接続可能であるか確認
+   4. mysqlでは起動時に毎回DB初期化処理を行うと、healthcheck後にclientを起動しても0.2秒程度client
