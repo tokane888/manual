@@ -1,5 +1,12 @@
 # Devin's Workspace Setup
 
+## 事前準備
+
+- 下記実行で依存パッケージ最新化の上push
+  - go mod tidy
+
+## 手順
+
 1. Git pull
    1. そのままでok
 2. Configure Secrets
@@ -21,3 +28,4 @@
    1. go fmt ./... && go vet ./...
 6. Setup Tests
    1. go test -v ./...
+
